@@ -1,0 +1,167 @@
+Introduction:
+  What is Cloud Computing:
+    The delivery of computing services over the internet, also called cloud.
+      Services like servers, storage, databases, networking, software, analytics, and intelligence.
+    Offer faster innovation, flexible resources, and economies of scale. 
+    Instead of owning and maintaining physical data centers and servers. you can: 
+      Access these resources on-demand from a cloud provider, such as AWS -Amazon Web Services-.
+    Transforms modern IT, providing instant access to shared resources via: 
+      Virtualization, scalability, and flexible payment models. 
+Introduction to AWS and Cloud Computing:
+  Cloud Computing VS Traditional IT Approach:
+    Cloud Computing:
+      Pay-as-you-go pricing.
+      Flexible resource provisioning.
+      Quick access to virtually unlimited resources.
+    Traditional IT Approach:
+      Infrastructure monitoring and disaster preparedness concerns.
+      Limited resources.
+      Time and money consuming for instal, maintain, upgrade.
+6 Advantages of Cloud Computing:
+  Trade capital expense -CapEx- for variable expense -OpEx-:
+    Instead of large upfront capital expenses -CapEx- for infrastructure. 
+    Cloud services use a pay-as-you-go -OpEx- model. 
+      Allowing businesses to pay only for what they use and deduct expenses in the same tax year.
+    CapEx VS OpEx:
+      OpEx -Operational Expenditure- refers to ongoing costs incurred in daily operations. 
+        Such as cloud services, utilities, and salaries. 
+        Can be deducted in the same tax year, providing flexibility based on usage. 
+        Allows businesses to be more agile and responsive to changing needs.
+      CapEx -Capital Expenditure- involves significant one-time investments in physical assets:
+        Servers and data centers. 
+          Which are depreciated over several years and represent long-term commitments. 
+        Ties the businesses to fixed investments.
+  Benefit from massive economies of scale:
+    AWS aggregates usage across its large customer base. 
+      Leveraging purchasing power to lower costs.
+        Which are passed on to customers as lower variable costs.
+  Stop guessing capacity:
+    Cloud computing allows businesses to adjust capacity based on actual demand. 
+      Eliminating the problem of over-provisioning and wasted resources.
+  Increase speed and agility:
+    AWS enables rapid deployment of resources via API calls, command line, or console. 
+      Allowing companies to quickly: 
+        Respond to changes.
+        Compete by bringing products to market faster.
+  Stop spending money running and maintaining data centers:
+    AWS encourages businesses to focus on innovation rather than maintaining data centers. 
+      As it doesn't add value to the business or provide competitive advantage.
+  Go global in minutes:
+    AWS allows businesses to deploy resources globally with ease. 
+      Something that was traditionally complex and time-consuming.
+Cloud Computing: Pricing and Models
+  Cloud Computing Deployment Models:
+    Private Cloud: 
+      Utilized by a single organization, inaccessible to the public.
+      Complete control over infrastructure and resources.
+      Enhanced security measures to safe sensitive applications and data.
+      Tailored to meet specific business requirements and compliance needs.
+    Public Cloud: 
+      Resources owned and operated by a third-party cloud service provider. 
+      Accessible over the Internet.
+      Six Advantages of Cloud Computing: 
+        scalability, flexibility, cost-effectiveness, reliability, security, global accessibility.
+    Hybrid Cloud: 
+      Combines on-premises servers with cloud capabilities. 
+        Allowing organizations to leverage both environments.
+      Provides control over sensitive assets by keeping them within the private infrastructure.
+      Offers the flexibility and cost-effectiveness of the public cloud. 
+        Scalable and adaptable solutions.
+  Types of Cloud Computing Models:
+    Infrastructure as a Service -IaaS-:
+      Offers virtualized computing resources over the internet.  
+      Allows flexible provisioning and management of infrastructure. 
+      Eliminates the need for physical hardware ownership.
+      Examples like Amazon EC2, Azure Virtual Machines, and Google Compute Engine.
+    Platform as a Service -PaaS-:
+      Cloud platform for developing, deploying, and managing applications. 
+      Simplifies application development and deployment.
+      no need for you to manage deployment or underlying infrastructure.
+      Examples like AWS Elastic Beanstalk, Azure App Service, and Google App Engine.
+    Software as a Service -SaaS-:
+      Cloud-based product that is run and managed by the service provider. 
+      Applications accessed over the internet. 
+      Examples like Google Workspace, Microsoft Office 365, and Salesforce.
+    See:
+      ./assets/Cloud Computing Pricing and Models/cloud-computing-models-and-manage-resources.png
+  AWS Pricing Models
+    Pay as you go:
+      Pay only for the resources you actually use. 
+      No the need for significant upfront investments in hardware or infrastructure.
+    Save when you reserve:
+      Manage budgets predictably by reserving capacity for extended periods, offering cost savings.
+        Reservations are available for: 
+          EC2 Reserved Instances. 
+          DynamoDB Reserved Capacity.
+          ElastiCache Reserved Nodes.
+          RDS Reserved Instance.
+          Redshift Reserved
+      Pay less by using more
+        Lower prices for higher volumes of resource consumption or data transfer.
+  Pay less AWS grows
+    As AWS scales and improves efficiency.
+      Customers benefit from reduced costs for the same or enhanced resources.
+Cloud Computing: Deployment Models
+  Private Cloud: 
+    Infrastructure is hosted in your own data center. 
+    Giving organizations complete control over hardware, software, and security. 
+    It requires software layers -from VMware, Microsoft, Red Hat- to manage the cloud environment. 
+      Offering customized and secure solutions -Provide some cloud management software-.
+    Though AWS’s public cloud security is often hard to match in this cases since it's complex.
+  Public Cloud: 
+    Offered by third-party providers -AWS, Azure, Google Cloud-. 
+    The public cloud is accessible to multiple users. 
+    It provides elasticity, operational expenditures -OpEx- instead of -CapEx-. 
+    While generally cost-efficient, private clouds may still be cheaper for specific workloads.
+  Hybrid Cloud: 
+    Connects private and public clouds, allow organization to run application in both environments. 
+    Move data and services between infrastructures by VPNs or private links -AWS Direct Connect-.
+      Giving flexibility for application deployment and scalability.
+    Allow us to keep the critical apps and sensitive data in out data center.
+  Multicloud: 
+    Involves using multiple cloud services -public and/or private- from different providers. 
+    This approach allows organizations to choose the best cloud for specific applications. 
+      Increases complexity, which may impact security and operational efficiency.
+===================================================================================================
+Then we have the public cloud. So, the  public cloud is a cloud service where,  
+of course, multiple customers, multiple  organizations, are utilizing this,  
+and anyone really can sign up  and start using the public cloud.
+Now, if we do that, it becomes a hybrid cloud  if we provide that sort of connectivity at the  
+network layer from our office or data center into  the public cloud, especially if we're deploying  
+some infrastructure locally in the data center as  well and providing that cross-communication. Now,  
+in the public cloud, we can deploy various  services. Of course, there's hundreds of  
+different services in the public cloud. In  terms of benefits with the public cloud,  
+we have that variable expense, so it's an Opex,  an operational expenditure, rather than a capital  
+expenditure or Capex cost. Rather than spending  large quantities of cash building our own systems,  
+we're just spending on a monthly basis based on  what we use. And then we have economies of scale,  
+so the public cloud can be very cost-effective.  The fact that AWS has created such a large  
+infrastructure and created the software  capabilities and the services which so many  
+customers can use means that they can lower the  price to you. Doesn't mean it's always cheaper.  
+In some cases, using a private cloud can be  cheaper for certain applications and certain  
+workloads. But don't forget to factor in all the  operational costs, the security, the data center,  
+and all those sorts of aspects as well. And then  we have massive amounts of elasticity in the  
+public cloud. It's almost limitless. If you scale  your business really quickly, there's capacity  
+there for you. Very hard to replicate that, if  not impossible, in a private cloud situation. So,  
+here, of course, we have AWS, Azure, Google  Cloud Platform, and other providers as well.
+So, the hybrid is what we saw before,  
+but where we're actually connecting  our data center and the cloud.
+So, not just the people in the office, but we now  actually have the full data center and whatever  
+application we have in our data center on-premises  connected into the public cloud with a connection  
+which, again, can be a virtual private network  over the Internet or it can be a private link  
+like AWS Direct Connect. So, here we can choose  where to put our applications. Some might make  
+sense in the data center, some might make more  sense in the public cloud, and we can leverage  
+different services for our various applications  as well, like SaaS services or Platform as a  
+Service or IaaS in the cloud. Maybe we even just  use it as a burst capacity or a backup; that's  
+what some organizations do. We can also easily  move data and applications and services between  
+these different deployment models because we've  set up this connectivity between them as well.
+Lastly, we have multicloud. This is becoming a  lot more common. All this really means is that  
+a company is finding the need to leverage multiple  public and private cloud services. They might find  
+that some applications they prefer to deploy into  Azure. Maybe that's because one of the development  
+teams in part of the company are more interested  in .NET and they like to use PowerShell, and  
+they're used to the Microsoft stack. Or maybe you  just prefer the identity features and integration  
+into Office 365, for example. Other applications  might make more sense in the AWS cloud, so they  
+put some in there as well. And then they might  even have multiple private clouds built on VMware,  
+OpenStack, and other providers, and they've got  full connectivity between these different clouds.  
+That's a multicloud environment, and it means you  get the best of these different clouds. Of course,  
+that does increase complexity, so  it's not always the best for things  
+like security or operational efficiency,  but it is quite a common scenario today.
