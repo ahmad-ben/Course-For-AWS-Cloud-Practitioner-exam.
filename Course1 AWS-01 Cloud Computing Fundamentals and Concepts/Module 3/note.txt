@@ -1,0 +1,211 @@
+Introduction:
+  Learn about the AWS Well-Architected Framework. 
+    Offering best practices and design principles for building: 
+      Secure, high-performing, resilient, and efficient cloud-based applications.
+AWS Well Adopted Framework
+  What is AWS Well-Architected Framework: 
+    Set of guidelines created by AWS to help organizations design and operate cloud systems.
+    Set of strategies for designing and running workloads in the cloud.
+    It consists of six pillars:
+      Security: 
+        Focuses on protecting data, identity management, and security threat detection.
+      Cost Optimization: 
+        Aims to minimize unnecessary expenses by using the right resources.
+      Performance Efficiency: 
+        Ensures efficient use of resources as system demand fluctuates.
+      Sustainability: 
+        Reduces environmental impact in cloud operations.
+          Environmental impact refers to How much: 
+            Energy, resources, and emissions are involved in maintaining cloud infrastructure.
+      Operational Excellence: 
+        Involves running and monitoring systems to deliver value, with principles like: 
+          Automating operations, making small reversible changes, and learning from failures.
+      Reliability: 
+        Ensures the system can: 
+          Recover from failures.
+          Scale dynamically.
+          Maintain availability through practices like automation and horizontal scaling.
+AWS Ecosystem: Free Tools
+  Explore the AWS Ecosystem: 
+    AWS's complimentary resources that can help you: 
+      Manage, monitor, and optimize your cloud environment effectively without any cost.
+  AWS Ecosystem and its free tools:
+    AWS Blogs: Stay updated on AWS developments and insights.
+  AWS Forums: Engage with the AWS community for discussions and troubleshooting.
+  AWS Whitepapers & Guides: Access in-depth information and best practices.
+  AWS Partner Solutions -formerly Quick Starts-: 
+    Automated deployments in AWS Cloud using templates.
+    Example: WordPress on AWS leveraging CloudFormation.
+  AWS Solutions: 
+    Vetted technology solutions for the AWS Cloud.
+    Example: 
+      AWS Landing Zone for a secure, multi-account AWS environment -replaced by AWS Control Tower-.
+  AWS Marketplace: 
+    A digital catalog of software listings from independent vendors, including:
+      Custom AMIs, CloudFormation templates, SaaS offerings, and container solutions.
+        AMIs stands for Amazon Machine Images.
+    Purchases are added to your AWS bill, and you can also sell your solutions here.
+  AWS Training:
+    AWS Digital Training: Self-paced online courses.
+    AWS Classroom Training: Instructor-led sessions.
+    AWS Private Training: Tailored solutions for organizations.
+    Training for Government & Enterprises: Specialized programs.
+    AWS Academy: Collaborates with universities for AWS-based curriculum.
+    Online Education: Various online educators also offer AWS-related courses.
+  AWS Professional Services & Partner Network:
+    AWS Professional Services: 
+      A global team collaborating with your team and AWS Partner Network -APN- members.
+    APN Technology Partners: Providers of hardware and software solutions.
+    APN Consulting Partners: Assist with application deployment on AWS.
+    APN Training Partners: Offer AWS training resources.
+    AWS Competency Program: Recognizes partners with proven expertise in specialized areas.
+    AWS Navigate Program: Helps APN Partners enhance their skills.
+  AWS IQ:
+    Connect with AWS Certified third-party experts for assistance on projects.
+    Features include video conferencing, contract management, and integrated billing.
+  AWS re:Post:
+    An AWS-managed Q&A service offering crowd-sourced answers to technical questions. 
+      Replacing AWS Forums.
+    Community members can earn reputation points.
+    Questions without community responses may escalate to AWS Support engineers.
+    Includes a Knowledge Center for common queries.
+  AWS Managed Services -AMS-:
+    Provides infrastructure and application support.
+      Allowing organizations to focus on business objectives.
+    Offers managed services for tasks like monitoring, patch management, and security.
+    Ensures best practices are implemented to reduce operational overhead and risk.
+    Provides 24-7-365 support for continuous service availability.
+Summary
+Introduction to AWS: 
+  AWS -Amazon Web Services-. 
+  Comprehensive cloud computing platform offering a wide range of services for: 
+    Storage, computing, networking, and more.
+  What Cloud Computing Is: 
+    Delivery of computing services over the internet, allowing for:
+      On-demand resource access, scalability, and cost efficiency.
+  5 Characteristics of Cloud Computing: 
+    On-demand self-service. 
+    Broad network access.
+    Multi-tenancy and resource pooling.
+    Rapid elasticity. 
+    Scalability, and measured service.
+  Why We Should Use Cloud Computing: 
+    Scalability, flexibility, cost savings, and the ability to focus on core business activities. 
+      Making it an attractive choice for businesses.
+  6 Advantages of Cloud Computing: 
+    Trade capital expenses for operational expenses. 
+    Benefit from massive economies of scale.
+    Stop guessing capacity.
+    Increase speed and agility.
+    Stop spending money running and maintaining data centers.
+    Go global in minutes.
+  Deploying cloud computing: 
+    Involves setting up and managing cloud-based resources. 
+      To deliver computing services over the internet through:
+        Public, private, and hybrid cloud platforms.
+  Models of cloud computing: 
+    Models:
+      Infrastructure as a Service -IaaS-.
+      Platform as a Service -PaaS-.
+      Software as a Service -SaaS-.
+    Each model offering different levels of control and management.
+  AWS Global Infrastructure: 
+    Availability Zones, Regions, and AWS Data Centers are part of AWS's global infrastructure. 
+      Providing high availability, low latency, and geographic diversity. 
+        To support resilient and efficient cloud services.
+  AWS pricing models: 
+    Based on paying as you use services or data.
+    Saving when you reserve.
+    Paying less by using volume discounts AWS provides.
+    Paying less as AWS infrastructure grows.
+Mini-Exam
+  Important information:
+    What is Stakeholder:
+      Stakeholder is any individual, group, or organization that: 
+        Has an interest in or is affected by the outcome of a project, decision. 
+      Can either be internal -within the organization- or external -outside the organization-.
+    A stockholder -shareholder-: 
+      Individual or entity that owns shares in a company. 
+      Stockholders have a financial stake in the company and may receive: 
+        Dividends, voting rights, and profits based on the company’s performance.
+  The Mini-Exam Q&A:
+    Q1:
+      The question:
+        An online company was running a workload on premises
+        and was struggling to launch new products and features. 
+        After migrating the workload to AWS, 
+        the company can quickly launch products and features 
+        and can scale its infrastructure as required. 
+        Which AWS Cloud value proposition does this scenario describe?
+      The options:
+        A. Business agility ✔️
+        B. High availability
+        C. Security
+        D. Centralized auditing
+    Q2:
+      The question:
+        Which benefit of cloud computing gives a company the ability to deploy applications to 
+        users all over the world through a 
+        network of AWS Regions, Availability Zones, and edge locations?
+      The options:
+        A. Economies of scale 
+        B. Global reach ✔️
+        C. Agility
+        D. High availability
+    Q3:
+      The question:
+        A company's headquarters is located on 
+        a different continent from where the majority of the company's customers live. 
+        The company wants an AWS Cloud environment setup that will 
+        provide the lowest latency to the customers. 
+        Which solution will provide the LOWEST network latency between 
+        the AWS resources and the customers?
+      The options:
+        A. Place the resources in the AWS Region that is closest to the company's headquarters. 
+          Move the resources to the Availability Zone that is closest to the customers.
+        B. Place all workloads in the AWS Region that is closest to the company's headquarters.
+        C. Place all workloads in the AWS Region that is closest to the majority of customers. ✔️
+        D. Place the resources in AWS edge locations that are closest to the company's 
+          headquarters.
+    Q4:
+      The question:
+        A company wants to eliminate the need to guess infrastructure capacity before deployments.
+        The company also wants to spend its budget on cloud resources only as 
+        the company uses the resources. 
+        Which advantage of the AWS Cloud matches the company's requirements?
+      The options:
+        A. Reliability
+        B. Global reach
+        C. Economies of scale
+        D. Pay-as-you-go pricing ✔️
+    Q5:
+      the question:
+        Which option is a common stakeholder role for the 
+        AWS Cloud Adoption Framework -AWS CAF- platform perspective?
+      options:
+        A. Chief financial officer (CFO)
+        B. Chief information officer (CIO)
+        C. Chief data officer (CDO)
+        D. Engineer ✔️
+    Q6:
+      the question:
+        A company is planning to 
+        replace its physical on-premises compute servers with AWS serverless compute services. 
+        The company wants to be able to take advantage of advanced technologies quickly 
+        after the migration. 
+        Which pillar of the AWS Well-Architected Framework does this plan represent?
+      options:
+        A. Security
+        B. Performance efficiency ✔️
+        C. Operational excellence
+        D. Reliability
+    Q7:
+      the question:
+        A system automatically recovers from failure when
+        a company launches its workload on the AWS Cloud services platform. 
+        Which pillar of the AWS Well-Architected Framework does this situation demonstrate?
+      options:
+        A. Cost optimization
+        B. Operational excellence
+        C. Performance efficiency
+        D. Reliability ✔️
