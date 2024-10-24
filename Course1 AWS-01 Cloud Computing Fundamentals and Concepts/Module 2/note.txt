@@ -1,0 +1,151 @@
+Introduction:
+  What is AWS Cloud Adoption Framework. 
+    A Framework help organizations effectively transition to the cloud.
+      By providing a comprehensive guidelines and best practices. 
+    It assists in planning, implementing, and managing cloud adoption. 
+      Across technical, business, and organizational perspectives.
+AWS Cloud Adoption Framework:
+  It aso called -AWS CAF-.
+  Assists in creating and executing a comprehensive plan for digital transformation using AWS.
+  Developed by AWS professionals. 
+  It incorporates AWS best practices and insights from thousands of customers.
+  It identifies key organizational capabilities essential for successful cloud transformations.
+  It organizes these capabilities into six perspectives:
+    Business, People, Governance, Platform, Security, and Operations.
+AWS Cloud Adoption Framework
+  Challenges:
+    Cloud adoption requires collaboration beyond just the IT department.
+    Different people from various parts of the organization should be involved in cloud adoption.
+      Engaging stakeholders from different areas is crucial for success.
+  Targets:
+    The session will explore who these stakeholders are and how to engage them.
+  Unique Cloud Journeys:
+    Each organization's cloud journey is unique due to many factors like: 
+      Organization type -public, private, non profit-. 
+      The Legacy systems.
+      Business goals.
+      Risks.
+  Challenges and Risks Also can vary-:
+    Organizations face challenges such as doing more with less while transforming services.
+    Workloads vary from mission-critical tasks to seasonal or disaster-related demands.
+  Resiliency Requirements:
+    Changing climate and disaster events impact service delivery and IT demands. 
+      Requiring adaptable cloud solutions.
+  Cloud Adoption Framework (CAF) Overview: 
+    It has been developed over about ten years. 
+    Integrating experiences from over 40,000 organizations across various sectors. 
+    The CAF aims to simplify cloud adoption, focusing on maximizing value and minimizing risks. 
+    The framework aligns cloud strategies with organizational outcomes.
+  CAF Perspectives: 
+    The CAF consists of six perspectives.
+    Grouping stakeholder concerns when transitioning to the cloud:
+      Business Perspective:
+        Concerns: 
+          Aligning business and IT strategies. 
+            Ensure that the projects you develop meet the defined organizational outcomes. 
+          Budgeting transitions from CapEx to OpEx, benefits realization, and opportunity costs.
+        Focus: 
+          Helping business managers understand the implications of cloud adoption. 
+            On budgets and accountability.
+      People Perspective:
+        Concerns: 
+          Career management, resource management, and training management.
+        Focus: 
+          Supporting staff through career transitions. 
+          Forecasting staffing needs, and fostering innovation through training opportunities.
+      Governance Perspective:
+        Concerns: 
+          Managing investments.
+          Adapting to agile project management.
+          Business performance management.
+        Focus: 
+          Prioritizing investments.
+            Make strategic decisions about where to allocate resources and funding for cloud.
+            Important for government entities. 
+              Often have limited budgets and must ensure that taxpayer funds are used efficiently.
+          Establishing KPIs for success.
+            What is KPIs:
+              Stands for key Performance Indicator.
+              Quantifiable measure of performance over time for a specific objective.
+          Effective license management in the cloud.
+      Platform Perspective:
+        Concerns: 
+          Compute, network, storage, and database provisioning.
+        Focus: 
+          Managing infrastructure through processes like infrastructure as code. 
+          Ensuring standards and guardrails are in place for innovation.
+      Security Perspective:
+        Concerns: 
+          Compliance, identity management, data protection, and incident response.
+        Focus: 
+          Establishing security frameworks. 
+            That delineate responsibilities between AWS and users for cloud security.
+      Operations Perspective:
+        Concerns: 
+          Application support, performance management, change management.
+        Focus: 
+          Ensuring applications deliver on objectives.
+          Utilizing auto-scaling.
+          Implementing effective release management processes.
+  Implementation Steps: 
+    The CAF is designed not just as a theoretical framework. 
+    The CAF is practical action plan to facilitate organizational transformation. 
+    The implementation includes: 
+      Workshops to engage stakeholders and develop tailored strategies. 
+      Emphasis on iterative progress rather than a linear approach.
+  Note about CAF:
+    It is not AWS specific, it's more generic framework.
+  Envisioning Workshop: 
+    Focuses on aligning IT projects with prioritized business goals. 
+    Participants including: 
+      Executives and stakeholders. 
+    Identify desired outcomes for example improved services. 
+    Define success metrics -KPIs- to measure progress. 
+    This collaboration helps ensure that IT initiatives support organizational objectives. 
+      Making it easier to justify project decisions later.
+  Alignment Workshop: 
+    Addresses stakeholder concerns related to cloud adoption. 
+      By organizing these concerns and prioritizing them.
+        Action plans are created to address issues, like providing training on cloud strategies.
+    It gathers input on questions and uncertainties, such as: 
+      Budget impacts or understanding cloud concepts. 
+  Launching Projects: 
+    After establishing action plans: 
+      Organizations prioritize IT projects for migration to the cloud or new app development. 
+      They align these projects with the -CAF- to ensure comprehensive planning, covering: 
+        Business, technology, and security aspects.
+  Realizing Value: 
+    Organizations measure the success of their initiatives using: 
+      The defined KPIs and generate reports to demonstrate the achieved outcomes. 
+Cloud Transformation Value Chain
+  Technology: 
+    Utilizing the cloud to: 
+      Migrate and modernize legacy Infrastructure, applications, data, and analytics platforms.
+  Process: 
+    Digitizing, automating, and optimizing business operations. 
+    Leveraging new data and analytics platforms for actionable insights. 
+    Using machine learning (ML) to enhance customer service.
+  Organization: 
+    Re-imagining the operating model, organizing teams around products and value streams. 
+    Leveraging agile methods for rapid iteration and evolution.
+  Product: 
+    Re-imagining the business model by: 
+      Creating new value propositions -products and services- and revenue models.
+  Envision: 
+    Demonstrate how the cloud will accelerate business outcomes and that by:
+      Identifying transformation opportunities.
+      Creating a foundation for digital transformation.
+  Workshop Steps:
+    Envision: 
+      Shows how the cloud will accelerate business outcomes. 
+        By identifying transformation opportunities.
+      Laying the groundwork for digital transformation.
+    Align: 
+      Identify capability gaps across the 6 AWS CAF Perspectives, resulting in an Action Plan.
+    Launch: Build and deliver pilot initiatives in production.
+    Demonstrate incremental business value.
+    Scale: 
+      Scale up pilot initiatives to achieve the desired business benefits. 
+        While maintaining the intended scope and impact.
+  See:
+    ./assets/caf.png

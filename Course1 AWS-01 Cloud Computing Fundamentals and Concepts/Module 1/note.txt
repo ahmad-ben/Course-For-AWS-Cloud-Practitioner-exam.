@@ -122,46 +122,42 @@ Cloud Computing: Deployment Models
     Involves using multiple cloud services -public and/or private- from different providers. 
     This approach allows organizations to choose the best cloud for specific applications. 
       Increases complexity, which may impact security and operational efficiency.
+AWS Global Infrastructure & Shared Responsibility Model
+  AWS Regions: 
+    Each region is a geographic area that contains multiple Availability Zones -AZs-.
+      AZs physically separate to ensure fault tolerance and disaster recovery.
+      From 3 to 6.
+    Designed for high availability, scalability, and low latency.
+    Most AWS services are region-scoped.
+    The Service availability and the Pricing vary from region to other.
+  Availability Zones -AZs-: 
+    Each AZ is made up of one or more data centers with redundant power, networking, and cooling.
+  Data center:
+    Secure, compliant, and equipped for scalability and redundancy.
+  AWS Points of Presence -PoPs-: 
+    Separate from data centers and AZs. 
+    Points of Presence include Edge Locations and Regional Caches. 
+      Reduce latency and improve performance for users globally.
+      AWS uses for content delivery -like with Amazon CloudFront-.
+      Delivering data closer to the end users.
+      +400 Edge Locations.
+  Shared Responsibility Model: 
+    Model referring to protection of your cloud computing resources. 
+    Whose responsibility is shared between you -customer- and AWS.
+      AWS secures the underlying cloud infrastructure. 
+      Customers are responsible for securing their data, applications, and access within the cloud.
+    Both parties collaborate to ensure a secure, compliant environment.
+Characteristics and Cloud Computing:
+  5 Characteristics of Cloud Computing:
+    On-demand self-service: 
+      Users can provision resources independently without interacting with the provider.
+    Broad network access: 
+      Resources are available over the network, accessible across various platforms.
+    Multi-tenancy and resource pooling: 
+      Multiple customers securely share the same infrastructure, optimizing resource usage.
+    Rapid elasticity and scalability: 
+      Resources can be quickly scaled up or down based on demand.
+    Measured service: 
+      Resource usage is tracked, and users are charged based on their consumption.
+        Insuring cost efficiency.
 ===================================================================================================
-Then we have the public cloud. So, the  public cloud is a cloud service where,  
-of course, multiple customers, multiple  organizations, are utilizing this,  
-and anyone really can sign up  and start using the public cloud.
-Now, if we do that, it becomes a hybrid cloud  if we provide that sort of connectivity at the  
-network layer from our office or data center into  the public cloud, especially if we're deploying  
-some infrastructure locally in the data center as  well and providing that cross-communication. Now,  
-in the public cloud, we can deploy various  services. Of course, there's hundreds of  
-different services in the public cloud. In  terms of benefits with the public cloud,  
-we have that variable expense, so it's an Opex,  an operational expenditure, rather than a capital  
-expenditure or Capex cost. Rather than spending  large quantities of cash building our own systems,  
-we're just spending on a monthly basis based on  what we use. And then we have economies of scale,  
-so the public cloud can be very cost-effective.  The fact that AWS has created such a large  
-infrastructure and created the software  capabilities and the services which so many  
-customers can use means that they can lower the  price to you. Doesn't mean it's always cheaper.  
-In some cases, using a private cloud can be  cheaper for certain applications and certain  
-workloads. But don't forget to factor in all the  operational costs, the security, the data center,  
-and all those sorts of aspects as well. And then  we have massive amounts of elasticity in the  
-public cloud. It's almost limitless. If you scale  your business really quickly, there's capacity  
-there for you. Very hard to replicate that, if  not impossible, in a private cloud situation. So,  
-here, of course, we have AWS, Azure, Google  Cloud Platform, and other providers as well.
-So, the hybrid is what we saw before,  
-but where we're actually connecting  our data center and the cloud.
-So, not just the people in the office, but we now  actually have the full data center and whatever  
-application we have in our data center on-premises  connected into the public cloud with a connection  
-which, again, can be a virtual private network  over the Internet or it can be a private link  
-like AWS Direct Connect. So, here we can choose  where to put our applications. Some might make  
-sense in the data center, some might make more  sense in the public cloud, and we can leverage  
-different services for our various applications  as well, like SaaS services or Platform as a  
-Service or IaaS in the cloud. Maybe we even just  use it as a burst capacity or a backup; that's  
-what some organizations do. We can also easily  move data and applications and services between  
-these different deployment models because we've  set up this connectivity between them as well.
-Lastly, we have multicloud. This is becoming a  lot more common. All this really means is that  
-a company is finding the need to leverage multiple  public and private cloud services. They might find  
-that some applications they prefer to deploy into  Azure. Maybe that's because one of the development  
-teams in part of the company are more interested  in .NET and they like to use PowerShell, and  
-they're used to the Microsoft stack. Or maybe you  just prefer the identity features and integration  
-into Office 365, for example. Other applications  might make more sense in the AWS cloud, so they  
-put some in there as well. And then they might  even have multiple private clouds built on VMware,  
-OpenStack, and other providers, and they've got  full connectivity between these different clouds.  
-That's a multicloud environment, and it means you  get the best of these different clouds. Of course,  
-that does increase complexity, so  it's not always the best for things  
-like security or operational efficiency,  but it is quite a common scenario today.
