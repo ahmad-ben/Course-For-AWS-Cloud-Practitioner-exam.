@@ -76,48 +76,48 @@ AWS Ecosystem: Free Tools
     Ensures best practices are implemented to reduce operational overhead and risk.
     Provides 24-7-365 support for continuous service availability.
 Summary
-Introduction to AWS: 
-  AWS -Amazon Web Services-. 
-  Comprehensive cloud computing platform offering a wide range of services for: 
-    Storage, computing, networking, and more.
-  What Cloud Computing Is: 
-    Delivery of computing services over the internet, allowing for:
-      On-demand resource access, scalability, and cost efficiency.
-  5 Characteristics of Cloud Computing: 
-    On-demand self-service. 
-    Broad network access.
-    Multi-tenancy and resource pooling.
-    Rapid elasticity. 
-    Scalability, and measured service.
-  Why We Should Use Cloud Computing: 
-    Scalability, flexibility, cost savings, and the ability to focus on core business activities. 
-      Making it an attractive choice for businesses.
-  6 Advantages of Cloud Computing: 
-    Trade capital expenses for operational expenses. 
-    Benefit from massive economies of scale.
-    Stop guessing capacity.
-    Increase speed and agility.
-    Stop spending money running and maintaining data centers.
-    Go global in minutes.
-  Deploying cloud computing: 
-    Involves setting up and managing cloud-based resources. 
-      To deliver computing services over the internet through:
-        Public, private, and hybrid cloud platforms.
-  Models of cloud computing: 
-    Models:
-      Infrastructure as a Service -IaaS-.
-      Platform as a Service -PaaS-.
-      Software as a Service -SaaS-.
-    Each model offering different levels of control and management.
-  AWS Global Infrastructure: 
-    Availability Zones, Regions, and AWS Data Centers are part of AWS's global infrastructure. 
-      Providing high availability, low latency, and geographic diversity. 
-        To support resilient and efficient cloud services.
-  AWS pricing models: 
-    Based on paying as you use services or data.
-    Saving when you reserve.
-    Paying less by using volume discounts AWS provides.
-    Paying less as AWS infrastructure grows.
+  Introduction to AWS: 
+    AWS -Amazon Web Services-. 
+    Comprehensive cloud computing platform offering a wide range of services for: 
+      Storage, computing, networking, and more.
+    What Cloud Computing Is: 
+      Delivery of computing services over the internet, allowing for:
+        On-demand resource access, scalability, and cost efficiency.
+    5 Characteristics of Cloud Computing: 
+      On-demand self-service. 
+      Broad network access.
+      Multi-tenancy and resource pooling.
+      Rapid elasticity. 
+      Scalability, and measured service.
+    Why We Should Use Cloud Computing: 
+      Scalability, flexibility, cost savings, and the ability to focus on core business activities. 
+        Making it an attractive choice for businesses.
+    6 Advantages of Cloud Computing: 
+      Trade capital expenses for operational expenses. 
+      Benefit from massive economies of scale.
+      Stop guessing capacity.
+      Increase speed and agility.
+      Stop spending money running and maintaining data centers.
+      Go global in minutes.
+    Deploying cloud computing: 
+      Involves setting up and managing cloud-based resources. 
+        To deliver computing services over the internet through:
+          Public, private, and hybrid cloud platforms.
+    Models of cloud computing: 
+      Models:
+        Infrastructure as a Service -IaaS-.
+        Platform as a Service -PaaS-.
+        Software as a Service -SaaS-.
+      Each model offering different levels of control and management.
+    AWS Global Infrastructure: 
+      Availability Zones, Regions, and AWS Data Centers are part of AWS's global infrastructure. 
+        Providing high availability, low latency, and geographic diversity. 
+          To support resilient and efficient cloud services.
+    AWS pricing models: 
+      Based on paying as you use services or data.
+      Saving when you reserve.
+      Paying less by using volume discounts AWS provides.
+      Paying less as AWS infrastructure grows.
 Mini-Exam
   Important information:
     What is Stakeholder:

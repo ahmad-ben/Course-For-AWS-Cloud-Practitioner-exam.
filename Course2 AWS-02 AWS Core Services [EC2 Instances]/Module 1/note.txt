@@ -1,0 +1,131 @@
+Introduction:
+  What we will learn:
+    What is EC2: 
+      Stands for -Elastic Compute Cloud-. 
+      AWS's essential service for scalable compute resources.
+    Discover instance types like:
+      General purpose, compute optimized, memory optimized, and storage optimized. 
+    Topics cover: 
+      Instance launching.
+      Configuration.
+      Security with security groups and key pairs, and using user data scripts. 
+    Gain skills for effective EC2 instance deployment and management. 
+      To meet various workload needs.
+Introduction to Amazon EC2:
+  Amazon EC2 -Elastic Compute Cloud-: 
+    Key AWS service offering infrastructure as a service, essential for cloud understanding.
+  EC2 Components:
+    Virtual Machines: 
+      Also called EC2 Instances, configurable to match workload needs.
+    Storage: 
+      Options include network-attached EBS and hardware-attached instance storage.
+        EBS -Elastic Block Store-:
+          EBS Volumes are independent storage units. 
+          Attached to an EC2 instance over AWS's network.
+    Load Balancing: 
+      Elastic Load Balancer for distributing load across instances.
+        distributes various types of load, like app traffic, network traffic and database Load.
+    Auto-Scaling:
+      Auto Scaling Groups -ASG- for adjusting resource use based on demand.
+  Instance Customization:
+    Operating System:
+      Linux or Windows options available.
+    Compute Power:
+      Configurable CPU, RAM, and storage.
+    Network Settings:
+      Flexible network options with fast, public IP.
+    Security:
+      Control access with security groups and firewall rules.
+    Bootstrapping:
+      Use EC2 User Data for startup configuration.
+  Instance Types Examples:
+    Range from T2 Micro (1 vCPU, 1GB RAM) to:
+      Larger types like C5 and M5. with more vCPUs, memory, and network speed.
+  AWS Free Tier: 
+    T2 Micro instance provides 750 hours/month for a year.
+  Flexibility and On-Demand Use: 
+    Easily choose and deploy instances suited to specific application needs.
+  What is the different between EC2 and EC2 Instance:
+    EC2 -Elastic Compute Cloud-: 
+      The overall AWS service that provides scalable computing capacity in the cloud.
+    EC2 Instance:
+      Virtual server you create within EC2.
+      Customized with specific configurations like -CPU, memory, storage- to run applications.
+    EC2 is the service, and an EC2 instance is an individual virtual machine within that service.
+Introduction to Amazon EC2:
+  What are Amazon EC2 Instances?
+    A virtual server in the AWS Cloud. 
+    The instance type of the launching EC2 instance determines its hardware available.
+    Allows users to rent virtual servers -known as instances-. 
+      On which they can run their own applications.
+    Each instance type offers a different balance of: 
+      Compute, memory, network, and storage resources.
+    Infrastructure as a Service
+  Amazon EC2 Capabilities:
+    Offers a wide range of instance types optimized for various use cases, such as: 
+      General-purpose computing, memory-intensive workloads, and GPU processing.
+    Renting virtual machines -EC2-.
+    Storing data on virtual drives -EBS-.
+    Distributing load across machines -ELB-.
+    Scaling the services using an auto-scaling group -ASG-.
+    Provides flexibility to scale compute capacity up or down based on demand. 
+      Enabling cost optimization and performance scalability.
+    Supports a variety of operating systems and software configurations. 
+      Allowing users to customize their computing environment according to their requirements.
+    Widely used for: 
+      Hosting websites, running applications, performing data processing tasks, and more.. 
+        Making it a fundamental component of cloud computing.
+  User Data Script
+    EC2 instances can be configured at launch using User Data scripts.
+    Bootstrapping refers to executing commands upon a machine's startup.
+    The User Data script executes only once during the initial startup of the instance.
+    EC2 User Data is utilized for automating startup tasks, including:
+      Installing updates.
+      Installing software.
+      Downloading files from the internet.
+      Any other tasks you might require..
+      It creates a server and static web page when the EC2 instance is first created.
+Quiz:
+  Quiz Q&A:
+    Q1:
+      the question:
+        True or False: 
+        Each EC2 instance type offers a different balance of 
+        compute, memory, network, and storage resources.
+      options:
+        True ✔️
+        False
+    Q2:
+      the question:
+        The User Data script in EC2 instances executes only once during the ??? of the instance.
+      options:
+        Shutdown
+        Restart
+        Initial startup ✔️
+        Maintenance window
+    Q3:
+      the question:
+        Amazon EC2 Instances are a type of ??? in the AWS Cloud 
+        that allows users to rent virtual servers.
+      options:
+        Physical server
+        Virtual server ✔️
+        Network device
+        Storage device
+    Q4:
+      the question:
+        Which feature allows EC2 instances to 
+        automatically adjust compute capacity based on demand?
+      options:
+        Elastic Load Balancing
+        Auto Scaling Group ✔️
+        Virtual Private Cloud
+        AWS Lambda
+    Q5:
+      the question:
+        Which of the following is NOT an EC2 capability?
+      options:
+        Renting virtual machines
+        Storing data on virtual drives
+        Distributing load across machines
+        Managing databases directly ✔️
