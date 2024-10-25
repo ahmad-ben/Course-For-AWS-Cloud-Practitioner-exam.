@@ -1,0 +1,276 @@
+Introduction:
+  What we will lean.
+EC2 Instances and Instance Types:
+  EC2 Sizing & Configuration:
+    Operating System -OS-: 
+      Choose between Linux, Windows, or macOS.
+    Compute Power & Cores -CPU-: 
+      Determine the CPU capacity and number of cores required.
+    Random-Access Memory -RAM-: 
+      Specify the amount of RAM needed for optimal performance.
+    Storage Space:
+      Network-attached: 
+        Utilize options such as Elastic Block Store -EBS- and Elastic File System -EFS-.
+      Hardware: 
+        Consider storage options provided by EC2 Instance Store.
+    Network Card: 
+      Configure the network card speed and obtain a Public IP address for connectivity.
+    Firewall Rules: 
+      Define security group settings to manage inbound and outbound traffic.
+    Bootstrap Script -Configure at First Launch-: 
+      Leverage EC2 User Data to execute scripts or commands during initial setup.
+  AWS EC2 naming convention for its services and resources:
+    For example the name m5.2xlarge:
+      m: instance class.
+      5: generation -AWS improves them over time-.
+      2xlarge: size within the instance class.
+  EC2 Instance Types -each designed to cater to different use cases-: 
+    General Purpose.
+      Great for diverse workloads like web servers and code repositories
+      Balances:
+        Compute
+        Memory
+        Networking resources effectively
+    Compute Optimized.
+      Ideal for compute-intensive tasks demanding high-performance processors.
+      Suitable for:
+        Batch processing workloads.
+          Refers to executing a series of tasks or jobs on a computer without manual intervention. 
+          These tasks are processed in groups -batches- rather than one at a time. 
+            Making it efficient for handling large volumes of data.
+        Media transcoding.
+        High-performance web servers.
+        High-performance computing -HPC-.
+          Perform complex calculations and simulations at high speeds.
+        Scientific modeling and machine learning.
+        Dedicated gaming servers.
+    Memory Optimized.
+      Provides fast performance for workloads processing large data sets in memory.
+      Suitable for:
+        High-performance relational/non-relational databases.
+        Distributed web-scale cache stores.
+        In-memory databases optimized for business intelligence -BI-.
+        Applications performing real-time processing of large unstructured data.
+      Focuses on providing high RAM for quick data processing. 
+        Ideal for applications needing to manipulate large datasets in memory.
+    Storage Optimized.
+      Storage-intensive tasks with: 
+        High, sequential read and write access to large data sets on local storage:
+      Suitable for:
+        High-frequency online transaction processing -OLTP- systems.
+        Relational and NoSQL databases.
+        Cache for in-memory databases -Redis-.
+        Data warehousing applications.
+        Distributed file systems.
+      Concentrates on high throughput and low latency for accessing large datasets stored on disk. 
+        Suitable for data-intensive applications that require fast read/write operations.
+    Accelerated Computing.
+    HPC Optimized.
+    Instance Features.
+    Measuring Instance Performance.
+  AWS Right Sizing
+    Selecting the most powerful isn't always the best due to the cloud's elasticity.
+    Right sizing involves: 
+      Matching instance types and sizes to workload requirements for optimal performance and cost.
+      Reviewing deployed instances. 
+        To find opportunities for downsizing without compromising capacity, reducing costs.
+    Scaling up is easy, so it's advisable to start with smaller instances.
+    It's crucial to right size: 
+      Before migration. 
+      After onboarding continuously, as requirements change.
+    Tools can assist in right sizing:
+      CloudWatch, Cost Explorer, Trusted Advisor, and third-party tools..
+Amazon EC2 Pricing Options:
+  Summary of the Amazon EC2 pricing options:
+    On-Demand: 
+      Flexible and straightforward with no commitments. 
+      Ideal for short-term or unpredictable workloads.
+    Reserved Instances -RI-: 
+      Discounted -up to 75%- for committing to one or three years. 
+      Suitable for steady-state applications -predictable-. 
+      We can also reserve capacity with Reserved Instances as well.
+      Offers options like: 
+        Standard -limited modifications-.
+          AZ, Instance size in Linux, Networking type. 
+        Convertible -more flexibility to change attributes-. 
+          AZ, Instance size in Linux, Networking type, family, OS, payment option. 
+      Payment options include all upfront, partial upfront, or no upfront.
+        upfront having the best discount, but no suitable for cash flow and vice versa. 
+      Instance attributes should match the attributes of reserved instance to see discounts, like:
+        Type of instance you're running, operating system, The tenancy, AZ and the region.
+      When you specify an AZ, you can also reserve capacity in it, but not by region.
+    Spot Instances: 
+      Offers up to 90% discounts by bidding for unused capacity but can be interrupted by AWS. 
+      Ideal for flexible workloads that can handle interruptions.
+      We have three types:
+        Spot instance: One or more spot instances.
+        Spot fleet: 
+          AWS launches and maintains a specified number of spot instances. 
+            You can be mix in on-demand instances to meet a certain capacity. 
+        EC2 fleet: 
+          AWS launches and maintains a specified number of spot, on-demand, and reserved instances. 
+            All in a single API call. 
+          You can define a lot of setting here, it's very flexible.
+    Dedicated Instances: 
+      Guarantees physical hardware isolation from other AWS customers, charging per instance.
+      Your instance is moved around on different physical servers.
+        Whichever is not occupied by others at the time.
+    Dedicated Hosts: 
+      Provides a whole physical server for customer use, paid per host. 
+      Suitable for workloads needing hardware-specific licensing or core visibility.
+      It's always the same physical machine for as long as you are paying.
+    Dedicated Instances and Dedicated Hosts:
+      Both use physical servers, but:
+        Dedicated Instances share hardware among your instances.
+        Dedicated Hosts provide complete exclusivity and control over a physical server. 
+    Savings Plans: 
+      Allows consistent usage discounts across EC2, Fargate, and Lambda.
+        With one or three year commitments.
+      There are two types:
+        Compute Savings Plan: 
+          Covers Fargate, Lambda, and EC2 across any region, family, size, tenancy, and OS.
+          EC2 Savings Plan: 
+            Specifically for EC2 with hourly usage. 
+              Applicable within a selected region and instance family. 
+              Allows any size, tenancy, and operating system combination.
+    Spot Block: 
+      Enables a fixed duration -1 to 6 hours- for Spot Instances, discounted but non-interruptible.
+        30% to 45% less then On-demand, less than Spot Instances but without interruption.
+EC2 Purchasing Options + How to Choose the Right Purchasing Option
+  EC2 Purchasing Options:
+    Amazon EC2 offers various purchasing options to: 
+      Suit different workload requirements and budgetary considerations.
+  Purchasing Options:
+    On-Demand Instances:
+      Pay-as-you-go model with no long-term commitments.
+      Offers flexibility to start and stop instances as needed. 
+        Without upfront payments or long-term contracts.
+      Use cases:
+        Variable Workloads: Ideal for unpredictable usage patterns or fluctuating workloads.
+        Development and Testing: temporary environments without long-term commitments.
+        Short-Term Projects: Quickly provision instances for short-term initiatives or projects.
+    Reserved Instances:
+      Reserved capacity for a specific instance type in a selected region.
+      72% discount compared to on-demand.
+      You reserve a specific instance attributes -Instance Type, Region, Tenancy, OS-.
+      Options for 1-year or 3-year terms.
+      Use cases:
+        Applications with steady-state workloads or predictable usage patterns.
+        Capacity Planning: 
+          Enables organizations to secure reserved capacity in advance for anticipated workloads. 
+            Ensuring resource availability when needed.
+    Savings Plans:
+      Flexible pricing model. 
+      Offering savings on compute usage across EC2 instances, AWS Lambda, and Fargate.
+      Provides significant discounts compared to On-Demand rates. 
+        With the flexibility to choose between different commitment options.
+      Use cases:
+        Workloads with consistent usage or those requiring flexibility in instance types and sizes.
+    Spot Instances:
+      Bid on unused EC2 capacity. 
+      Allowing access to spare compute capacity at reduced rates.
+      Offers the potential for significant cost savings. 
+        Sometimes up to 90% compared to On-Demand prices.
+      Use cases:
+        Useful for workloads that are resilient to failure.
+        flexible start/end time.
+        Batch jobs.
+        Data analysis.
+        Image processing.
+    Dedicated Hosts
+      Physical servers dedicated to a single customer's use. 
+      Providing isolation and control over instance placement.
+      Offers compliance and regulatory requirements by: 
+        Ensuring instances run on dedicated infrastructure.
+      Use cases:
+        Ideal for applications with licensing restrictions or regulatory constraints.
+        Sensitive data. 
+    Dedicated Instances
+      Physical servers exclusively dedicated to a single customer's use.
+      Enhanced security and isolation for sensitive workloads.
+      Predictable performance
+      Ideal for applications with strict compliance or licensing requirements
+      May share hardware with other instances in same account
+      No control over instance placement -can move hardware after Stop / Start-
+      Use cases:
+        Storing sensitive data that cannot be interrupted like banking institutions.
+    Capacity Reservations
+      Capacity refers to the overall resources: 
+        CPU, RAM, .. needed to run your instances effectively. 
+        Ensuring that you have the necessary performance and availability for your workloads.
+      Reserve capacity for specific instance types in a selected AWS Availability Zone.
+      Provides guaranteed capacity availability for instances within the reserved capacity pool.
+      Offers flexibility to launch instances within the reservation as needed.
+        Ensuring resource availability for critical workloads.
+      Can be purchased for On-Demand instances, Reserved Instances, or Savings Plans. 
+        Providing various pricing options and cost-saving opportunities.
+      Use cases:
+        Organizations requiring predictable performance and capacity assurance. 
+          For mission-critical applications or workloads for example.
+  How to choose EC2 Purchasing Options
+    Define Workload Requirements
+      Identify the specific requirements of your workload, including: 
+        Compute, memory, storage, and networking needs.
+      Analyze Performance Characteristics:
+        Evaluate the performance characteristics of different EC2 instance types, such as: 
+          CPU performance, memory size, and network performance.
+      Consider Cost Optimization:
+        Assess the cost implications of different instance types, taking into account: 
+          On-Demand pricing, Reserved Instances, Savings Plans, and spot instance options.
+      Review Use Case Suitability:
+        Explore the various EC2 instance families available, such as: 
+          General Purpose, Compute Optimized, Memory Optimized, Storage Optimized, etc.
+      Evaluate Instance Families
+        Conduct testing and benchmarking to validate your choice. 
+          Before deployment.
+            Check The performance and suitability of selected EC2 instance types for your workload.
+      Monitor and Optimize
+        Continuously monitor EC2 instance performance.
+        Use metrics to identify optimization opportunities.
+        Make adjustments as needed to meet evolving workload requirements.
+EC2 Sizing & Configuration: Pop Quiz
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        the question:
+          When launching an EC2 instance. 
+          the ??? determines the hardware available to your instance.
+        options:
+          Instance ID
+          Instance type ✔️
+          Instance name
+          Instance key
+      Q2:
+        the question:
+          Which of the following is NOT an EC2 capability?
+        options:
+          Renting virtual machines
+          Distributing load across machines
+          Managing databases directly ✔️
+          Scaling services using an auto-scaling group
+      Q3:
+        the question:
+          ??? involves executing commands upon a machine's startup using User Data scripts.
+        options:
+          Scaling
+          Bootstrapping ✔️
+          Cloning
+          Snapshotting
+      Q4:
+        the question:
+          Which EC2 instance type is ideal for 
+          compute-intensive tasks demanding high-performance processors?
+        options:
+          General Purpose
+          Compute Optimized ✔️
+          Memory Optimized
+          Storage Optimized
+      Q5:
+        the question:
+          The ??? pricing model is a pay-as-you-go model with no long-term commitments, 
+          ideal for applications with unpredictable workloads.
+        options:
+          Reserved Instances
+          Spot Instances
+          On-Demand Instances ✔️
+          Dedicated Hosts
