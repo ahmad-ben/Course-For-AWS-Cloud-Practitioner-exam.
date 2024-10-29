@@ -1,5 +1,5 @@
 Introduction:
-  What we will lean.
+  What we will learn.
 EC2 Instances and Instance Types:
   EC2 Sizing & Configuration:
     Operating System -OS-: 
@@ -81,7 +81,7 @@ EC2 Instances and Instance Types:
     Tools can assist in right sizing:
       CloudWatch, Cost Explorer, Trusted Advisor, and third-party tools..
 Amazon EC2 Pricing Options:
-  Summary of the Amazon EC2 pricing options:
+  Summary of the Amazon EC2 pricing Options:
     On-Demand: 
       Flexible and straightforward with no commitments. 
       Ideal for short-term or unpredictable workloads.
@@ -232,44 +232,44 @@ EC2 Sizing & Configuration: Pop Quiz
   Quiz:
     Quiz Q&A:
       Q1:
-        the question:
+        The question:
           When launching an EC2 instance. 
           the ??? determines the hardware available to your instance.
-        options:
+        Options:
           Instance ID
           Instance type ✔️
           Instance name
           Instance key
       Q2:
-        the question:
+        The question:
           Which of the following is NOT an EC2 capability?
-        options:
+        Options:
           Renting virtual machines
           Distributing load across machines
           Managing databases directly ✔️
           Scaling services using an auto-scaling group
       Q3:
-        the question:
+        The question:
           ??? involves executing commands upon a machine's startup using User Data scripts.
-        options:
+        Options:
           Scaling
           Bootstrapping ✔️
           Cloning
           Snapshotting
       Q4:
-        the question:
+        The question:
           Which EC2 instance type is ideal for 
           compute-intensive tasks demanding high-performance processors?
-        options:
+        Options:
           General Purpose
           Compute Optimized ✔️
           Memory Optimized
           Storage Optimized
       Q5:
-        the question:
+        The question:
           The ??? pricing model is a pay-as-you-go model with no long-term commitments, 
           ideal for applications with unpredictable workloads.
-        options:
+        Options:
           Reserved Instances
           Spot Instances
           On-Demand Instances ✔️

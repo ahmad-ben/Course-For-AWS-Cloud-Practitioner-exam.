@@ -137,7 +137,7 @@ Mini-Exam
         the company can quickly launch products and features 
         and can scale its infrastructure as required. 
         Which AWS Cloud value proposition does this scenario describe?
-      The options:
+      Options:
         A. Business agility ✔️
         B. High availability
         C. Security
@@ -147,7 +147,7 @@ Mini-Exam
         Which benefit of cloud computing gives a company the ability to deploy applications to 
         users all over the world through a 
         network of AWS Regions, Availability Zones, and edge locations?
-      The options:
+      Options:
         A. Economies of scale 
         B. Global reach ✔️
         C. Agility
@@ -160,7 +160,7 @@ Mini-Exam
         provide the lowest latency to the customers. 
         Which solution will provide the LOWEST network latency between 
         the AWS resources and the customers?
-      The options:
+      Options:
         A. Place the resources in the AWS Region that is closest to the company's headquarters. 
           Move the resources to the Availability Zone that is closest to the customers.
         B. Place all workloads in the AWS Region that is closest to the company's headquarters.
@@ -173,38 +173,38 @@ Mini-Exam
         The company also wants to spend its budget on cloud resources only as 
         the company uses the resources. 
         Which advantage of the AWS Cloud matches the company's requirements?
-      The options:
+      Options:
         A. Reliability
         B. Global reach
         C. Economies of scale
         D. Pay-as-you-go pricing ✔️
     Q5:
-      the question:
+      The question:
         Which option is a common stakeholder role for the 
         AWS Cloud Adoption Framework -AWS CAF- platform perspective?
-      options:
+      Options:
         A. Chief financial officer (CFO)
         B. Chief information officer (CIO)
         C. Chief data officer (CDO)
         D. Engineer ✔️
     Q6:
-      the question:
+      The question:
         A company is planning to 
         replace its physical on-premises compute servers with AWS serverless compute services. 
         The company wants to be able to take advantage of advanced technologies quickly 
         after the migration. 
         Which pillar of the AWS Well-Architected Framework does this plan represent?
-      options:
+      Options:
         A. Security
         B. Performance efficiency ✔️
         C. Operational excellence
         D. Reliability
     Q7:
-      the question:
+      The question:
         A system automatically recovers from failure when
         a company launches its workload on the AWS Cloud services platform. 
         Which pillar of the AWS Well-Architected Framework does this situation demonstrate?
-      options:
+      Options:
         A. Cost optimization
         B. Operational excellence
         C. Performance efficiency

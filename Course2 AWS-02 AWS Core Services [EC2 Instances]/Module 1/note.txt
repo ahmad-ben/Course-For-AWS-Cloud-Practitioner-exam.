@@ -88,43 +88,43 @@ Introduction to Amazon EC2:
 Quiz:
   Quiz Q&A:
     Q1:
-      the question:
+      The question:
         True or False: 
         Each EC2 instance type offers a different balance of 
         compute, memory, network, and storage resources.
-      options:
+      Options:
         True ✔️
         False
     Q2:
-      the question:
+      The question:
         The User Data script in EC2 instances executes only once during the ??? of the instance.
-      options:
+      Options:
         Shutdown
         Restart
         Initial startup ✔️
         Maintenance window
     Q3:
-      the question:
+      The question:
         Amazon EC2 Instances are a type of ??? in the AWS Cloud 
         that allows users to rent virtual servers.
-      options:
+      Options:
         Physical server
         Virtual server ✔️
         Network device
         Storage device
     Q4:
-      the question:
+      The question:
         Which feature allows EC2 instances to 
         automatically adjust compute capacity based on demand?
-      options:
+      Options:
         Elastic Load Balancing
         Auto Scaling Group ✔️
         Virtual Private Cloud
         AWS Lambda
     Q5:
-      the question:
+      The question:
         Which of the following is NOT an EC2 capability?
-      options:
+      Options:
         Renting virtual machines
         Storing data on virtual drives
         Distributing load across machines
