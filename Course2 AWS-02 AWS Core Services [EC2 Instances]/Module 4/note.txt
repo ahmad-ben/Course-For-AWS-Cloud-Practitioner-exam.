@@ -1,0 +1,125 @@
+Summary
+  EBS Volumes: 
+    Network drives attached to one EC2 instance at a time.
+    Mapped to an Availability Zone.
+    Can use EBS Snapshots for backups or transferring EBS volumes across AZs.
+  AMI -Amazon Machine Image-: 
+    Creates ready-to-use EC2 instances with customizations.
+  EC2 Image Builder: 
+    Automatically builds, tests, and distributes AMIs.
+  EC2 Instance Store:
+    High-performance hardware disk attached to an EC2 instance.
+    Data is lost if the instance is stopped or terminated.
+  EFS -Elastic File System-:
+    Allows multiple EC2 instances to access the same file system simultaneously.
+    Network file system that can be attached to hundreds of instances in a region.
+      It's a region-specific. 
+      Can be accessed by Amazon EC2 instances within that same region. 
+    It can be configured to be accessible across multiple AZ within that region. 
+      Providing high availability and durability.
+  EFS-IA -EFS Infrequent Access-:
+    Cost-optimized storage class for infrequently accessed files.
+  FSx for Windows:
+    Network file system for Windows servers.
+  FSx for Lustre:
+    High-performance computing Linux file system.
+Recap Exam
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          Which of the following Amazon EC2 pricing models allow customers to 
+          use existing server-bound software licenses?
+        Options:
+          Spot Instances.
+          Reserved Instances.
+          Dedicated Hosts. ✔️
+          On-Demand Instances.
+      Q2:
+        The question:
+          Which of the following is the customer's responsibility 
+          under the AWS shared responsibility model?
+        Options:
+          Patching underlying infrastructure.
+          Physical security.
+          Patching Amazon EC2 instances. ✔️
+          Patching network infrastructure.
+      Q3:
+        The question:
+          What is the primary benefit of using Amazon EC2 Spot Instances?
+        Options:
+          They provide guaranteed availability and performance.
+          They offer the lowest cost for EC2 instances. ✔️
+          They come with reserved capacity, ensuring resources are always available.
+          They provide enhanced security features compared to other instance types.
+      Q4:
+        The question:
+          A company requires an isolated environment within AWS for security purposes. 
+          Which action can be taken to accomplish this?
+        Options:
+          Create a separate Availability Zone to host the resources.
+          Create a separate VPC to host the resources. ✔️
+          Create a placement group to host the resources.
+          Create an AWS Direct Connect connection between the company and AWS.
+      Q5:
+        The question:
+          How does Amazon EC2 Auto Scaling enhance application availability?
+        Options:
+          By automatically provisioning additional EC2 instances based on demand. ✔️
+          By automatically scaling down EC2 instances during periods of low demand.
+          By providing built-in load balancing capabilities for EC2 instances.
+          By automatically updating the operating.
+      Q6:
+        The question:
+          Which AWS managed service can be used to 
+          distribute traffic between one or more Amazon EC2 instances?          
+        Options:
+          NAT gateway.
+          Elastic Load Balancing. ✔️
+          Amazon Athena.
+          AWS PrivateLink.
+      Q7:
+        The question:
+          Which AWS services or features 
+          provide disaster recovery solutions for Amazon EC2 instances?
+        Options:
+          Reserved Instances. 
+          EC2 Amazon Machine Images -AMIs-.
+          Amazon Elastic Block Store Amazon -Amazon EBS- snapshots.
+          B&C. ✔️
+      Q8:
+        The question:
+          A company wants to ensure that two Amazon EC2 instances are in separate data centers 
+          with minimal communication latency between the data centers. 
+          How can the company meet this requirement?
+        Options:
+          Place the EC2 instances in two separate AWS Regions connected with a VPC peering connection.
+          Place the EC2 instances in two separate Availability Zones within the same AWS Region. ✔️
+          Place one EC2 instance on premises and the other in an AWS Region. 
+            Then connect them by using an AWS VPN connection.
+          Place both EC2 instances in a placement group for dedicated bandwidth.
+      Q9:
+        The question:
+          A company needs an Amazon EC2 instance for a rightsized database server 
+          that must run constantly for 1 year.
+          Which EC2 instance purchasing option will meet these requirements MOST cost-effectively?
+        Options:
+          Standard Reserved Instance. ✔️
+          Convertible Reserved Instance. 
+          On-Demand Instance. 
+          Spot Instance.
+  Questions I got wrong and why:
+    Q7:
+      I din't know that AMIs allow you to create backups of your EC2 instances.
+        Which can be used to launch new instances in case of failure.
+    Q8:
+      I think that: 
+        Make the 2 in different AZ may cause latency.
+        It's better to be in the same placement group.
+      But:
+        While placement groups can provide low-latency communication between instances. 
+          They do not guarantee that instances will be in separate data centers. 
+          As they typically reside in the same Availability Zone.
+        This option allows for minimal communication latency. 
+          Since Availability Zones are designed to be close to each other within the same region. 
+          While still providing fault tolerance and redundancy.

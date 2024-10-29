@@ -194,8 +194,3 @@ Security in EC2: Pop Quiz
           Bootstrapping ✔️
           Cloning
           Snapshotting
-
-
-
-
-
