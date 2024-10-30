@@ -1,0 +1,102 @@
+Introduction:
+  What we will learn:
+    Explore Elastic Load Balancing -ELB- and Auto Scaling Groups -ASG- in AWS. 
+    Discover how: 
+      ELB distributes incoming traffic across multiple targets for high availability.
+      ASG automatically adjusts EC2 instances to match demand, optimizing performance and costs. 
+    Configure and manage ELB and ASG. 
+      Integrate them effectively.
+      Implement best practices for scaling applications. 
+        By the end, you'll be ready to leverage these tools to enhance your AWS infrastructure.
+Scalability and High Availability: An Introduction
+  Scalability Introduction:
+    The ability of an application or system to handle increasing loads by adapting.
+    There are two types of scalability:
+      Vertical Scalability
+      Horizontal Scalability -also known as elasticity-.
+    Scalability is closely related but distinct from High Availability. ??
+    Vertical Vs Horizontal Scalability, consider a call center:
+      Vertical Scalability: 
+        Adding more resources -upgrading server hardware- to handle increased call volume.
+      Horizontal Scalability: 
+        Adding more call center agents to handle increased call volume. 
+          Allowing workload distribution across multiple agents.
+    High Availability 
+      Ensures that systems remain operational and accessible despite failures. 
+        Focusing on minimizing downtime and ensuring continuous service availability.
+  Vertical Scalability
+    Increasing the size of the instance, for example:
+      If your application runs on a t2.micro, scaling it vertically means running it on a t2.large.
+    Commonly used for non-distributed systems, like databases.
+    Limit to how much you can vertically scale, determined by hardware limitations.
+  High Availability
+    High Availability often accompanies horizontal scaling. 
+      Ensuring your application or system runs in at least two Availability Zones.
+    Its primary goal is to maintain system operation despite a data center loss or disaster.
+  High Availability & Scalability For EC2:
+    Vertical Scaling -Scale Up-Down-:
+      Increase the size of the instance.
+    Horizontal Scaling -Scale Out-In-:
+      Increase the number of instances.
+      Utilize Auto Scaling Groups and Load Balancers for management.
+    High Availability:
+      Run instances of the same application across multiple Availability Zones -AZs-.
+      Implement -ASG- and -ELB- across multiple AZs for increased reliability.
+  Scalability vs Elasticity vs Agility:
+    Scalability: 
+      The ability to accommodate a larger load by either: 
+        Enhancing the hardware -scale up- or adding nodes -scale out-.
+    Elasticity: 
+      In a scalable system, elasticity refers to the automatic scaling based on the load. 
+        Enabling a pay-per-use model, demand matching, and cost optimization.
+    Agility: 
+      Unrelated to scalability. agility implies that new IT resources can be provisioned quickly. 
+        Reducing the time to availability from weeks to minutes.
+Scalability and High Availability -Pop Quiz-:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          ??? refers to the ability of an application or system to 
+          handle increasing loads by adapting.
+        Options:
+          Reliability
+          Scalability ✔️
+          Agility
+          Elasticity
+      Q2:
+        The question:
+          Which type of scalability involves increasing the number of instances 
+          to handle increased load?
+        Options:
+          Vertical Scalability 
+          Horizontal Scalability ✔️
+          Dynamic Scalability
+          Static Scalability
+      Q3:
+        The question:
+          Vertical scalability involves increasing the ??? of the instance.
+        Options:
+          Number
+          Size ✔️
+          Type
+          Availability
+      Q4:
+        The question:
+          High availability ensures that 
+          systems remain operational and accessible despite failures. 
+          Which of the following is NOT a characteristic of high availability?
+        Options:
+          Minimizing downtime
+          Ensuring continuous service availability
+          Automatically increasing system size ✔️
+          Running in multiple Availability Zones
+      Q5:
+        The question:
+          In a scalable system, ??? refers to automatic scaling based on the load, 
+          enabling a pay-per-use model and cost optimization.
+        Options:
+          Elasticity ✔️
+          Agility
+          Flexibility
+          Availability

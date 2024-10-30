@@ -123,3 +123,7 @@ Recap Exam
         This option allows for minimal communication latency. 
           Since Availability Zones are designed to be close to each other within the same region. 
           While still providing fault tolerance and redundancy.
+        Two data centers within the same AZ: 
+          Not applicable, as AWS does not provide this level of granularity.
+        Two data centers in separate AZs: 
+          Recommended for redundancy and minimal latency while maintaining availability.
