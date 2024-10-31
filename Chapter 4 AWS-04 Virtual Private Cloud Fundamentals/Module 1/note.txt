@@ -1,0 +1,244 @@
+Introduction:
+  What we will learn:
+    Comprehensive introduction to AWS Virtual Private Cloud -VPC-. 
+    Covering the basics of networking in AWS, including: 
+      Subnets, Route tables, network configuration, connectivity options, and gateways. 
+    Learn how to create and manage a secure and isolated network environment in the cloud.
+      Ensuring scalability, availability, and seamless integration with on-premises infrastructure. 
+  About Amazon Virtual Private Cloud -VPC-: 
+    A core AWS service that allows you to create a customizable virtual network in the cloud. 
+  By mastering VPC:
+    You will gain the skills needed to architect robust and reliable cloud solutions. 
+      Tailored to your organization's needs.
+Understanding Amazon Virtual Private Cloud -VPC-:
+  What is VPC:
+    Logically isolated portion of the AWS cloud within a region, dedicated to your account.
+      You cannot create a VPC that spans multiple Regions directly.
+    We can say it's your data center in the AWS.
+    Isolated area that you can create your resources in. 
+    Private and secured and controlled by you.
+    You can create multiple VPCs within a region, up to 5.
+    In each VPC we can create one or more subnets.
+    Each VPC has an IP address range you should specify known as the VPC address block. 
+      Defined using CIDR notation like 10.0.0.0/16.
+        CIDR: 
+          Stands for Classless Inter-Domain Routing.
+          Method for allocating IP addresses and routing.
+      This address block provides the pool of IP addresses. 
+        Can be allocated to subnets within the VPC.
+  What are Subnets:
+    Subdivisions within a VPC.
+      Enable you to isolate resources within different -AZs- in the same Region. 
+    They can be classified as public or private subnets based on their internet accessibility.
+    Required to host resources like EC2 instances within a VPC.
+    Each subnet in AWS is specific to a single Availability Zone.
+    We an have multiple subnets in the same AZ.
+    Each subnet created within the VPC takes a portion of the VPC address block. 
+      For example a subnet might use 10.0.1.0/24 if the VPC is 10.0.0.0/16. 
+        Subnets are restricted to a single AZ. 
+          Enabling finer control over IP distribution and redundancy.
+  Public Subnets:
+    The EC2 instances in this subnet have a public IP address that can be found on the internet.
+  Private Subnets:
+    The EC2 instances in this subnet will get a private address.
+      So these instances can't be accessed from the internet.  
+  Instances in the Subnets:
+    Each instance launched within a subnet is assigned an IP address from that subnet's range. 
+      Either automatically or manually. 
+        This IP falls within the VPC address block, ensuring network consistency.
+  How Connectivity Works in a VPC:
+    Each VPC has an invisible VPC router that manages the routing of traffic within the VPC. 
+      You don't directly interact with the VPC router, you control its behavior by a route table.
+        The route table defines rules for how traffic should be directed, for example:
+          If two EC2 instances in the same VPC need to communicate. 
+            They can do so internally. 
+            Both instances have IP private addresses within the VPC's IP range. 
+              Allowing direct, local routing without leaving the VPC.
+          To connect to the outside world, you need an Internet Gateway:
+            It is attached to the VPC. 
+              Acts as the access point for traffic between the VPC and the broader internet.
+            For external traffic.
+              Any address not within the VPC's IP range will be directed to the Internet Gateway.
+            It sits at the edge of the VPC. 
+              Managing all inbound and outbound traffic to and from the internet.
+    This setup allows secure, controlled communication within the VPC and with external resources.
+  Internet gateways Types:
+    Internet Gateway -IGW- is for IPv4.
+    Egress-Only Internet Gateway -IGW- is for IPv6.
+  Peering connection is a connection between two VPCs.
+  VPC Endpoint: 
+    Provides a private connection to AWS service.
+      Without requiring traffic to traverse the public Internet. 
+    Communication happens directly within the AWS network, enhancing security and reducing latency.
+    In standard configurations: 
+      Traffic would go through the VPC router and then the Internet Gateway. 
+        To access AWS public services. 
+  AWS Direct Connect: 
+    Network service. 
+    Establish a dedicated line from your on-premises data center or office to AWS.
+    Provides a dedicated, private connection between on-premises data center and AWS. 
+      It bypasses the public Internet, allowing for more secure and reliable connectivity.
+  Security Group
+    A security group acts as a virtual firewall for your EC2 instances.
+    Control inbound and outbound traffic.
+    Functionality:   
+      Operates at the instance level.
+      Uses stateful rules, meaning: 
+        If you allow inbound traffic, the corresponding outbound traffic is automatically allowed.
+      Specify rules based on IP protocols, port numbers, and source/destination IP addresses.
+    Ideal for controlling access to instances.
+      Defining which traffic is permitted or denied based on specific criteria.
+  Network ACL -Access Control List-:
+    Layer of security.
+    Acts as a firewall for controlling traffic to and from subnets within your VPC.
+    Functionality:   
+      Operates at the subnet level.
+      Uses stateless rules.
+        Meaning that you need to define rules for both inbound and outbound traffic separately.
+      Allow or deny traffic based on IP protocol, port number, and source/destination IP addresses.
+    Useful for setting broader network-level access rules.
+      Providing an additional layer of security for your VPC.
+  Virtual Private Cloud: An Introduction
+  Introduction to VPC & Subnets:
+    VPC is Virtual Private Cloud; private network to deploy your resources -regional resource-.
+    Subnets allow you to partition your network inside your VPC -Availability Zone resource-.
+    A public subnet is a subnet that is accessible from the internet.
+    A private subnet is a subnet that is not accessible from the internet.
+    To define access to the internet and between subnets, we use route tables.
+    IP Addresses in AWS, useful not tested information!
+      Public IPv4: Usable on the internet. 
+        By default in every stop-start cycle an EC2 instance is assigned to a new public IPv4 add.
+      Private IPv4: Used within private networks -LAN-, such as internal AWS networks.
+        For example 192.168.1.1. 
+      Private IPv4 addresses remain constant for EC2 instances, even when stopped and restarted. 
+      Elastic IP: 
+        Provides a static public IPv4 address that can be associated with an EC2 instance. 
+      Pricing: AWS charges $0.005 per hour for all public IPv4 addresses, including Elastic IPs. 
+        Free Tier includes 750 hours of usage per month. 
+      IPv6: Internet Protocol Version 6 -Approximately 340 Undecillion Addresses-.
+        All IP addresses are public in AWS -there are no private ranges-. 
+        Example Address: 2001:db8:3333:4444:cccc:dddd:eeee:ffff 
+        No charge for usage.
+  Internet Gateway & NAT Gateways:
+    Internet Gateways enables internet connectivity for instances in a VPC.
+      Public Subnets are configured with a route to the Internet Gateway for external access.
+    NAT Gateways -managed by AWS- and NAT Instances -managed by the user- 
+      Provide internet access to instances in Private Subnets while keeping them private.
+  Network ACL & Security Groups:
+    NACL -Network Access Control List-:
+      Acts as a firewall controlling traffic to and from a subnet.
+      Supports both ALLOW and DENY rules.
+      Attached at the subnet level.
+      Rules are based solely on IP addresses.
+    Security Groups:
+      A firewall.
+      Controls traffic to and from an Elastic Network Interface -ENI- or an EC2 instance.
+      Only ALLOW rules are supported.
+      Rules can include IP addresses and other security groups.
+VPC Connections
+  VPC Peering
+    Allows two VPCs to connect privately using AWS network.
+      Making them behave as if they were in the same network.
+    It requires that the VPCs have non-overlapping CIDR blocks -IP address ranges-.
+      Both VPCs should not have the same IP address ranges. 
+      The IP address ranges used in each VPC should be distinct.
+        Avoiding routing conflicts and ensure proper communication between the VPCs. 
+      For example: 
+        If one VPC uses the CIDR block 10.0.0.0/16, the other VPC might use 192.168.0.0/16. 
+          Ensuring that the two ranges do not overlap.
+    VPC Peering connections are not transitive.
+      A direct connection must be established for each pair of VPCs that need to communicate.
+      Example:
+        VPC A initiates the request. 
+        VPC B accepts it. 
+        Both VPCs need to configure their route tables and security settings. 
+          To enable communication.
+  VPC Endpoints
+    Enable private network connections to AWS services. 
+      Bypassing the public internet for enhanced security and lower latency.
+    VPC Endpoint Gateway is used for S3 and DynamoDB.
+    VPC Endpoint Interface is used for other AWS services.
+  AWS PrivateLink -VPC Endpoint Services-:
+    The most secure and scalable way to expose a service to thousands of VPCs. 
+      Without requiring VPC peering, internet gateways, NAT devices, or route tables.
+    It requires:
+      Network Load Balancer -NLB- in the service VPC.
+        The Network Load Balancer is a load balancing service. 
+          Directs traffic to the service instances in the Service VPC.
+        The Service VPC is the VPC hosting the service.
+      Elastic Network Interface -ENI- in the customer VPC.
+        The Customer VPC is the VPC that connects to the service -the client-.
+        Elastic Network Interface is a virtual network interface in the customer VPC.
+          It enables access to the service.
+    You don't need a separate NLB for each VPC. 
+    You need a separate NLB one for the service itself in the Service VPC. 
+      Each customer VPC that connects will have its own ENI for secure access.
+  Site-to-Site VPN:
+    Connects an on-premises VPN to AWS.
+    Type of VPN connection.
+    The connection is automatically encrypted.
+    Traffic goes over the public internet.
+    On-premises: must use a Customer Gateway -CGW-
+      Physical/Software appliance located on the on-premises side of a Site-to-Site VPN connection.
+    AWS: must use a Virtual Private Gateway -VGW-.
+      Virtual router on the AWS side of the Site-to-Site VPN connection.
+  Direct Connect:
+    Establishes a physical connection between on-premises and AWS.
+    The connection is private, secure, and fast.
+    Traffic goes over a private network.
+    Takes at least a month to establish.
+  AWS Client VPN:
+    AWS Client VPN -using OpenVPN-.
+    Allows you to connect from your computer to your private network in AWS and on-premises.
+    Enables you to connect to your EC2 instances over a private IP. 
+      As if you were in the private VPC network.
+    The connection goes over the public internet.
+  Transit Gateway:
+    Provides transitive peering between thousands of VPCs and on-premises networks. 
+      Using a hub-and-spoke -star- connection.
+    Utilizes a single gateway to offer this functionality.
+    Compatible with Direct Connect Gateway and VPN connections.
+Introduction to VPC & Subnets -Pop Quiz-:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          VPC stands for ??? and it provides a private network to deploy your resources.
+        Options:
+          Virtual Personal Cloud.
+          Virtual Public Cloud.
+          Virtual Private Cloud. ✔️
+          Virtual Primary Cloud.
+      Q2:
+        The question:
+          What is the main difference between a public subnet and a private subnet in AWS?
+        Options:
+          Public subnets are accessible from the internet, private subnets are not. ✔️
+          Public subnets are more secure than private subnets.
+          Public subnets are not accessible from the internet, private subnets are.
+          Public subnets cost more than private subnets.
+      Q3:
+        The question:
+          To define access to the internet and between subnets, we use ???.
+        Options:
+          Network ACLs.
+          Route tables. ✔️
+          Security groups.
+          IP addresses.
+      Q4:
+        The question:
+          What enables internet connectivity for instances in a VPC?
+        Options:
+          NAT Gateway.
+          Internet Gateway. ✔️
+          VPN Gateway.
+          Elastic IP.
+      Q5:
+        The question:
+          A ??? provides internet access to instances in private subnets 
+          while keeping them private.
+        Options:
+          Internet Gateway.
+          Elastic IP.
+          NAT Gateway. ✔️
+          Public Subnet.

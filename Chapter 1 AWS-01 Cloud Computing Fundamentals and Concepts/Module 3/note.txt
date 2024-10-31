@@ -148,10 +148,10 @@ Mini-Exam
         users all over the world through a 
         network of AWS Regions, Availability Zones, and edge locations?
       Options:
-        A. Economies of scale 
-        B. Global reach ✔️
-        C. Agility
-        D. High availability
+        A. Economies of scale. 
+        B. Global reach. ✔️
+        C. Agility.
+        D. High availability. Manara potential error ❌
     Q3:
       The question:
         A company's headquarters is located on 
@@ -183,10 +183,10 @@ Mini-Exam
         Which option is a common stakeholder role for the 
         AWS Cloud Adoption Framework -AWS CAF- platform perspective?
       Options:
-        A. Chief financial officer (CFO)
-        B. Chief information officer (CIO)
-        C. Chief data officer (CDO)
-        D. Engineer ✔️
+        A. Chief financial officer (CFO). Manara potential error ❌ -Correct answer unknown-
+        B. Chief information officer (CIO).
+        C. Chief data officer (CDO).
+        D. Engineer. ✔️
     Q6:
       The question:
         A company is planning to 
