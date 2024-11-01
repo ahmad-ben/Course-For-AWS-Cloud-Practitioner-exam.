@@ -1,0 +1,61 @@
+Introduction:
+  what we will learn:
+    Discover network monitoring tools and techniques.
+      For gaining visibility into the performance and health of your VPC. 
+    How to use:
+      AWS CloudWatch, VPC Flow Logs, and third-party monitoring solutions. 
+        To monitor network traffic, detect anomalies, and troubleshoot connectivity issues. 
+  By implementing effective network monitoring strategies.
+    You'll be able to proactively identify and address potential network-related issues.
+      Ensuring the reliability and availability of your cloud infrastructure.
+Network Monitoring:
+  How do you monitor the network:
+    VPC Flow Logs, Subnet Flow Logs, Elastic Network Interface Flow Logs. 
+      Features you can enable on your VPC resources to capture and analyze network traffic. 
+        Aiding in troubleshooting and monitoring network connectivity and security.
+      Capture information about IP traffic going into your interfaces. 
+        Aiding in monitoring and troubleshooting connectivity issues, such as:
+          Subnets to the internet.
+          Subnets to subnets.
+          Internet to subnets.
+      They also capture network information from AWS managed interfaces like: 
+        Elastic Load Balancers, ElastiCache, RDS, and Aurora.
+  VPC Flow Logs data can be sent to S3, CloudWatch Logs, and Kinesis Data Firehose.
+    For analysis and storage.
+VPC Flow Logs and Network Monitoring -Pop Quiz-:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+        VPC Flow Logs capture information about ??? traffic going into your interfaces.
+        Options:
+          TCP.
+          HTTP.
+          IP. ✔️
+          UDP.
+      Q2:
+        The question:
+          VPC Flow Logs can capture network information from AWS managed interfaces like 
+          Elastic Load Balancers, ???, RDS, and Aurora.
+        Options:
+          S3.
+          CloudFront.
+          ElastiCache. ✔️
+          Lambda.
+      Q3:
+        The question:
+          Where can VPC Flow Logs data be sent for analysis and storage?
+        Options:
+          Amazon Glacier.
+          AWS Glue.
+          CloudWatch Logs. ✔️
+          AWS Lambda.
+      Q4:
+        The question:
+          VPC Flow Logs, Subnet Flow Logs, and Elastic Network Interface Flow Logs 
+          aid in monitoring and troubleshooting ??? issues.
+        Options:
+          Security.
+          Performance.
+          Connectivity. ✔️
+          Scalability.

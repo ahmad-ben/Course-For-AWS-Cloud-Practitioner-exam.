@@ -1,0 +1,106 @@
+Introduction:
+  What we will do:
+    Read The Chapter Summary & Pass A Recap Exam.
+Summary -Virtual Private Cloud Summary-:
+  VPC -Virtual Private Cloud-is a private network within the AWS cloud.
+  Subnets are partitions of a VPC tied to an Availability Zone -AZ-.
+  Internet Gateway provides internet access at the VPC level.
+  NAT Gateway/Instances allow private subnets to access the internet.
+  NACL -Network Access Control List-: 
+    Stateless rules for inbound and outbound traffic at the subnet level.
+  Security Groups: 
+    Stateful rules that operate at the EC2 instance level or Elastic Network Interface -ENI-.
+  VPC Peering connects two VPCs with non-overlapping IP ranges; non-transitive.
+  Elastic IP is Aa fixed public IPv4 address with ongoing costs if not in use.
+  VPC Endpoints provide private access to AWS Services within VPC.
+  PrivateLink privately connect to a service in a 3rd party VPC.
+  VPC Flow Logs are network traffic logs.
+  Site to Site VPN is a VPN over public internet between on-premises DC and AWS.
+  Client VPN by an OpenVPN connection from your computer into your VPC.
+  Direct Connect is a direct private connection to AWS.
+  Transit Gateway connect thousands of VPC and on-premises networks together.
+Recap Exam
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          What is the function of the Amazon VPC Endpoint?
+        Options:
+          To establish a secure connection between VPCs.
+          To provide internet access to instances within a VPC.
+          To enable communication between resources in a VPC and AWS services 
+          without traversing the public internet. ✔️
+          To manage access control lists -ACLs- for subnets within a VPC.
+      Q2:
+        The question:
+          How does Amazon VPC peering differ from VPN connections?
+        Options:
+          VPC peering connects two VPCs within the same region, 
+          while VPN connections connect a VPC to an external network. ✔️
+          VPC peering requires additional hardware, while VPN connections are software-based.
+          VPC peering is limited to connecting VPCs in different regions, 
+          while VPN connections can only connect VPCs within the same region.
+          VPC peering is a one-to-many connection, while VPN connections are one-to-one.
+      Q3:
+        The question:
+          Which components are required 
+          to build a successful site-to-site VPC connection on AWS? -Choose two.-
+        Options:
+          Customer gateway. ✔️ Manara Potential Error ❌ 
+            "Even i chose the 2 correct answers they didn't accept it, 
+            maybe they still don't accept two answers and just pick one."
+          Virtual private gateway. ✔️
+          Internet gateway.
+          A&B.
+      Q4:
+        The question:
+          Which Amazon Virtual Private Cloud -Amazon VPC- feature 
+          enables users to connect two VPCs together?
+        Options:
+          Amazon VPC endpoints.
+          Amazon Elastic Compute Cloud -Amazon EC2- ClassicLink.
+          Amazon VPC peering. ✔️
+          AWS Direct Connect.
+      Q5:
+        The question:
+          A company requires an isolated environment within AWS for security purposes. 
+          Which action can be taken to accomplish this?
+        Options:
+          Create a separate Availability Zone to host the resources.
+          Create a separate VPC to host the resources. ✔️
+          Create a placement group to host the resources.
+          Create an AWS Direct Connect connection between the company and AWS.
+      Q6:
+        The question:
+          Which AWS service enables users to securely connect to AWS resources 
+          over the public internet?
+        Options:
+          Amazon VPC peering.
+          AWS Direct Connect.
+          AWS VPN. ✔️
+          Amazon Pinpoint.
+
+      Q7:
+        The question:
+          How does Amazon VPC differ from traditional network infrastructure?
+        Options:
+          VPCs are managed entirely by AWS, while traditional networks are managed on-premises.
+          VPCs are more expensive to set up and maintain than traditional networks.
+          VPCs offer more flexibility and scalability compared to traditional networks. ✔️
+          VPCs are limited in terms of bandwidth and latency compared to traditional networks.
+      Q8:
+        The question:
+          What is the purpose of security groups in Amazon VPC?
+        Options:
+          To control traffic at the subnet level.
+          To provide granular control over network ACLs.
+          To filter inbound and outbound traffic to instances. ✔️
+          To establish VPN connections between VPCs.
+      Q9:
+        The question:
+          What is the function of a Network ACL -Access Control List- in Amazon VPC?
+        Options:
+          To control traffic at the subnet level. ✔️
+          To filter inbound and outbound traffic to instances.
+          To provide granular control over network security groups.
+          To establish VPN connections between VPCs.

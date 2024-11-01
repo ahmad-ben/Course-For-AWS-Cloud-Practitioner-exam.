@@ -1,0 +1,26 @@
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+
+        Options:
+
+      Q2:
+        The question:
+
+        Options:
+
+      Q3:
+        The question:
+
+        Options:
+
+      Q4:
+        The question:
+
+        Options:
+
+      Q5:
+        The question:
+
+        Options:
