@@ -182,6 +182,7 @@ VPC Connections
       Physical/Software appliance located on the on-premises side of a Site-to-Site VPN connection.
     AWS: must use a Virtual Private Gateway -VGW-.
       Virtual router on the AWS side of the Site-to-Site VPN connection.
+    There is no need for the Internet Gateway in this case. 
   Direct Connect:
     Establishes a physical connection between on-premises and AWS.
     The connection is private, secure, and fast.

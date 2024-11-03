@@ -1,0 +1,164 @@
+introduction:
+  What we will lean:
+    S3 essentials, buckets, objects, storage classes, and access controls. 
+    Create, manage, and secure S3 buckets.
+    Efficiently handle data storage, retrieval, and management using S3 APIs. 
+    Explore advanced features like: 
+      Versioning.
+      Encryption.
+      Lifecycle policies.
+      Cross-region replication for cost optimization and data protection. 
+  Mastering Amazon S3 enables you to leverage its capabilities effectively. 
+    Building robust cloud storage solutions.
+  Amazon S3: 
+    Foundational AWS storage service renowned for its scalability, durability, and security. 
+Introduction to Amazon Simple Storage Service -S3- Cloud Storage on AWS:
+  Introduction to Amazon S3: 
+    Amazon Simple Storage Service -Amazon S3- offers a secure and scalable object storage solution.
+    It is accessible via a web services interface.
+      API layer that allows applications and services to interact with S3 programmatically
+    Allows for easy storage and retrieval of data from Amazon EC2 or the web. 
+    Users can select regions for data storage, create buckets, and start storing data easily.
+      Amazon S3 is region-based in terms of where data is physically stored. 
+      It’s accessible from anywhere, allowing retrieval globally.
+  Scalability and Cost Efficiency: 
+    Amazon S3 eliminates the need to predict future storage requirements. 
+      It scales to accommodate any amount of data. 
+      Users only pay for the storage they actually use, with no minimum fees or setup costs.
+  Data Reliability and Version Control: 
+    Amazon S3 ensures data durability by: 
+      Automatically replicating data across multiple devices and facilities. 
+    It offers version control, allowing users to retrieve past versions of objects. 
+      To recover from accidental deletions or application failures.
+  Storage Classes:
+    S3 Standard: 
+      For general-purpose storage of frequently accessed data.
+    S3 Standard Infrequent Access -IA-. 
+      For data that is accessed less often but needs to be readily available.
+        Fast retrieval -similar to S3 Standard-.
+      Slightly higher retrieval cost due to infrequent access.
+    Amazon Glacier: 
+      For long-term data archiving.
+      Retrieval times vary -from minutes to hours- based on the retrieval option chosen.
+      Very low storage cost, optimized for large volumes of archived data. 
+      Higher retrieval costs and longer retrieval times.
+    Lifecycle Management: 
+      Amazon S3 provides lifecycle policies. 
+        That automatically transition data to the most cost-effective storage class over time. 
+          Depending on the data's activity level.
+    Data Security: 
+      Amazon S3 offers multiple security features, including: 
+        Identity and Access Management -IAM- policies.
+        Access Control Lists -ACLs-. 
+          Manage permissions at the object and bucket levels. 
+          Specify: 
+            Which AWS accounts or groups have access to specific S3 resources.
+            What actions they can perform.
+        Bucket policies.
+          JSON-based policies that you attach directly to a bucket. 
+          Allow you to grant permissions to users and services at the bucket level.
+        Query string authentication. 
+          allows you to create pre-signed URLs that grant temporary access to objects in S3.
+        Data transfers can be secured with SSL encryption.
+          Data actively moving from one location to another. 
+            Such as from a client to Amazon S3 or from S3 back to a client.
+          Encryption secures data being transferred between clients and S3. 
+            By encrypting the data in transit.
+        Data at rest can be encrypted as well.
+          Data that is stored on a persistent storage device.
+            Such as the data stored in S3 buckets.
+    Ease of Getting Started: 
+      Users can easily start using Amazon S3 by: 
+        Signing up for an AWS account and creating a storage bucket with a few clicks.
+Amazon S3: Introduction
+  Introduction to Amazon S3:
+    Stands for Simple Storage Service.
+    A highly scalable, durable, and secure object storage service.
+      For storing and retrieving any amount of data.
+    Often called -infinitely scaling- storage.
+    Offers features like:
+      Versioning, lifecycle policies, and fine-grained access controls for managing data.
+    Supports:
+      Data transfer acceleration.
+        Feature designed to speed up the transfer of files to and from S3 buckets.
+      Integration with other AWS services for data processing and analytics.
+    Commonly used for:
+      Backup and recovery. 
+      Data archiving.
+      Content distribution.
+      As a data lake for big data analytics.
+  Buckets in S3:
+    Amazon S3 facilitates the storage of objects -files- within buckets -directories-:
+      Bucket names must be globally unique across all regions and accounts.
+      Buckets are established at the regional level.
+      Despite S3 appearing as a global service, buckets are confined to a specific region.
+        While the bucket's regional establishment relates to the:
+          Physical infrastructure and legal compliance. 
+        The accessibility of the bucket's content can be from anywhere.
+    Naming conventions mandate:
+      No uppercase letters or underscores.
+      Length between 3 and 63 characters.
+      Not in the format of an IP address.
+      Commencing with a lowercase letter or number.
+      Excluding the prefix "xn--" at the start.
+      Avoiding the suffix "-s3alias" at the end.
+  S3 Bucket Policies:
+    JSON:
+      control access to buckets and objects.
+      Permit or Restrict.
+      APIs permitted or restricted.
+      User or account affected by the policy.
+        Policies can target specific users or accounts. 
+          Determining who is allowed or denied access to the bucket and its contents.
+    Use the S3 bucket policy to:
+      Enable public access to the bucket.
+      Mandate encryption on uploaded objects.
+        Policy can require that data is encrypted either: 
+          Before it is uploaded to S3.
+          Can enforce server-side encryption by S3 during the upload process.
+      Provide access permissions to another account -Cross-Account Access-.
+Introduction to Amazon S3: Pop Quiz
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          Amazon S3 is often called ??? storage due to its 
+          highly scalable, durable, and secure nature.
+        Options:
+          Limited.
+          Infinitely scaling. ✔️
+          Temporary.
+          Local.
+      Q2:
+        The question:
+          Which of the following is NOT a feature of Amazon S3?
+        Options:
+          Versioning.
+          Lifecycle policies.
+          Fine-grained access controls.
+          Direct database management ✔️.
+      Q3:
+        The question:
+          In Amazon S3, buckets must have globally unique names and are confined to a specific ???.
+        Options:
+          Account.
+          User.
+          Region. ✔️
+          Service.
+      Q4:
+        The question:
+          What is a common use case for Amazon S3?
+        Options:
+          Running virtual machines.
+          Backup and recovery. ✔️
+          Real-time database transactions.
+          Application deployment.
+      Q5:
+        The question:
+          S3 bucket policies are written in ??? and can be used to enable 
+          public access, mandate encryption, or provide cross-account access.
+        Options:
+          XML.
+          YAML.
+          JSON. ✔️
+          SQL.
