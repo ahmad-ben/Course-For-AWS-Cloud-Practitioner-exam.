@@ -1,0 +1,228 @@
+Characteristics of S3
+  Characteristics of Amazon S3
+    Durability:
+      Measures the likelihood of data remaining intact and not getting lost or corrupted over time.
+      High durability of 99.999999999% -11 9's- for objects.
+        Ensuring data is protected across multiple AZs.
+      If you store 10 million objects, you can expect to lose a single object each 10,000 years.
+      This durability applies to all storage classes.
+    Availability:
+      Likelihood that you’ll be able to access your data when needed. 
+      Refers to how readily available a service is for use.
+      Availability varies depending on the storage class, for example:
+        S3 Standard has 99.99% availability.
+          Equates to potential unavailability of approximately 53 minutes per year.
+  Static Websites and Versioning:
+    S3 can host static websites and have them accessible on the Internet.
+    The website URL will be -depending on the region-:
+        http://bucket-name.s3-website-aws-region.amazonaws.com
+      OR:
+        http://bucket-name.s3-website.aws-region.amazonaws.com
+  Versioning:
+    File versioning is available in Amazon S3.
+      You can version your files.
+    It is enabled at the bucket level.
+    Same key overwrite will change the "version": 1, 2, 3….
+      Overwriting a file with the same key will result in incrementing the version number.
+    It is best practice to version your buckets.
+    Protect against unintended deletes -ability to restore a version-.
+    Easy roll back to previous version.
+      It simplifies the process of reverting to an earlier version of a file.
+    Additional details:
+      Any file not versioned before versioning is enabled will be assigned the version "null".
+      Suspending versioning will not remove any previously stored versions.
+        Turning off versioning won't delete any previously saved versions of your objects. 
+        All earlier versions will remain in the bucket. 
+        New uploads won't create additional versions until versioning is turned back on.
+  Replication -Cross Region Replication and Same Region Replication-:
+    Versioning must be enabled on both the source and destination buckets for replication.
+      Versioning is a mandatory requirement for S3 replication. 
+      whether you're using -CRR- or -SRR-. 
+        It must be enabled on both the source and destination buckets for replication to function.
+      This ensures that any changes, deletions, or additions to objects are: 
+        Consistently tracked and replicated across the buckets.
+    Supports:
+      Cross-Region Replication -CRR- Same-Region Replication -SRR-.
+      Buckets can be in different AWS accounts.
+        The source and destination buckets do not have to belong to the same AWS account. 
+        You can set up replication between:
+          Two buckets in the same AWS account.
+          Two buckets in different AWS accounts.
+        Allows data replication across accounts.
+      Copying of objects is asynchronous.
+      Proper IAM permissions must be granted to S3 for replication.
+S3 Storage Classes:
+  Availability in S3: 
+    measures the percentage of time data can be accessed. 
+    Storage classes offer varying availability, from 99.5% for S3 One Zone-IA to 99.99% for others.
+  S3 has different storage classes to suit various use cases:
+    Standard Classes: 
+      Designed for frequently accessed data, with minimal latency and high availability.
+    Intelligent Tiering: 
+      Automatically moves data between tiers based on access patterns.
+    Infrequent Access -IA-: 
+      Suitable for data accessed less frequently, with reduced costs but some retrieval fees, like: 
+        Minimum capacity charge per object, Minimum storage duration time, Retrieval fee. 
+    One Zone-IA: 
+      Stores data in a single availability zone, lowering cost but reducing availability.
+    Glacier Classes -for archival data- provide low-cost, long-term storage:
+      Glacier Instant Retrieval:
+        Offers low-latency access for archived data.
+      Glacier Flexible Retrieval:
+        Cost-effective for data rarely accessed, with retrieval time range from minutes to hours.
+      Glacier Deep Archive:
+        Cost-effective for data rarely accessed, with retrieval times of hours.
+  Unique pattern to remember:
+    For all the storage classes that usually their data shouldn't be usually accessed we have:
+      Minimum capacity charge per object, Minimum storage duration time, Retrieval fee.
+        As an additional fee, and that's for AWS to ensure the users don't exploit this classes. 
+S3 Storage Classes     
+  S3 Storage Classes: An Overview
+    S3 Storage Classes Overview:
+      Designed for varying use cases based on access frequency, durability, and cost.
+      Includes options like Standard, Intelligent-Tiering, Standard-IA, and One Zone-IA.
+      Enables cost optimization through diverse pricing structures.
+      Supports automatic data migration with lifecycle policies.
+        Automatically migrate data between classes based on: 
+          Usage patterns and retention requirements.
+      Provides global data storage with high availability.
+      Allows easy transition between classes to meet changing needs.
+  All S3 Storage Classes:
+    Amazon S3 Standard -General Purpose-.
+    Amazon S3 Standard-Infrequent Access -IA-.
+    Amazon S3 One Zone-Infrequent Access.
+    Amazon S3 Glacier Instant Retrieval.
+    Amazon S3 Glacier Flexible Retrieval.
+    Amazon S3 Glacier Deep Archive.
+    Amazon S3 Intelligent Tiering.
+  S3 Storage Classes: Comparison
+    These are the key points you need to know for the exam!
+      Manara potential error ❌.
+  S3 Encryption:
+    Manara potential error ❌, repeat the same type + no whitepapers.
+      Server Side Encryption -Default-:
+        Server encrypts the file after receiving it
+      Server Side Encryption -Default-:
+        Server encrypts the file after receiving it
+      Useful whitepapers for you to read below!
+    About S3 Encryption:
+      Server-Side Encryption -SSE-: 
+        AWS manages encryption and decryption for your data, with three main types:
+          SSE-S3: 
+            S3 manages both the encryption keys and the encryption process, using AES-256.
+          SSE-KMS: 
+            Managed by AWS Key Management Service -KMS-. 
+              Offers more control over encryption keys and enables audit logging of key usage.
+          SSE-C: 
+            Customer-provided keys are used for encryption. 
+            AWS manages the encryption process, but you supply and manage the encryption key.
+      Client-Side Encryption: 
+        The customer fully manages the encryption keys and processes.  
+        The encryption and decryption process is handled client-side. 
+          Data is encrypted before it is uploaded to S3, and decrypted after downloading. 
+  IAM Access Analyzer for S3:
+    Feature designed to help you secure access to your S3 buckets by: 
+      Ensuring that only authorized users have access.
+    Ensures only intended individuals have access to your S3 buckets.
+    Evaluates S3 Bucket Policies, S3 ACLs, and S3 Access Point Policies.
+    Powered by IAM Access Analyzer.
+    Identifies and flags any unintended access configurations, such as: 
+      Buckets that are publicly accessible or shared with other AWS accounts
+  Shared Responsibility Model for S3:
+    AWS Responsibility:
+      Guarantee unlimited storage.
+      Provide encryption for stored data.
+      Ensure data separation between different customers.
+      Ensure AWS employees cannot access your data.
+    Your Responsibility:
+      Configure S3 buckets.
+      Set bucket policies and public access settings.
+      Manage IAM users and roles.
+      Enable encryption for data storage.
+  S3 Access Points:
+    Network endpoints that enable fine-grained access control to Amazon S3 buckets. 
+    The S3 Access Point Policies are policies applied specifically to S3 Access Points. 
+    Each Access Point has a unique URL or DNS name and its own policy. 
+      Allow precise control over permissions for different apps or user groups in the same bucket.
+      For example: 
+        Create multiple Access Points for a single bucket, each with distinct policies.
+          Defining how specific apps or users interact with the bucket's data. 
+        Instead of accessing the bucket through its standard URL, for example:
+          https://bucket-name.s3.region.amazonaws.com. 
+          Users or applications access it via an Access Point-specific URL, like: 
+            https://access-point-name.s3-accesspoint.region.amazonaws.com. 
+        This approach simplifies access management. 
+          As each Access Point enforces the permissions specified in its policy. 
+          Offering customized and secure access to the bucket without modifying the bucket policy.
+  ACLs -Access Control Lists- VS Bucket Policies:
+    ACLs: 
+      Offer basic, object-level permissions. 
+      Allow you to grant permissions only at the bucket or object level to:
+        AWS accounts and predefined groups like everyone or authenticated users.
+      Control is limited to -read- and -write- permissions at the bucket and object levels.
+      Best suited for simpler use cases where minimal access control is sufficient, for example: 
+        Making an object publicly readable.
+      Legacy method and are generally discouraged in favor of bucket policies. 
+        Especially in newer S3 implementations.
+    Bucket Policies: 
+      JSON-based policies applied at the bucket level. 
+      Offering more advanced control over access. 
+      They allow for complex conditions, actions, and user-specific permissions, including: 
+        permissions for users in different AWS accounts.
+      More granular control, supporting actions like: 
+        -PutObject- or -GetObject- and enabling condition keys like:
+          IP address conditions or time-based conditions. 
+        Enforce specific access conditions beyond simple -read- or -write- permissions.
+      Recommended for complex access management, especially when you need to: 
+        Manage access for different AWS accounts. 
+        Enforce encryption.
+        Apply multiple conditions. 
+        Be more comprehensive and adaptable for larger environments.
+        Follow strict security policies.
+      The recommended approach by AWS for managing permissions.
+Durability and Availability in Amazon S3 Pop Quiz:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          Amazon S3 offers high durability of ??? for objects, 
+          ensuring data is protected across multiple Availability Zones.
+        Options:
+          99.999999999%. ✔️
+          99.999%.
+          99.99%.
+          99.9999%.
+      Q2:
+        The question:
+          How often can you expect to lose a single object 
+          if you store 10 million objects with Amazon S3?
+        Options:
+          Once every year.
+          Once every 100 years.
+          Once every 10,000 years. ✔️
+          Once every 1,000 years.
+      Q3:
+        The question:
+          S3 Standard has an availability of ???.
+        Options:
+          99.9%.
+          99.99%. ✔️
+          99.999%. 
+          100%.
+      Q4:
+        The question:
+          Which feature in Amazon S3 helps protect against unintended deletions 
+          by allowing you to restore previous versions of files?
+        Options:
+          Encryption.
+          Versioning. ✔️
+          Lifecycle Policies.
+          Cross-Region Replication.
+      Q5:
+        The question:
+          For replication in Amazon S3, versioning must be enabled on ???.
+        Options:
+          The source bucket only.
+          The destination bucket only.
+          Both the source and destination buckets. ✔️
+          Neither the source nor the destination buckets.

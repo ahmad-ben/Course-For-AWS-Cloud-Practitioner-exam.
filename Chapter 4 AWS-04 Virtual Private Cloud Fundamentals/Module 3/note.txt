@@ -46,7 +46,7 @@ Recap Exam
           Which components are required 
           to build a successful site-to-site VPC connection on AWS? -Choose two.-
         Options:
-          Customer gateway. ✔️ Manara Potential Error ❌ 
+          Customer gateway. ✔️ Manara potential error ❌ 
             "Even i chose the 2 correct answers they didn't accept it, 
             maybe they still don't accept two answers and just pick one."
           Virtual private gateway. ✔️
