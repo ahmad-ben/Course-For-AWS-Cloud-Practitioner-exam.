@@ -1,0 +1,89 @@
+Summary
+  Buckets vs Objects: 
+    Buckets have globally unique names and are tied to a specific region.
+    Objects are the individual files stored within buckets.
+  S3 Security: 
+    Security measures include: 
+      IAM policies. 
+      S3 Bucket Policies for public access control.
+      S3 Encryption for data protection.
+  S3 Websites: 
+    Amazon S3 can host static websites without the need for servers.
+  S3 Versioning: 
+    Allows for storing multiple versions of files.
+      Providing protection against accidental deletions.
+  S3 Replication: 
+    Enables replication of data within the same region or across regions. 
+      Requiring versioning to be enabled.
+  S3 Storage Classes: 
+    Different storage classes include: 
+      Standard.
+      IA -Infrequent Access-.
+      1Z-IA "One Zone-IA".
+      Intelligent Tiering.
+      Glacier options -Instant Retrieval, Flexible Retrieval, Deep Archive-.
+  Snow Family: 
+    A set of physical devices like Snowball and Snowcone for: 
+      Importing data onto S3 and performing edge computing.
+  OpsHub: 
+    Desktop application for managing Snow Family devices. 
+      Simplifying operations like data transfer and device configuration.
+  Storage Gateway: 
+    A hybrid storage solution that extends on-premises storage to S3. 
+      Facilitating seamless integration between local storage systems and the cloud.
+Recap Exam:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          What is the significance of SSE-S3 encryption in Amazon S3?
+        Options:
+          It encrypts data at rest using keys managed by AWS. ✔️
+          It encrypts data at rest using keys managed by the customer.
+          It encrypts data in transit between the client and S3 using SSL/TLS.
+          It ensures the integrity of data stored in S3 by performing checksum validation.
+      Q2:
+        The question:
+          How does Amazon S3 Intelligent-Tiering differ from Standard S3 storage class?
+        Options:
+          Intelligent-Tiering automatically moves data to the Glacier storage class 
+            based on access patterns, while Standard S3 does not.
+          Intelligent-Tiering provides lower durability than Standard S3.
+          Intelligent-Tiering is suitable for infrequently accessed data, 
+            while Standard S3 is for frequently accessed data. ✔️
+          Intelligent-Tiering has higher storage costs compared to Standard S3.
+      Q3:
+        The question:
+          What is the purpose of Cross-Region Replication (CRR) in Amazon S3?
+        Options:
+          To automatically compress data before storing it in S3.
+          To synchronize data between multiple S3 buckets within the same region.
+          To replicate data across multiple AWS regions for disaster recovery and compliance. ✔️
+          To encrypt data in transit between S3 and client applications.
+      Q4:
+        The question:
+          How does Amazon S3 Transfer Acceleration improve data transfer speed?
+        Options:
+          By compressing data before transferring it to S3.
+          By utilizing AWS Direct Connect for dedicated network connectivity.
+          By caching frequently accessed data in edge locations using Amazon CloudFront.
+          By optimizing network routing to reduce latency in data transfer to S3. ✔️
+      Q5:
+        The question:
+          A Cloud Practitioner needs to store data for 7 years to meet regulatory requirements.
+          Which AWS service will meet this requirement at the LOWEST cost?
+        Options:
+          Amazon S3.
+          AWS Snowball.
+          Amazon Redshift.
+          Amazon S3 Glacier. ✔️
+  Amazon S3 Transfer Acceleration:
+    Feature of Amazon S3. 
+    Improves data transfer speed by using AWS's global network of edge locations to: 
+      Optimize the route between your clients and your S3 buckets. 
+        This reduces latency by finding the fastest path through AWS's network.
+    The process of optimizing network routing with Amazon S3 Transfer Acceleration starts when: 
+      Traffic first reaches an AWS edge location. 
+        Once the data arrives at the nearest edge location. 
+        AWS's global network routes it through the most efficient path to reach the S3 bucket. 
+          Reducing latency and improving transfer speeds over long distances.
