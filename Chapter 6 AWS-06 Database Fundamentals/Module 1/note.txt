@@ -1,0 +1,261 @@
+Introduction:
+  What we will learn:
+    Overview of Databases in the Cloud.
+Overview of Databases in the Cloud
+  Relational vs Non-relational Databases:
+    Relational databases: 
+      Store data in tables with rigid schemas -defined structure of data-. 
+      Use tables, rows, and columns, with structured query language -SQL-. 
+        Performing complex queries. 
+      Data must be consistent across tables.
+      Scale vertically -adding more resources to one server-. 
+        If database server need to scale then you need to add more CPU, storage, memory..
+      Examples include: 
+        Amazon RDS, Oracle, and MySQL. 
+      They are well-suited for complex queries and joins between multiple tables.
+    Non-relational databases -NoSQL-: 
+      Flexible schemas where data can be stored in various formats like: 
+        key-value pairs, documents, graphs. 
+      Scale horizontally -adding more servers-. 
+      Examples include: 
+        Amazon DynamoDB, MongoDB, and Cassandra.
+      More flexible structures.
+      Can store data in formats like JSON, with varying attributes across rows.
+  Operational vs Analytical Databases:
+    Operational databases: 
+      OLTP -Online Transaction Processing-. 
+      Handle transactional data in real-time, like customer orders on a website. 
+      Examples: Amazon RDS -relational- and DynamoDB -non-relational-.
+    Analytical databases: 
+      OLAP -Online Analytical Processing-
+      Source data comes from OLTP DBs.
+      Aggregate data for reporting and analysis. 
+      These databases are optimized for complex queries across large datasets. 
+      Often using data warehouses. 
+        Centralized repository that stores large volumes of structured data from different sources. 
+        Optimized for analysis and reporting rather than transactional processing.
+      Examples: Amazon Redshift, Amazon EMR -Hadoop-.
+AWS Databases Introduction:
+  Why do we need databases:
+    Structuring the data.
+    Building indexes so you can efficiently search through your data.
+    Defining relationships between your data.
+      Allowing you to hold more complex relationships with all your datasets.
+    Databases are designed with specific optimizations tailored to different use cases. 
+      Offering varying features, structures, and limitations.
+  Difference between relational and non-relational databases:
+    Relational Databases:
+      Structure: Data stored in tables with rows and columns.
+      Schema: Fixed schema with predefined structure.
+      Relationships: Supports complex relationships using foreign keys.
+      Query Language: Uses SQL.
+      Examples in AWS: Amazon RDS -supports MySQL, PostgreSQL, Oracle, SQL Server-.
+    Non-Relational Databases:
+      Structure: Data stored in various formats like key-value pairs, documents, or graphs.
+      Schema: Dynamic schema allowing flexibility.
+      Relationships: Does not enforce relationships; handles large volumes of unstructured data.
+      Query Language: Various, depending on the DB type like MongoDB, Cassandra, etc.
+      Examples: A.DynamoDB "key-value", A.DocumentDB -document-, A.Neptune -graph database-.
+Databases Part 1:
+  Relational Databases
+    Amazon RDS:
+      Managed database service employing SQL for queries.
+        AWS manage the infrastructure security, patches, backups... for you.
+      Enables creation of cloud databases managed by AWS.
+      Supports various SQL-based databases:
+        PostgreSQL.
+        MySQL.
+        MariaDB.
+        Oracle.
+        Microsoft SQL Server.
+        IBM DB2.
+        Aurora -AWS proprietary database-.
+  Amazon RDS Deployment Options:
+    Read Replicas:
+      Up to 15 Read Replicas supported.
+        Distributing read operations across them to reduce the load on the primary database.
+      Primary database handles all writes.
+      Asynchronous replication from primary.
+      Enhances performance and responsiveness.
+        Offloading read-heavy workloads while the primary database handles all write operations.
+    Multi-AZ:
+      Failover for High Availability.
+        Activates during an Availability Zone outage, ensures continuous database service.
+        Automatically switches to a standby database in another AZ if the primary goes down.
+      Main database handles all read/write operations.
+        Secondary remains inactive unless a failover is needed.
+      Limited to one alternative Availability Zone for failover.
+        Primary database and a single standby replica in a different AZ of the same region. 
+        This setup only supports one standby database. 
+          The maximum number of databases in this configuration is two -primary and standby-.
+    Multi-AZ with two readable standbys: 
+      Allows two read-only standby databases. 
+      The primary still handles all the write operations. 
+      Maximum number of standbys is 2.
+        Can be a total of 3 databases:
+          1 primary database that handles both read and write operations.
+          2 readable standbys "read-only replicas", which can handle read operations.
+        Each of the 3 is in a separate AZ of the same region.
+      Providing more read capacity while maintaining high availability in the same region.
+      Manara potential error ❌.
+    Multi-Region -Read Replicas-:
+      Disaster recovery in case of region issue.
+      Local performance for global reads.
+        Provides local access to data for read operations, improving performance for global apps.
+      Replication cost.
+      See:
+        ./assets/Databases Part 1/rds-multi-az-and-multi-region.png
+  Advantages of RDS compared to deploying a database on EC2:
+    RDS is a managed service, offering:
+      Automated provisioning and OS patching.
+      Continuous backups with point-in-time restore.
+      Monitoring dashboards.
+      Read replicas for enhanced read performance.
+      Multi-AZ setup for disaster recovery.
+      Scheduled maintenance windows for upgrades.
+      Scaling capabilities -vertical and horizontal-.
+      Storage backed by EBS.
+      SSH access to instances is not available with RDS.
+  Amazon Aurora:
+    Database engines offered by Amazon RDS. 
+    Providing the benefits of a relational database with enhanced cloud-native performance.
+    Global-scale relational database service built for the cloud.
+    Full MySQL and PostgreSQL compatibility.
+      Supports both PostgreSQL and MySQL databases.
+    Provides: 
+      Built-in security.
+      Continuous backups.
+      Serverless compute.
+      Up to 15 read replicas.
+      Automated multi-Region replication.
+      Integrations with other AWS services.
+    Aurora is -AWS cloud-optimized- and boasts significant performance enhancements:
+      5x improvement over MySQL on RDS.
+      Over 3x the performance of Postgres on RDS.
+    Aurora's storage automatically scales in increments of 10GB, up to 128 TB.
+      In response to actual usage.
+      Eliminates the need for capacity planning and reduces management overhead.
+    Automated database provisioning. 
+    Pay-per-second billing offers potential cost savings.
+      Suitable for irregular, sporadic, or unpredictable workloads.
+    Costs 20% more than RDS and is not included in the free tier.
+    See:
+      ./assets/Databases Part 1/amazon-rds-aurora.png
+  NoSQL Databases
+    Short for non-SQL or non-relational databases. 
+    Crafted for distinct data models.
+    Boast adaptable schemas tailored for contemporary applications.
+    Advantages:
+      Flexibility: Simplified evolution of data models.
+      Scalability: Designed for horizontal scaling through distributed clusters.
+      High Performance: Optimization for specific data models.
+      Functionality: Tailored types optimized for respective data models.
+      Examples: Key-value, document, graph, in-memory, and search databases.
+  JSON -JavaScript Object Notation- Overview:
+    Widely used data format modeled after JavaScript object syntax.
+    Fits naturally into the NoSQL database model due to its schema-less nature.
+  Characteristics of JSON:
+    Data can include nested structures, allowing for complex data hierarchies.
+    Fields in JSON data can be added, removed, or modified over time without constraints.
+    Supports a variety of data types, including arrays, strings, numbers, and boolean values.
+    See:
+      ./assets/Databases Part 1/json-example.png
+  Amazon DynamoDB
+    Automated key-value database provisioning and dynamic scaling in response to actual usage.
+    Both PostgreSQL and MySQL are compatible with Aurora Serverless DB. Manara potential error ❌.
+    Eliminates the need for capacity planning and reduces management overhead.
+    Pay-per-second billing offers potential cost savings.
+  Is a key/value database:
+    A type of non-relational database, also known as NoSQL database. 
+      Uses a simple key-value method to store data. 
+    Stores data as a collection of key-value pairs in which a key serves as a unique identifier. 
+    Both keys and values can be anything, ranging from simple objects to complex compound objects.
+    Suitable for irregular, sporadic, or unpredictable workloads.
+  Amazon DynamoDB Global Tables:
+    Amazon DynamoDB Feature.
+    Make a DynamoDB table accessible with low latency in multiple-regions.
+      Allowing the creation of DynamoDB table copies in multiple AWS regions.
+    Active-Active replication -read/write to any AWS Region-.
+      Each copy -replica- can handle both read and write operations.
+  Amazon DocumentDB:
+    Fully managed and highly available, with replication across 3 Availability Zones -AZs-.
+    Storage automatically grows in increments of 10GB.
+    Automatically scales to handle workloads with millions of requests per second.
+    MongoDB is used to store, query, and index JSON data. 
+      Manara potential error ❌🔝, what's the relationship?
+    Has similar -deployment concepts- as Amazon Aurora.
+      Refer to the way the database is set up, scaled, and managed. 
+      Amazon DocumentDB shares similar features with Amazon Aurora in terms of how it is deployed: 
+        Offering high availability, automatic backups, and scaling options across different AZ. 
+        Both services are managed database solutions designed for easy deployment in AWS. 
+          But Amazon DocumentDB is specifically for MongoDB-compatible applications.
+    MongoDB compatibility.
+  Amazon ElastiCache
+    Similar to how RDS provides managed relational databases.
+      It provides managed in-memory caching services, specifically for Redis and Memcached. 
+      It takes care of operational tasks like: 
+        Setup, scaling, and maintenance. 
+          Making it easier for you to use these caching technologies without a manual management.
+    Caches are high-performance, low-latency in-memory databases.
+    They help alleviate the load on databases for workloads with heavy read operations.
+    AWS handles: 
+      OS maintenance and patching.
+      Optimizations.
+      Setup.
+      Configuration.
+      Monitoring.
+      Failure recovery.
+      Backups
+  DynamoDB Accelerator -DAX-:
+    Fully managed in-memory cache for DynamoDB.
+    Offers up to a 10x performance improvement. 
+      Reducing latency from single-digit milliseconds to microseconds.
+    Provides a secure, highly scalable, and highly available solution.
+    Difference with ElastiCache at the CCP -Cloud Computing Platform- level:
+      DAX is exclusively used with and integrated into DynamoDB.
+      ElastiCache can be used with other databases.
+Introduction to Databases Pop Quiz:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          Databases allow for structuring data, building indexes, and defining ??? between data, 
+          enabling more complex relationships.
+        Options:
+          Links.
+          Connections.
+          Relationships. ✔️
+          Dependencies.
+      Q2:
+        The question:
+          Which of the following is a key feature of relational databases?
+        Options:
+          Dynamic schema.
+          Data stored in tables with rows and columns. ✔️
+          NoSQL query language.
+          Unstructured data handling.
+      Q3:
+        The question:
+          Amazon DynamoDB is an example of a ??? database.
+        Options:
+          Relational.
+          Non-relational. ✔️
+          Graph.
+          SQL.
+      Q4:
+        The question:
+          Which AWS service is a managed database service 
+          that supports various SQL-based databases such as MySQL, PostgreSQL, and Oracle?
+        Options:
+          Amazon DynamoDB.
+          Amazon Redshift.
+          Amazon RDS. ✔️
+          Amazon Neptune.
+      Q5:
+        The question:
+          In Amazon RDS, read replicas are used to ???.
+        Options:
+          Handle write operations.
+          Distribute read queries and enhance performance. ✔️
+          Provide storage backup.
+          Encrypt data.
