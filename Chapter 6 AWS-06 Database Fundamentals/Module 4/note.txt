@@ -1,0 +1,174 @@
+Summary
+  Relational Databases - OLTP:
+    RDS & Aurora -SQL-: 
+      Support SQL operations, ideal for transactional processing.
+    Differences in Deployment Options:
+      Multi-AZ: 
+        Ensures high availability by replicating data across multiple Availability Zones.
+      Read Replicas: 
+        Improves read performance by creating read-only copies of the database.
+          In the same or different regions.
+      Multi-Region: 
+        Distributing database instances across multiple geographic regions.
+          Enhances global accessibility and disaster recovery.
+  In-memory Database:
+    ElastiCache: 
+      Boosts performance by storing frequently accessed data in memory, reducing latency.
+  Key/Value Database:
+    DynamoDB -serverless-: 
+      Offers fast and flexible NoSQL database service, scaling automatically with demand.
+    DAX -DynamoDB Accelerator-: 
+      In-memory cache specifically for DynamoDB, significantly reducing response times.
+  Data Warehousing -OLAP-:
+    Redshift -SQL-: 
+      Optimized for handling large scale querying and analysis.
+      Using columnar storage and data compression.
+  Big Data Processing:
+    Amazon EMR -Elastic MapReduce-:
+      Manages Hadoop framework.
+        Processing large datasets across dynamically scalable Amazon EC2 instances.
+      Managed service by AWS that simplifies setting up, managing, and scaling a Hadoop cluster.
+        Hadoop cluster: 
+          Collection of nodes -servers or EC2 instances-. 
+            Work together to store and process large datasets in a distributed manner.
+      Automatically manages the cluster, including EC2 instances. 
+      Provides the necessary tools to run big data processing frameworks like Hadoop, Spark, etc.
+      Manara Potential Error ❌ "They use the following header -Hadoop Cluster: EMR-" 
+  Serverless Querying:
+    Athena: 
+      Queries data directly on Amazon S3 using standard SQL.
+        Without the need for server provisioning.
+          Athena is serverless.
+          You don't need to manage or provision any infrastructure like servers or clusters. 
+  Data Visualization:
+    QuickSight: 
+      Provides fast, serverless business intelligence service to: 
+        Build visualizations and perform ad-hoc analysis.
+  NoSQL Databases:
+    DocumentDB: 
+      Compatible with MongoDB, designed to handle JSON documents.
+    Neptune: 
+      A graph database service for managing relationships between highly connected datasets.
+    Timestream: 
+      Managed time-series database for real-time analysis of time-stamped data.
+  Blockchain and Ledger Services:
+    Amazon QLDB: 
+      Ledgers for recording financial transactions with an: 
+        Immutable, cryptographically verifiable journal.
+    Amazon Managed Blockchain: 
+      Manages blockchain networks with support for popular frameworks like: 
+        Hyperledger Fabric and Ethereum.
+  Data Integration and Migration:
+    Glue: 
+      Managed ETL service that simplifies data preparation and loading.
+      Also serves as a data catalog.
+        AWS Glue Data Catalog:
+          Core features.
+          Acts as a central repository to store metadata information about your datasets. 
+            Making it easier to organize and search for data. 
+    Database Migration Service -DMS-: 
+      Migrates databases to AWS efficiently and securely.
+Recap Exam:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          What is the primary benefit of using Amazon Aurora for database workloads?
+        Options:
+          It provides unlimited storage capacity and throughput for any type of database workload.
+          It supports both relational and non-relational data models 
+            within the same database instance.
+          It offers fully managed PostgreSQL and MySQL-compatible databases 
+            with up to five times better performance than standard engines. ✔️
+          It offers serverless database provisioning, allowing automatic scaling based on demand.
+      Q2:
+        The question:
+          How does Amazon RDS Multi-AZ deployment enhance database availability?
+        Options:
+          By deploying database instances in multiple AWS regions for disaster recovery.
+          By automatically 
+            replicating data synchronously across multiple Availability Zones within a region. ✔️
+          By providing read replicas to 
+            offload read-only workloads from the primary database instance.
+          By allowing seamless scaling of database resources based on demand.
+      Q3:
+        The question:
+          What is the purpose of Amazon RDS Read Replicas?
+        Options:
+          To automatically failover to a standby database instance 
+            in case of a primary instance failure.
+          To offload read-only workloads from the primary database instance 
+            and improve scalability. ✔️
+          To synchronize data between multiple RDS instances in different regions.
+          To encrypt data at rest and in transit for enhanced security.
+      Q4:
+        The question:
+          Which AWS service can run a managed PostgreSQL database 
+          that provides online transaction processing (OLTP)?
+        Options:
+          Amazon EMR.
+          Amazon DynamoDB.
+          Amazon Athena.
+          Amazon RDS. ✔️
+      Q5:
+        The question:
+          What is the primary benefit of using Amazon Redshift for data warehousing?
+        Options:
+          It offers petabyte-scale data warehousing 
+            with automated backups and high availability. ✔️
+          It supports serverless data ingestion and processing for big data analytics.
+          It offers fully managed PostgreSQL-compatible databases 
+            optimized for analytics workloads.
+          It provides real-time analytics capabilities with low-latency query performance.
+      Q6:
+        The question:
+          How does Amazon Aurora Serverless differ from provisioned Aurora databases?
+        Options:
+          Aurora Serverless supports only MySQL-compatible databases, 
+            while provisioned Aurora databases support both MySQL and PostgreSQL.
+          Aurora Serverless automatically scales compute capacity based on workload demand, 
+            while provisioned Aurora databases have fixed compute resources. ✔️
+          Aurora Serverless offers higher durability and availability 
+            than provisioned Aurora databases.
+      Q7:
+        The question:
+          What is the primary advantage of using Amazon DocumentDB over traditional MongoDB databases?
+        Options:
+          DocumentDB offers serverless database deployment, 
+            eliminating the need for manual capacity management.
+          DocumentDB supports multi-document transactions and ACID compliance, 
+            which are not available in MongoDB.
+          DocumentDB offers fully managed database provisioning with automatic scaling and backup.
+          DocumentDB provides compatibility with existing MongoDB applications 
+            without requiring code changes. ✔️
+      Q8:
+        The question:
+          How does Amazon Neptune differ from traditional relational databases?
+        Options:
+          Neptune provides compatibility with SQL databases, 
+            while traditional relational databases use proprietary query languages.
+          Neptune supports schema-less data models, 
+            while traditional relational databases enforce rigid schema structures.
+          Neptune is a graph database engine 
+            designed for storing and querying highly connected data, 
+            while traditional relational databases are optimized for structured data. ✔️
+          Neptune offers fully managed database provisioning with automatic scaling, 
+            while traditional relational databases require manual capacity management.
+      Q9:
+        The question:
+          What is the primary benefit of using Amazon ElastiCache for caching workloads?
+        Options:
+          It supports both caching and persistent storage for flexible data management.
+          It automatically optimizes database queries and indexes for improved performance.
+          It provides fully managed, 
+            in-memory caching with support for popular engines such as Redis and Memcached. ✔️
+          It offers low-latency access to data stored in Amazon RDS and Amazon DynamoDB.
+      Q10:
+        The question:
+          Which AWS service can be used to 
+          query stored datasets directly from Amazon S3 using standard SQL?
+        Options:
+          Amazon CloudSearch.
+          Amazon Athena. ✔️
+          AWS Glue.
+          AWS Data Pipeline.
