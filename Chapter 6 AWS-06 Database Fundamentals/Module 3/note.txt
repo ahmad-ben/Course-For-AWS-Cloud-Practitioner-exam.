@@ -1,0 +1,118 @@
+AWS Migration and Transfer Services:
+  AWS Migration Hub: 
+    Provides a centralized dashboard to manage migration projects.
+  Database Migration Service -DMS-: 
+    Migrates databases like Oracle, MySQL from on-premises or other clouds to AWS services. 
+      RDS, Redshift, or DynamoDB. 
+  Schema Conversion Tool: 
+    Assists with schema differences between databases.
+  Server Migration Service -SMS-: 
+    Moves on-premises virtual machines like VMware, Hyper-V to Amazon EC2. 
+      By creating Amazon Machine Images -AMIs- for incremental migration.
+        AMI is updated with only the data that has changed since the last migration session. 
+          Rather than re-creating the entire image from scratch each time.
+  DataSync: 
+    Syncs on-premises NAS storage to AWS S3, EFS, FSx with encryption in transit. 
+    Can also be used with Snowcone for remote data transfers.
+  Snowcone And DataSync:
+    DataSync can be used with Snowcone by installing a DataSync agent on the Snowcone device. 
+    This setup is helpful for: 
+      Remote data transfers when internet connectivity is limited or unavailable. 
+    Snowcone is a small, rugged, and portable edge computing device from AWS.
+    Enables data collection, storage, and compute functions at the edge. 
+    Often used in remote or disconnected environments.
+    Once the DataSync agent is set up on Snowcone. 
+      You can transfer data from the Snowcone device to AWS storage services like Amazon S3.
+  Snowball Family: Physical devices like Snowball, Snowcone, Snowmobile for large data migrations.
+    Snowball Edge offers compute capabilities for edge cases.
+    Snowmobile transports massive datasets -up to exabytes- using a truck with a storage container.
+  What is NAS: 
+    Stands for Network Attached Storage.
+    Centralized storage solution that connects to a network. 
+    Allowing multiple users and client devices to access data from a shared location. 
+    It operates on a network, typically using file-sharing protocols like: 
+      NFS -Network File System- or SMB -Server Message Block-. 
+    Suitable for applications where file sharing is essential.
+Database Migration Services:
+  DMS -Database Migration Service-:
+    Quickly and securely migrates databases to AWS. 
+      Ensuring resilience and self-healing capabilities.
+    The source database remains available during the migration process.
+      Source database remains active and accessible during migration.
+        Minimal or no downtime for your original on-premises database while DMS copies data to AWS. 
+    Supports both: 
+      Homogeneous migrations for example from Oracle to Oracle.
+      Heterogeneous migrations for example from Microsoft SQL Server to Amazon Aurora.
+  AWS Schema Conversion Tool:
+    Both solutions -DMS SC and SCT- automatically: 
+      Convert database schemas and code objects.
+      Marking unconvertible objects with manual conversion instructions.
+    Scans app source codes for SQL statements.
+      Optimizes them for AWS services during database migration.
+        SCT tool inspects source code in applications for any SQL queries or statements. 
+        Modifies them to work more efficiently with AWS databases.
+          Making the migration smoother and ensuring better performance on AWS.
+    Post-conversion: 
+      AWS SCT facilitates data migration from various warehouses to Amazon Redshift.
+        Using data migration agents.
+    These tools: 
+      Simplify migrations.
+      Support popular databases.
+      Save significant manual effort and resources.
+    AWS offers two schema conversion solutions for database migrations: 
+      The managed AWS DMS Schema Conversion -DMS SC-.
+      The downloadable AWS Schema Conversion Tool -AWS SCT-.
+      When using the AWS SCT, you will choose between two options for schema conversion:
+        AWS DMS Schema Conversion -DMS SC-: 
+          Managed service.
+          Integrates with the DMS to convert schema automatically as part of the migration process.
+        AWS Schema Conversion Tool -AWS SCT-: 
+          Downloadable tool that allows you to perform schema conversion manually. 
+          Gives you more control over the process.
+AWS Databases Shared Responsibility Model:
+  AWS:
+    RDS sets up and runs the database engine on the instance provided.
+    Maintenance and Operations:
+      AWS manages OS and database engine maintenance and patching.
+  Customer:
+    Choose instance type and storage class for desired processing power and performance.
+    Configure network access via security groups.
+    Manage database users and permissions.
+AWS Database Migration Service -DMS- and Shared Responsibility Model Pop Quiz:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          AWS Database Migration Service (DMS) can 
+          migrate databases while keeping the ??? database available during the migration process.
+        Options:
+          Source. ✔️
+          Destination.
+          Backup.
+          Temporary.
+      Q2:
+        The question:
+          Which of the following types of migrations does AWS DMS support?
+        Options:
+          Only homogeneous migrations.
+          Only heterogeneous migrations.
+          Both homogeneous and heterogeneous migrations. ✔️
+          None of the above.
+      Q3:
+        The question:
+          The AWS Schema Conversion Tool (SCT) helps to 
+          convert database schemas and ??? objects during database migrations.
+        Options:
+          Configuration.
+          Index.
+          Code. ✔️
+          Network.
+      Q4:
+        The question:
+          During database migration, AWS SCT can 
+          scan application source codes for SQL statements and ??? them for AWS services.
+        Options:
+          Remove.
+          Optimize. ✔️
+          Encrypt.
+          Backup.
