@@ -1,0 +1,231 @@
+Databases Part 2:
+  Amazon Redshift:
+    Primarily a relational database.
+    Based on PostgreSQL but is not used for Online Transaction Processing -OLTP-.
+      Designed for Online Analytical Processing -OLAP-. 
+      Suitable for analytics and data warehousing.
+    Provides a SQL interface for performing queries.
+    Typically, data is loaded once every hour, not every second.
+      Loaded in batches, rather than loading continuously. 
+      Suited to Redshift’s data warehousing purposes and helps optimize performance.
+    Offers 10x better performance than other data warehouses and can scale to petabytes of data.
+    Utilizes columnar storage of data, as opposed to row-based storage.
+      Stores data in columns rather than rows.
+        Enabling faster read speeds and efficient compression.
+    Features Massively Parallel Query Execution -MPP- and is highly available.
+      Distribute queries across multiple nodes simultaneously.
+    Pricing is based on a pay-as-you-go model, depending on the instances provisioned.
+      You pay for the entire cluster even when it's idle.
+      Provides control over scaling and configuration.
+        Offering fine-tuned optimization for predictable workloads.
+    Compatible with Business Intelligence -BI- tools such as: 
+      AWS Quicksight or Tableau for data visualization and analysis.
+        Tableau is a standalone business intelligence tool and is not a part AWS services.
+  Amazon Redshift Serverless:
+    Automatically provisions and scales the underlying capacity of the data warehouse.
+    Allows running analytics workloads without managing data warehouse infrastructure.
+    Offers a pay-only-for-what-you-use pricing model, helping save costs.
+    Use cases include reporting, dashboarding applications, and real-time analytics.
+  What are Data Warehouses: 
+    Specialized systems used to store and manage large volumes of historical and structured data.
+    Designed for analysis and reporting rather than day-to-day transactions. 
+    They support OLAP workloads and are optimized for retrieving insights from historical data.
+  What is OLAP -Online Analytical Processing-: 
+    A category of data processing.
+    Focused on complex queries, reporting, and data analysis across large datasets. 
+    Used in data warehousing and business intelligence to generate insights from historical data.
+  What is OLTP -Online Transaction Processing-: 
+    A type of data processing.
+    Designed for handling frequent, quick, and often real-time transactions like: 
+      Inserting, updating, and deleting records. 
+    It’s commonly used in apps that manage daily operations, such as banking systems or e-commerce.
+  What is MPP -Massively Parallel Processing-: 
+    A computing architecture. 
+    Where multiple processors execute different parts of a query simultaneously across many nodes. 
+      Significantly speeding up data processing. 
+    Example like Redshift, it uses MPP for handling complex, large-scale queries.
+  Amazon EMR Elastic MapReduce-:
+    A cloud big data platform for processing massive amounts of data.
+      Big data processing service.
+    It can handle both structured and unstructured data but isn’t strictly a database.
+    Supports open-source big data tools like Apache Hadoop, Apache Spark, HBase, Flink, and Presto.
+    Simplifies running big data frameworks for processing and analyzing large datasets.
+      No need to extensive infrastructure management.
+    Designed to be cost-effective, scalable, and secure.
+    Commonly used for data transformation, data processing, and data analytics tasks.
+    Allows quick setup and configuration of clusters of virtual servers for data processing.
+    Suitable for handling vast amounts of data efficiently.
+  Amazon EMR Vs Redshift:
+    Both handle and process large amounts of data, but they serve different purposes:
+      Amazon Redshift: 
+        Optimized for data warehousing and analytics using SQL.
+        Focus on structured data and running complex queries quickly.
+      Amazon EMR: 
+        Designed for big data processing using open-source frameworks like Hadoop and Spark.
+        Ideal for more diverse, unstructured data and complex data transformation tasks.
+    Both are suited for big data. 
+      But have different strengths depending on the type of data and processing required.
+  Amazon Athena:
+    Serverless query service to analyze data stored in Amazon S3.
+    Uses standard SQL language to query files.
+    Supports formats such as CSV, JSON, ORC, Avro, and Parquet -built on Presto-.
+      Refers to the various file formats that Amazon Athena can query directly.
+      Athena can run SQL queries on data stored in these formats. 
+        Without requiring additional data transformation.
+    Pricing is $5.00 per TB of data scanned.
+    Optimize cost by using compressed or columnar data formats -reduces data scanned-.
+    Use cases include: 
+      Business intelligence.
+      Analytics.
+      Reporting.
+      Analyzing logs such as VPC Flow Logs, ELB Logs, CloudTrail trails.
+  Amazon QuickSight
+    Serverless machine learning-powered business intelligence service for: 
+      Creating interactive dashboards.
+    ML techniques are being used to enhance the BI process.
+    Fast, automatically scalable, and embeddable, with per-session pricing.
+      Embeddable: 
+        Allows you integrate or embed its dashboards and visualizations directly into other apps. 
+          Websites, or portals. 
+        You can present QuickSight data to users without them needing to leave the primary app.
+      Per-session Pricing: 
+        You don't pay for a fixed number of users or seats.
+        It charges based on: 
+          The number of sessions users interact with the embedded visualizations or reports. 
+        Each time a user accesses or interacts with the reports, it counts as a session. 
+          Charges are based on that session count. 
+        This can be more cost-effective for organizations with varying user needs.
+    Use cases include:
+      Business analytics.
+      Building visualizations.
+      Performing ad-hoc analysis.
+        Spontaneous or on-the-fly data analysis. 
+          That is done to answer specific questions or explore data at a particular moment. 
+        Often unplanned.
+        Analysts or users create queries and reports to get immediate insights. 
+          Based on the current need, rather than using pre-built reports or dashboards. 
+        Flexibility allows users to: 
+          Quickly explore and analyze data to find answers or patterns as questions arise.
+      Gaining business insights using data.
+      Integrated with various data sources such as RDS, Aurora, Athena, Redshift, and S3.
+  Amazon Neptune
+    Fully managed graph database service.
+    Popular for datasets like social networks, where users have: 
+      friends, posts have comments, comments have likes from users, and users share and like posts.
+    Highly available across three Availability Zones -AZs-, with up to 15 read replicas.
+      Replications across multiple AZs.
+    Designed to build and run apps working with: 
+      Highly connected datasets, optimized for complex and challenging queries.
+    Capable of: 
+      Storing up to billions of relationships and querying the graph with millisecond latency.
+    Great for use cases such as: 
+      Knowledge graphs -Wikipedia-, fraud detection, recommendation engines, and social networking.
+        fraud detection like: 
+          Circular transactions: 
+            The User A sends money to User B and then User B sends money back to User A.
+          High-frequency transfers:
+            To much transfers between users not even connected.
+  Amazon TimeStream
+    Fully managed, fast, scalable, serverless time series database.
+      Database designed specifically for handling time-stamped data like:
+        Sensor data, logs, or metrics.
+    Data points are indexed by time like temperature readings each hour, stock prices every minute.
+    Automatically scales up and down to adjust capacity as needed.
+    Capable of storing and analyzing trillions of events per day.
+    Offers performance that is: 
+      1000s of times faster and costs 1/10th that of traditional relational databases.
+    Provides built-in time series analytics functions.
+      Helping identify patterns in data in near real-time.
+  Amazon Quantum Ledger Database -QLDB-
+    Designed to record financial transactions in a 
+      Transparent, immutable, and cryptographically verifiable manner.
+    Fully managed, serverless, highly available, with replication across three AZs.
+    Used to review the history of all changes made to your application data over time.
+    Immutable system: no entry can be removed or modified, ensuring data integrity.
+    Offers 2-3x better performance than common ledger blockchain frameworks.
+      Because it is optimized for centralized use cases, rather than decentralized ones. 
+        Designed to be controlled by a single entity or authority. 
+          Rather than multiple independent participants.
+        Centralized use cases: 
+          One party like a bank or organization manages the data. 
+        Decentralized use cases: 
+          Like blockchain involve multiple parties sharing control over the data.
+            Where no single entity has full authority over the system.
+      Allows data manipulation using SQL.
+        Transaction log is immutable: 
+          Once a record is added, it cannot be altered or deleted.
+        Current data can still be manipulated: 
+          You can update or change the latest records in the database using SQL. 
+            But the historical data -transaction log- is preserved and cannot be modified.
+    Difference with Amazon Managed Blockchain: 
+      QLDB does not have a decentralization component.
+      Is designed to comply with financial regulation rules.
+  Amazon Managed BlockChain:
+    Blockchain Technology:
+      Enables the development of applications where:
+        Multiple parties can execute transactions without requiring a trusted, central authority.
+      Amazon Managed Blockchain:
+        A managed service that allows you to:
+          Join public blockchain networks.
+          Create your own scalable private network.
+          Compatible with blockchain frameworks Hyperledger Fabric and Ethereum.
+  AWS Glue:
+    Managed database to extract, transform, and load -ETL- service. 
+      Manara Potential Error ❌, it's not a DB.
+      Extract: 
+        It can pull data from various sources like databases, data lakes, or cloud storage.
+      Transform: 
+        It allows for data transformation like cleaning, reshaping, or enriching. 
+          Adding additional useful information to make it suitable for analysis.
+      Load: 
+        After transformation, it can load the data into: 
+          Data warehouses, databases, or data lakes for analytics.
+    Designed to process and move data between databases and storage systems.
+      But it doesn't store data long-term like a traditional database.
+    Useful for preparing and transforming data for analytics.
+    Fully serverless service.
+Non-relational Databases Pop Quiz
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          Amazon Redshift is based on PostgreSQL but is designed for ??? and data warehousing.
+        Options:
+          Online Transaction Processing (OLTP).
+          Online Analytical Processing (OLAP). ✔️
+          Real-time data processing.
+          Blockchain applications.
+      Q2:
+        The question:
+          Which of the following features does Amazon Redshift utilize to enhance performance?
+        Options:
+          Row-based storage.
+          Columnar storage. ✔️
+          Single-threaded query execution.
+          Local storage only.
+      Q3:
+        The question:
+          Amazon EMR is a cloud big data platform for processing massive amounts of data 
+          using open-source tools such as ??? and Apache Spark.
+        Options:
+          SQL Server.
+          Hadoop. ✔️
+          Oracle.
+          MySQL.
+      Q4:
+        The question:
+          Which AWS service allows you to analyze data stored in Amazon S3 using standard SQL?
+        Options:
+          Amazon Redshift.
+          Amazon QuickSight.
+          Amazon Athena. ✔️
+          Amazon Neptune.
+      Q5:
+        The question:
+          Amazon QLDB is designed to record financial transactions in a 
+          transparent, immutable, and ??? manner.
+        Options:
+          Verifiable. ✔️
+          Editable.
+          Flexible.
+          Temporary.
