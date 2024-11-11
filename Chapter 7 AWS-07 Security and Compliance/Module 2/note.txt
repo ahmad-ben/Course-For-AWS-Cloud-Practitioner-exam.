@@ -1,0 +1,227 @@
+Shared Responsibility Model Overview:
+  IAM Shared Responsibility Model:
+    AWS handles:
+      Infrastructure -global network security-.
+      Configuration and vulnerability analysis of their services.
+      Compliance validation.
+    You, the customer, handle:
+      Users, Groups, Roles, Policies management and monitoring.
+      Enable MFA on all accounts.
+      Rotate all your keys often.
+      Use IAM tools to apply appropriate permissions.
+      Analyze access patterns & review permissions.
+Security Tools -Security Tools to Protect Your AWS Resources-:
+  AWS Secrets Manager:
+    Service designed for storing secrets securely.
+    Passwords are an example of some of the secrets you may have!
+    Allows enforcing rotation of secrets at regular intervals.
+    Automates the generation of secrets during rotation, leveraging Lambda functions.
+    Integrates seamlessly with Amazon RDS -MySQL, PostgreSQL, Aurora- for enhanced security.
+    Ensures encryption of secrets using KMS -Key Management Service-.
+    Primarily tailored for RDS integration, providing robust secret management capabilities.
+  AWS Artifact:
+    Online platform.
+    Provide instant access to AWS compliance documentation and agreements.
+    Features:
+      Artifact Reports:
+        Downloading of AWS security and compliance documents from third-party auditors, like:
+          ISO -International Organization for Standardization- certifications. 
+          Payment Card Industry -PCI- reports.
+          System and Organization Control (SOC) reports.
+      Artifact Agreements:  
+        Facilitate reviewing, accepting, and tracking the status of AWS agreements like: 
+          The Business Associate Addendum -BAA-.
+          Health Insurance Portability and Accountability Act -HIPAA-.
+            Within individual accounts or organizations.
+    Supports internal audit or compliance processes.
+      By offering comprehensive access to necessary documentation and agreements.
+  Amazon GuardDuty:
+    Intelligent threat discovery solution to safeguard your AWS Account.
+    Utilizes:
+      Machine Learning algorithms.
+      Anomaly detection techniques.
+      Third-party data sources.
+    Activation is simplified with a one-click enablement process -30 days trial-. 
+      No need for software installation. 
+    Input data sources encompass various AWS services: 
+      CloudTrail Events Logs: 
+        Detects unusual API calls and unauthorized deployments. 
+      CloudTrail Management Events: 
+        Monitors activities like VPC subnet creation and trail setup. 
+          Trail setup: 
+            The configuration of AWS CloudTrail to record account activity, such as: 
+              API calls and actions across AWS services. 
+            Used by both CloudTrail for logging and auditing and GuardDuty for threat detection.
+      CloudTrail S3 Data Events: 
+        Tracks actions such as object retrieval, listing -display a list of items-, and deletion. 
+      VPC Flow Logs: 
+        Identifies unusual internal traffic patterns and IP addresses. 
+    Optional features extend coverage to additional services such as:
+      EKS Audit Logs, RDS, Aurora, EBS, Lambda, and S3 Data Events.
+    Offers integration with -EventBridge- rules for proactive notifications, in case of findings. 
+      Which can be directed to AWS Lambda or SNS. 
+    Provides protection against cryptocurrency attacks. 
+      With a dedicated finding for this threat vector.
+  Amazon Inspector:
+    Automated Security Assessments streamline security evaluations across various AWS resources.
+    AWS resources you can use Inspector on:
+      EC2 Instances:
+        Utilizes the AWS Systems Manager -SSM- agent for assessment. 
+          SSM Stands for Services Systems Manager.
+        Analyzes unintended network accessibility.
+        Checks for known vulnerabilities in the running OS.
+      Container Images in Amazon ECR:
+        Conducts assessments of container images.
+          Upon push to Amazon Elastic Container Registry -ECR-. 
+      Lambda Functions: 
+        Identifies software vulnerabilities in function code and package dependencies. 
+        Assesses functions during deployment.
+  AWS Config:
+    Facilitates auditing and maintaining compliance for AWS resources.
+    You can do the following with Config:
+      Recording configurations and changes over time. 
+      Option to store configuration data in S3 for analysis with Athena.
+      Resolving inquiries such as security group SSH access restrictions and bucket public access. 
+        Helps ensure that SSH access to EC2 instances and Public access to S3 buckets are: 
+          In line with security best practices.
+      Uses continuous monitoring and alerts like SNS to help you resolve any issues.
+      Receiving alerts -SNS notifications- for any changes made. 
+      Operating as a per-region service. 
+        But can be aggregated across regions and accounts for comprehensive analysis.
+  AWS CloudTrail
+    Provides governance, compliance, and auditing capabilities for your AWS account.
+    CloudTrail is enabled by default. 
+    Offers a history of events and API calls made in your AWS account through various interfaces: 
+      Console, SDK, CLI, and AWS services.
+    CloudTrail Logs can be stored in CloudWatch Logs or S3 for further analysis and monitoring.
+    A trail can be configured to apply to: 
+      All regions -default-.
+      Single region for more granular control.
+    In case of resource deletion in AWS. 
+      CloudTrail should be the first place to investigate to understand the actions taken.
+  AWS Macie
+    Fully managed data security and privacy service. 
+    Leveraging machine learning and pattern matching to: 
+      Identify and safeguard sensitive data within AWS.
+    Detects and notifies users about sensitive data.
+      Such as personally identifiable information -PII-, like: 
+        Names, addresses, or credit card numbers, within your Amazon S3 buckets.
+    It notifies you if any sensitive data is found.
+      So you can take action to protect or restrict access to that data.
+    Primarily focused on Amazon S3 for detecting and classifying sensitive data.
+  AWS Security Hub
+    Serves as a centralized security management tool. 
+    Enabling the oversight of security across multiple AWS accounts and automating security checks.
+    Integrated dashboards provide real-time security and compliance status.
+      Facilitating swift actions.
+    Automatically aggregates alerts from various AWS services and partner tools, including: 
+      Config.
+      GuardDuty.
+      Inspector.
+      Macie.
+      IAM Access Analyzer.
+      Systems Manager.
+      Firewall Manager.
+      AWS Health.
+      AWS Partner Network Solutions.
+    Requires enabling AWS Config Service to use Security Hub's capabilities.
+  AWS Detective
+    Leverages machine learning and graph analysis to analyze, investigate, and rapidly identify: 
+      The underlying cause of security concerns or suspicious activities.
+    Automatically gathers and processes events from various sources like: 
+      VPC Flow Logs, CloudTrail, and GuardDuty. 
+        Creating a comprehensive and unified view.
+    Visualizations provided by Amazon Detective offer detailed insights and contextual information. 
+      Aiding in the identification and resolution of security incidents.
+  IAM Access Analyzer:
+    Identify shared resources outside your defined zone of trust within AWS by examining:
+      S3 Buckets
+      IAM Roles
+      KMS Keys
+      Lambda Functions and Layers
+      SQS Queues
+      Secrets you store inside Secrets Manager
+    Establish a zone of trust, typically an AWS Account or AWS Organization. 
+      Flag any access to resources outside this zone as findings for further investigation.
+        There should be no findings in IAM Access Analyzer. 
+          If your resources are properly configured according to your security and access policies.
+      If IAM Access Analyzer identifies any resources accessible by entities outside this zone. 
+        These will be flagged as findings.
+  Root User Privilege:
+    Possesses unrestricted access to all AWS services and resources.
+    Lock away your AWS root user access keys.
+      Remove the root user access keys.
+      Enable Multi-Factor Authentication -MFA-.
+      Use IAM users for daily tasks.
+      Store root user credentials securely.
+    Don't use your root account for everyday purposes.
+    Actions that can be performed only by the root user:
+      Change account settings -account name, email address, root user password and access keys-.
+      View certain tax invoices. 
+      Close your AWS account.
+      Restore IAM user permissions.
+      Change or cancel your AWS Support plan.
+      Register as a seller in the Reserved Instance Marketplace.
+      Configure an Amazon S3 bucket to enable MFA.
+        MFA can be used to prevent unauthorized deletion of objects in versioned buckets. 
+          Through the MFA-Delete feature.
+      Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID or VPC endpoint ID.
+      Sign up for GovCloud.
+  AWS Abuse:
+    If you suspect AWS resources are being used for abusive or illegal activities. 
+      Report them promptly to the AWS Abuse team.
+    Abusive and prohibited behaviors include: 
+      Spam.
+      Port scanning.
+      DoS or DDoS attacks.
+      Intrusion attempts.
+      Hosting objectionable or copyrighted content.
+      Distributing malware. 
+    Contact the AWS Abuse team through the AWS abuse form or via email at abuse@amazonaws.com
+      With relevant details and evidence for investigation and action.
+AWS Security Tools Pop Quiz:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          AWS Secrets Manager automates the generation and rotation of ???, 
+          integrating seamlessly with Amazon RDS.
+        Options:
+          Access keys.
+          Security groups.
+          Encryption keys.
+          Secrets. ✔️
+      Q2:
+        The question:
+          Which AWS service provides governance, compliance, and auditing capabilities 
+          by recording events and API calls?
+        Options:
+          AWS Config.
+          AWS CloudTrail. ✔️
+          AWS Macie.
+          AWS Security Hub.
+      Q3:
+        The question:
+          Amazon Inspector is used for automated security assessments across various AWS ???.
+        Options:
+          IAM roles.
+          Services. ✔️
+          Security groups.
+          Access keys.
+      Q4:
+        The question:
+          In the IAM shared responsibility model, customers are responsible for managing IAM ???.
+        Options:
+          Users.
+          Access keys.
+          Policies.
+          All of the above. ✔️
+      Q5:
+        The question:
+          Multi-factor authentication (MFA) adds an extra layer of security 
+          by requiring users to provide both a password and a ???.
+        Options:
+          Security question.
+          Biometric scan.
+          Security device. ✔️
+          Access key.
