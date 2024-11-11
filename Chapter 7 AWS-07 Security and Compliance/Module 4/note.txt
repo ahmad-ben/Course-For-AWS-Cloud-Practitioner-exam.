@@ -1,0 +1,208 @@
+Summary
+  Identity Access Management -IAM- Summary:
+    Users: 
+      Represent individual entities. 
+      Associated with a physical user.
+      Granted access to the AWS Management Console through passwords.
+    Groups: 
+      Collections of users exclusively, used for simplified management of access permissions.
+    Policies: 
+      JSON documents detailing permissions for users or groups, governing access to AWS resources.
+    Roles: 
+      Assigned to EC2 instances or AWS services, defining the set of permissions they possess.
+    Security: 
+      Implemented through Multi-Factor Authentication -MFA- and Password Policies.
+    AWS CLI: 
+      Utilized to administer AWS services via command-line interfaces.
+        Facilitating efficient management tasks.
+    AWS SDK: 
+      Employs programming languages for managing AWS services, offering programmatic access.
+    Access Keys: 
+      Credentials facilitating access to AWS services via CLI or SDK. 
+        Enhancing automation and integration capabilities.
+    Audit: 
+      Facilitated through IAM Credential Reports and IAM Access Advisor. 
+        Ensuring compliance and security assessments.
+    IAM Access Analyzer: 
+      Identifies resource access risks.
+    Root users: 
+      Possesses unrestricted control over AWS account settings and management.
+  Security and Compliance Summary:
+    Firewall Manager: 
+      An AWS service.
+      Helps manage security policies centrally across your AWS organization for WAF, Shield, etc.
+    Shield: 
+      AWS Service.
+      Provides protection against DDoS -Distributed Denial of Service- attacks.
+        Offering both standard and advanced features for enhanced security.
+    WAF -Web Application Firewall-: 
+      AWS Service.
+      Protects web apps from common attacks. 
+        By allowing you to create custom security rules to filter HTTP(S) requests.
+    CloudHSM: 
+      AWS Service. 
+      Provides hardware-based encryption.
+        To securely store and manage your encryption keys in a hardware security module (HSM).
+    KMS: 
+      AWS-managed encryption keys.
+    AWS Certificate Manager: 
+      Provision, manage, and deploy SSL/TLS Certificates.
+    Artifact: 
+      Access compliance reports like PCI, ISO, etc.
+    GuardDuty: 
+      Identify malicious behavior using VPC, DNS, and CloudTrail Logs.
+    Inspector: 
+      Discover software vulnerabilities in EC2, ECR Images, and Lambda functions.
+    Network Firewall: 
+      Protect VPC against network attacks.
+    Config: 
+      Monitor configuration changes and compliance adherence.
+    Macie: 
+      Identify sensitive data like personally identifiable information -PII- in Amazon S3 buckets.
+    CloudTrail: 
+      Track API calls made by users within the account.
+    AWS Security Hub: 
+      Aggregate security findings from multiple AWS accounts.
+    Amazon Detective: 
+      Identify the root cause of security issues or suspicious activities.
+    AWS Abuse: 
+      Report AWS resources used for abusive or illegal purposes.
+    Root user privileges:
+      Change account settings.
+      Close your AWS account.
+      Change or cancel your AWS Support plan.
+      Register as a seller in the Reserved Instance Marketplace.
+    IAM Access Analyzer: 
+    Identify which resources are shared externally.
+Recap Exam:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          Which tasks are the responsibility of AWS, 
+          according to the AWS shared responsibility model?
+        Options:
+          Patch the Amazon EC2 guest operating system.
+          Upgrade the firmware of the network infrastructure. ✔️
+          Apply password rotation for IAM users.
+          Maintain least privilege access to the root user account.
+      Q2:
+        The question:
+          Which AWS service contains built-in engines 
+          to protect web applications that run in the cloud from 
+          SQL injection attacks and cross-site scripting?
+        Options:
+          AWS WAF. ✔️
+          AWS Shield Advanced.
+          Amazon GuardDuty.
+          Amazon Detective.
+      Q3:
+        The question:
+          Which AWS service primarily provides 
+          detailed monitoring and observability of your cloud resources and applications, 
+          offering data and actionable insights to optimize the performance, 
+          manage resource utilization, and maintain a secure and compliant environment?
+        Options:
+          AWS CloudTrail.
+          Amazon CloudWatch. ✔️
+          AWS Config.
+          Amazon Inspector.
+      Q4:
+        The question:
+          Which of the following statements best describes the policy on penetration testing 
+          within the AWS environment?
+        Options:
+          Customers can perform penetration testing on their AWS resources 
+            without any restrictions or prior approval. ✔️
+          AWS prohibits all forms of penetration testing within its infrastructure 
+            to maintain security and operational integrity.
+          Customers must request and receive approval from AWS 
+            before conducting any penetration testing on or within their AWS resources. 
+          Penetration testing is only allowed for EC2 instances and not for any other AWS services.
+      Q5:
+        The question:
+          Which AWS service can be used to encrypt data at rest?
+        Options:
+          Amazon GuardDuty.
+          AWS Shield.
+          AWS Security Hub.
+          AWS Key Management Service (AWS KMS). ✔️
+      Q6:
+        The question:
+          What is the primary function of AWS GuardDuty?
+        Options:
+          It is an intrusion detection service that 
+            monitors and protects your AWS environments and workloads from 
+            malicious activity and unauthorized behavior. ✔️
+          It acts as a firewall to protect your AWS resources from external attacks.
+          It provides DDoS protection for applications running on AWS.
+          It manages encryption keys used to encrypt your AWS data.
+      Q7:
+        The question:
+          Which of the following acts as an instance-level firewall 
+          to control inbound and outbound access?
+        Options:
+          Network access control list.
+          Security groups. ✔️
+          AWS Trusted Advisor.
+          Virtual private gateways.
+      Q8:
+        The question:
+          Which AWS service allows users to download security and compliance reports 
+          about the AWS infrastructure on demand?
+        Options:
+          Amazon GuardDuty.
+          AWS Security Hub.
+          AWS Artifact. ✔️
+          AWS Shield.
+      Q9:
+        The question:
+          Which AWS service monitors AWS accounts for security threats?
+        Options:
+          Amazon GuardDuty. ✔️
+          AWS Secrets Manager.
+          Amazon Cognito.
+          AWS Certificate Manager (ACM).
+      Q10:
+        The question:
+          Which of the following is an AWS best practice for managing an AWS account root user?
+        Options:
+          Keep the root user password with the security team.
+          Enable multi-factor authentication (MFA) for the root user. ✔️
+          Create an access key for the root user.
+      Q11:
+        The question:
+          What is the primary function of Amazon CloudWatch Logs?
+        Options:
+          It provides a central repository for 
+            collecting, analyzing, and storing logs from AWS resources and applications. ✔️
+          It manages the deployment and updating of applications on AWS.
+          It encrypts data stored in AWS using managed keys.
+      Q12:
+        The question:
+          What is the primary purpose of the AWS IAM Access Analyzer?
+        Options:
+          It generates and manages encryption keys for protecting data in AWS services.
+          It automatically scales the computing capacity of AWS resources based on observed load.
+          It identifies the permissions granted to your resources and 
+            helps you analyze them for public and cross-account access. ✔️
+      Q13:
+        The question:
+          What unique capability does the AWS account root user have that other IAM users do not?
+        Options:
+          The ability to manage IAM roles and policies.
+          The ability to enable region-specific services.
+          The ability to access all resources across all AWS services 
+            without explicit permissions. ✔️
+          The ability to deploy new EC2 instances.
+      Q14:
+        The question:
+          A company needs an automated security assessment report that will identify 
+            unintended network access to Amazon EC2 instances. 
+            The report also must identify operating system vulnerabilities on those instances. 
+            Which AWS service or feature should the company use to meet this requirement?
+        Options:
+          AWS Trusted Advisor.
+          Security groups.
+          Amazon Macie.
+          Amazon Inspector. ✔️

@@ -157,7 +157,7 @@ Cloud Monitoring:
     Shows how AWS outages directly impact you & your AWS resources.
     Global service.
     Alert, remediation, proactive, scheduled activities.
-Cloud Monitoring Pop Quiz;
+Cloud Monitoring Pop Quiz:
   Quiz:
     Quiz Q&A:
       Q1:
