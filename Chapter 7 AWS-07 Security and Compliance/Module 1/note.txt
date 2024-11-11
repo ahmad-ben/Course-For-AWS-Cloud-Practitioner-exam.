@@ -1,0 +1,280 @@
+IAM Introduction:
+  IAM Overview:
+    Stands for Identity and Access Management.
+    IAM enables management of users, groups, and roles for AWS resource access.
+    The root account has maximum privileges and should be used minimally for security.
+    It as a global scope within AWS. 
+      Users, groups, roles, and policies you create in IAM are accessible across all AWS regions. 
+      Ensuring consistent IAM throughout your AWS account without the need for any configuration. 
+    Users are for individuals.
+    Groups for organizing users by function or team...
+    Roles for AWS services or applications -EC2 instances, Lambda, Fargate, etc.-.
+      Allow to securely access AWS resources without needing permanent credentials like: 
+        Passwords or API keys.
+      Used by AWS services or applications to perform actions on other AWS resources.
+        Such as accessing an S3 bucket on behalf of the user or application.
+      Role Assignment: 
+        Instead of giving each service its own access credentials. 
+          Create a role with specific permissions and then assign this role to the service, like:
+            If an EC2 instance needs to read from an S3 bucket.
+            You attach a role with "read" permissions to the EC2 instance.
+      Temporary Credentials: 
+        When a role is assigned, AWS provides temporary credentials to the service. 
+        This ensures that access is limited to the time the role is active.
+          Can be automatically renewed as needed.
+      Security Benefit: 
+        Since roles do not require hard-coded credentials. 
+          They reduce the risk of credential exposure, keeping access secure and manageable.
+      Roles is the recommended for granting temporary, scoped permissions to AWS services or app.
+    See:
+      ./assets/IAM Introduction/iam-overview.png
+  Policies and Permissions:
+    Policies are JSON documents.
+    Define permissions for users, groups, and roles. 
+    AWS provides managed policies to simplify setup.
+    The principle of least privilege is essential. 
+      Granting users and roles only the permissions necessary for their tasks.
+  Security Best Practices:
+    Enable multi-factor authentication.
+    Avoid sharing IAM credentials.
+    Never embed credentials in code.
+    Enterprises can integrate IAM with existing user directories, like Active Directory. 
+      Via IAM Federation.
+    IAM Federation is an AWS IAM feature that may use SAML -Security Assertion Markup Language-.
+  Account and Credential Safety:
+    Never use or share the root account after setup, as it is highly privileged.
+    Mishandling IAM credentials, especially in code, can lead to misuse and financial consequences.
+      Such as unauthorized resource usage.
+  User Directories: 
+    Systems that store and manage user information. 
+      Enabling streamlined authentication and authorization across multiple applications.
+  Active Directory -AD-: 
+    A Microsoft directory service for managing users and resources in a network. 
+      Allowing centralized control over access. 
+    Using IAM Federation, AWS integrates with AD for single sign-on, using existing AD credentials.
+IAM Introduction:
+  Introduction to IAM:
+    Identity Access Management -IAM-
+      Allows you to specify who or what can access services and resources in AWS.
+      Centrally manage fine-grained permissions.
+      Analyze access to refine permissions across AWS.
+    Global service for managing user identities and access to AWS resources.
+    Default root account is created but shouldn't be utilized or shared for security reasons.
+  IAM identities -principal entities-:
+    Users represent individuals within the organization and can be organized into groups.
+    Groups exclusively contain users and cannot include other groups.
+      Users aren't required to be in a group and can be members of multiple groups simultaneously.
+    Roles used for machines or AWS services that need permissions to perform specific actions.
+  IAM Permissions:
+    Users or groups, or roles can be assigned JSON documents known as policies.
+    Policies define the permissions granted to those users, groups, or roles.
+      Depending on where the policy is applied.
+    AWS follows the least privilege principle. 
+      Users are given only the permissions they need to perform their tasks. 
+        Minimizing the risk of unauthorized access or misuse.
+  IAM Policies:
+    JSON documents that define permissions for users, groups, or roles.
+    Each policy consists of one or more statements, each with specific access permissions.
+    Statements contain elements such as: 
+      actions -allowed or denied-.
+      Resources -the AWS resources to which the actions apply-.
+      Conditions -optional criteria that must be met for the policy to be applied-.
+    Attached to IAM identities -users, groups, or roles-. 
+      To grant or restrict access to AWS resources.
+    AWS provides: 
+      Predefined policies for common use cases.
+      Custom policies can be created to tailor permissions according to specific requirements.
+  IAM Policy Structure:
+    Version: Version of the policy language, always set to "2012-10-17."
+    Id: Optional identifier for the policy.
+    Statement: One or more individual statements -required-.
+    Each statement consists of:
+      Sid: An optional identifier for the statement.
+      Effect: Specifies whether the statement allows or denies access -Allow, Deny-.
+      Principal: The account, user, or role to which the policy is applied.
+      Action: A list of actions that the policy allows or denies.
+      Resource: A list of resources to which the actions are applied.
+      Condition: Optional conditions for when the policy is in effect.
+  IAM Shared Responsibility Model:
+    AWS handles:
+      Infrastructure -global network security-.
+      Configuration and vulnerability analysis.
+      Compliance validation.
+    You, the customer, handle:
+      Users, Groups, Roles, Policies management and monitoring.
+      Enable MFA on all accounts.
+      Rotate all your keys often.
+      Use IAM tools to apply appropriate permissions.
+      Analyze access patterns & review permissions.
+Security within IAM:
+  IAM Password Policy:
+    Setting a strong password enhances the security of your AWS account.
+    AWS allows you to establish a password policy, enabling you to:
+      Specify a minimum password length.
+      Mandate the inclusion of specific character types, such as: 
+        Uppercase letters, lowercase letters, numbers, and non-alphanumeric characters.
+      Permit all IAM users to change their passwords.
+      Enforce password expiration.
+        Prompting users to change their passwords after a defined period.
+      Prevent the reuse of passwords to enhance security further.
+  IAM Multi-Factor Authentication:
+    Users with access to your AWS account can modify configurations or delete resources. 
+      posing security risks.
+    It's essential to safeguard both root accounts and IAM users.
+    Multi-Factor Authentication -MFA- adds an extra layer of security by: 
+      Requiring users to provide both: 
+        A password -something they know-.
+        Security device -something they own-. 
+      Reducing the risk of unauthorized access, even if passwords are compromised.
+      If a password is stolen or hacked, the account is not compromised.
+  Multifactor Devices: 
+    Manara potential error ❌. -no devices there-
+    Virtual MFA Devices:
+      Google Authenticator: A smartphone app that generates time-sensitive codes for MFA.
+      AWS MFA: An app used to generate temporary security codes for AWS accounts.
+    Hardware MFA Devices:
+      YubiKey: A physical USB key that generates one-time passcodes for authentication.
+    SMS-based MFA:
+      AWS can send one-time passcodes via SMS to your mobile phone. 
+        As an additional authentication method.
+  AWS Management Console: 
+    Web-based interface.
+    Allows users to interact with and manage AWS services. 
+    Provides a graphical user interface -GUI- for accessing and configuring AWS resources, such as: 
+      EC2 instances, S3 storage, IAM roles, and more.
+    Serves as the central hub for:
+      Managing services: Creating, configuring, and monitoring AWS resources.
+      Billing and cost management: Reviewing usage, cost, and generating reports.
+      Security and IAM: Managing access permissions for users and roles.
+      Automation: Running tasks and workflows for resource management.
+    Where users and administrators perform day-to-day tasks related to AWS cloud management. 
+      Providing an intuitive interface for both new and experienced users.
+  AWS Command Line Interface:
+    Facilitates interaction with AWS services via commands in your command-line shell.
+    Provides direct access to the public APIs of AWS services.
+    Enables the development of scripts for resource management.
+    Open-source tool available at https://github.com/aws/aws-cli
+    Serves as an alternative to using the AWS Management Console for AWS resource management tasks.
+  AWS Software Development Kit -SDK-:
+    Collection of language-specific APIs -libraries-.
+    Enable you to programmatically access and manage AWS services.
+    Can be embedded within your application and supports languages like: 
+      JavaScript, Python, PHP, .NET, Ruby, Java, Go, Node.js, and C++. 
+    Mobile SDKs: 
+      For platforms like Android and iOS. 
+    IoT Device SDKs: 
+      For platforms like Embedded C and Arduino.
+    An example of the AWS SDK in use is the AWS CLI, which is built on the AWS SDK for Python.
+      AWS CLI is built on the AWS SDK for Python -Boto3-.
+        The AWS CLI commands are essentially Python scripts that utilize the Boto3 library. 
+          To communicate with AWS services.
+      AWS CLI leverages the AWS SDK for Python -Boto3- to send requests to AWS services.
+        Enabling users to manage their AWS resources through simple command-line commands.
+  Access Keys in AWS:
+    You can access AWS in three ways:
+      AWS Management Console -protected by password + MFA-.
+      AWS Command Line Interface -CLI-: protected by access keys.
+      AWS Software Developer Kit -SDK- for code: protected by access keys.
+    Access Keys are generated via the AWS Management Console.
+    Users are responsible for managing their own access keys.
+    Access Keys are treated as secrets and should not be shared.
+      Don't share your access keys with anyone!
+    The Access Key ID serves a similar purpose as a username.
+    The Secret Access Key serves a similar purpose as a password.
+  IAM Roles for Services:
+    Certain AWS services require permission to perform actions on your behalf.
+    To grant permissions, IAM roles are assigned to AWS services.
+    Common roles include:
+      EC2 Instance Roles.
+      Lambda Function Roles.
+      Roles for CloudFormation.
+    IAM roles define the permissions and policies. 
+      That govern what actions the associated service can perform.
+  IAM Security Tools:
+    IAM Credentials Report -Account-Level-: 
+      Provides a comprehensive list of all users in your AWS account. 
+        Along with the status of their various credentials.
+      Enables tracking and monitoring of IAM users and their associated credentials.
+        Including access keys and passwords.
+    IAM Access Advisor -User-Level-: 
+      Displays the service permissions granted to an IAM user.
+      Shows the timestamp of the user's last access to each service.
+      Helps in reviewing and revising IAM policies based on actual service usage.
+        Ensuring adherence to the principle of least privilege.
+  IAM Best Practices:
+    Principle of Least Privilege:
+      Grant users only the permissions they need to perform their tasks.
+      Regularly review and refine IAM policies to remove unnecessary permissions.
+    Use IAM Roles for AWS Resources:
+      Assign IAM roles to AWS services like EC2 instances, Lambda functions. 
+        Instead of using long-term access keys.
+      Rotate IAM role credentials regularly for enhanced security.
+    Enable Multi-Factor Authentication -MFA-:
+      Require IAM users to use MFA to add an extra layer of security.
+      Enforce MFA for privileged actions and console access.
+    One physical user should have One AWS user.
+    Create a strong password policy.
+    Audit permissions of your account using IAM Credentials Report & IAM Access Advisor.
+  IAM Guidelines and Best Practices:
+    Root Account Usage: 
+      Only use it for AWS account setup; otherwise, avoid using it for day-to-day operations.
+    User Management: 
+      Create a separate AWS user for each individual and avoid sharing credentials.
+    Group Assignment: 
+      Assign users to groups and manage permissions at the group level for easier management.
+    Password Policy: 
+      Implement a strong password policy to enhance security.
+    Multi-Factor Authentication -MFA-: 
+      Use and enforce MFA to add an extra layer of security.
+    Roles for Services: 
+      Use roles to grant permissions to AWS services rather than using individual user credentials.
+    Programmatic Access: 
+      Use access keys for programmatic access -CLI/SDK- and rotate them regularly.
+    Audit Permissions: 
+      Regularly audit permissions with tools like IAM Credentials Report and IAM Access Advisor.
+    Access Key Management: 
+      Never share IAM users and access keys; each should be unique to an individual or service.
+IAM Basics Pop Quiz:
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          What does IAM stand for in AWS?
+        Options:
+          Internet Access Management.
+          Infrastructure Access Management.
+          Identity Access Management. ✔️
+          Intelligent Access Management.
+      Q2:
+        The question:
+          Which of the following is NOT a valid IAM entity in AWS?
+        Options:
+          Users.
+          Groups.
+          Policies.
+          Organizations. ✔️
+      Q3:
+        The question:
+          Which of the following IAM features adds an extra layer of security 
+          by requiring users to provide both a password and a security device?
+        Options:
+          Password Policy.
+          Access Keys.
+          Multi-Factor Authentication. ✔️
+          IAM Roles.
+      Q4:
+        The question:
+          How are IAM policies written?
+        Options:
+          In XML format.
+          In YAML format.
+          In JSON format. ✔️
+          In HTML format.
+      Q5:
+        The question:
+          What security principle does IAM adhere to?
+        Options:
+          Principle of Most Privilege.
+          Principle of Least Privilege. ✔️
+          Principle of Shared Access.
+          Principle of Unlimited Access.
