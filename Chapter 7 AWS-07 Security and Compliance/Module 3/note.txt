@@ -1,0 +1,204 @@
+Cloud Monitoring:
+  AWS CloudWatch Metrics:
+    Feature of the Amazon CloudWatch service.
+    CloudWatch: 
+      Offers metrics for every service in AWS.
+        Providing valuable insights into resource utilization and performance.
+    A metric: 
+      Is a variable to monitor, such as CPU utilization, network traffic, and more.
+      Each metric having associated timestamps. 
+    You can create CloudWatch dashboards to visualize and track these metrics over time. 
+      For effective monitoring and analysis.
+  AWS CloudWatch Alarms:
+    Feature of the Amazon CloudWatch service.
+    Can be set to monitor specific metrics and trigger actions based on defined thresholds.
+    Alarms serve to initiate notifications based on various metrics.
+    Alarm actions include:
+      Auto Scaling: adjusting the desired count of EC2 instances.
+      EC2 Actions: halting, terminating, restarting, or restoring an EC2 instance.
+      SNS notifications: dispatching a notification to an SNS topic.
+      Several options such as sampling, percentage, maximum, minimum, etc.
+      Users can select the evaluation period for an alarm.
+      For instance, one can set up a billing alarm on the CloudWatch Billing metric.
+      Alarm states include: OK, INSUFFICIENT_DATA, and ALARM.
+  Amazon CloudWatch Logs:
+    Feature of the Amazon CloudWatch service.
+    CloudWatch Logs can collect log from:
+      Elastic Beanstalk: collection of logs from application
+      ECS: collection from containers
+      AWS Lambda: collection from function logs
+      CloudTrail based on filter.
+        Capture just the Events and the API calls you care about from the CloudTrail by filtering.
+      CloudWatch log agents: on EC2 machines or on-premises servers
+      Route53: Log DNS queries
+      Enables real-time monitoring of logs
+      Adjustable CloudWatch Logs retention.
+        Configure how long to retain the logs in CloudWatch Logs.
+        From a few days to several years, or even set them to never expire.
+    By default, logs from your EC2 instance do not go to CloudWatch.
+      To send logs to CloudWatch, you need to run a CloudWatch agent on EC2.
+      Ensure correct IAM permissions for the agent.
+      The CloudWatch log agent can also be set up on-premises.
+  Amazon EventBridge:
+    Serverless event bus that facilitates application integration by streaming data in real time.
+    Routes events from AWS services, custom applications, and SaaS products to over 90 AWS targets: 
+      Like Lambda, SQS, and SNS.
+    The service decouples application components. 
+      Simplifying the management of event-driven architectures and enhancing flexibility.
+    Key use cases include application orchestration and real-time data processing.
+      application orchestration:
+        The automation of workflows that coordinate and manage communications and requests between: 
+          App services and/or databases.
+    To get started with EventBridge.
+      Set up event rules, configure security with IAM roles, and conduct pattern testing.
+    Best practices include:
+      Efficient event filtering and robust error handling in event-driven setups.
+  AWS CloudTrail:
+    Ensures governance, compliance, and audit capabilities for your AWS account.
+    CloudTrail is activated by default.
+    Tracks and records a history of events and API calls in your AWS account via:
+      AWS Management Console.
+      SDKs.
+      Command Line Interface -CLI-.
+      AWS Services.
+    Allows integration of CloudTrail logs into CloudWatch Logs or Amazon S3 for storage.
+      Amazon S3: 
+        CloudTrail logs can be stored in S3 buckets for long-term storage and retention.
+    Trails can be configured to monitor all regions -default setting- or a specific single region.
+    In cases of resource deletion within AWS, CloudTrail should be checked first for investigation.
+  AWS X-Ray:
+    Usually, debugging in production follows this approach:
+      Test locally.
+      Add log statements throughout the code.
+      Re-deploy in production.
+      Log formats vary across applications, making log analysis challenging.
+      Debugging is relatively straightforward for monolithic applications.
+        But complex for distributed services.
+      Lack of common views of the entire architecture hampers understanding.
+    AWS service that provides a visual analysis of our applications:
+      Troubleshooting performance -bottlenecks-.
+      Understand dependencies in a microservice architecture.
+        Shows the relationships between different services in your application. 
+        Making it easier to visualize how each part of the system interacts with others.
+      Pinpoint service issues.
+      Review request behavior.
+        You can track how requests move through your application.
+          Helping you understand the path and timing of each request.
+      Find errors and exceptions.
+      Are we meeting time SLA?
+        Can help assess whether your app is: 
+          Meeting Service Level Agreements -SLAs- related to response times and performance.
+        What is SLA -Service Level Agreement-
+          Formal agreement between a service provider and a customer. 
+            Outlines the expected level of service, including specific performance metrics. 
+          In the context of response times and performance an SLA defines: 
+            The maximum acceptable response time for a service.
+            The expected performance standards -uptime, availability- the provider must meet. 
+          If the provider fails to meet these standards.
+            The SLA typically includes penalties or compensation for the customer.
+      Where I am throttled? 
+      Identify users that are impacted.
+  Amazon CodeGuru
+    ML-powered service for automated code reviews and application performance recommendations.
+    It provides two functionalities:
+      CodeGuru Reviewer: 
+        Automated code reviews for static code analysis during development.
+      CodeGuru Profiler: 
+        Visibility and recommendations about application performance during runtime in production.
+  Amazon CodeGuru Reviewer:
+    Uses Machine Learning and automated reasoning.
+      Automated Reasoning:
+        The use of algorithms and computer systems to automatically apply logical reasoning. 
+          Solving problems or verify the correctness of a system.
+    Identifies critical issues, security vulnerabilities, and hard-to-find bugs.
+    Examples include: 
+      Common coding best practices, resource leaks, security detection, and input validation.
+    Draws from hard-learned lessons across: 
+      Millions of code reviews on thousands of open-source and Amazon repositories.
+    Supports Java and Python.
+    Integrates with GitHub, Bitbucket, and AWS CodeCommit.
+  Amazon CodeGuru Profiler:
+    Helps understand the runtime behavior of your application, example: 
+      Identify if your application is consuming excessive CPU capacity on a logging routine. 
+    Features: 
+      Identify and remove code inefficiencies.
+      Improve application performance -reduce CPU utilization-.
+      Decrease compute costs.
+      Provides heap summary to identify which objects are using up memory.
+        Heap refers to the portion of memory used by apps. 
+          To dynamically allocate and store objects at runtime.
+      Includes anomaly detection.
+      Supports applications running on AWS or on-premise.
+      Minimal overhead on the application.
+        The profiler is designed to add little to no impact on the performance of the application. 
+          Meaning it doesn't slow down the system while running.
+  AWS Health Dashboard -Service History-:
+    AWS Health Dashboard is an AWS Service.
+    Service History is a feature within this dashboard.
+    Displays the health of all regions and services.
+    Provides historical information for each day.
+    Offers an RSS feed for subscription, Previously known as AWS Service Health Dashboard.
+    What is RSS feed:
+      Stands for Really Simple Syndication. 
+      Way to deliver regularly updated content, like news or blog posts, in a standardized format. 
+      Allows users to subscribe to the feed and then:
+        Receive updates automatically when new content is published without visit the website.
+      In our context:
+        RSS feed provides a way for users to: 
+          Receive notifications about the health status of AWS services and regions. 
+        By subscribing to the RSS feed: 
+          Users can stay updated on any ongoing or past issues related to AWS services.
+    Service History VS RSS feed:
+      both offer information about AWS service health.
+      Service History is more of an archive and report tool.
+      RSS Feed is a notification system that delivers continuous, up-to-date information.
+  AWS Health Dashboard -Your Account-:
+    Same service as AWS Health Dashboard, but this time just for your account.
+    Shows how AWS outages directly impact you & your AWS resources.
+    Global service.
+    Alert, remediation, proactive, scheduled activities.
+Cloud Monitoring Pop Quiz;
+  Quiz:
+    Quiz Q&A:
+      Q1:
+        The question:
+          What type of variable does CloudWatch monitor, 
+          such as CPU utilization and network traffic?
+        Options:
+          Logs.
+          Timestamps.
+          Metrics. ✔️
+          Events.
+      Q2:
+        The question:
+          Which AWS service initiates notifications based on various metrics 
+          and allows actions such as auto-scaling and sending SNS notifications?
+        Options:
+          AWS CloudWatch Alarms. ✔️
+          AWS CloudFormation.
+          AWS Lambda.
+          AWS X-Ray.
+      Q3:
+        The question:
+          What can CloudWatch Logs collect logs from?
+        Options:
+          Only Lambda functions.
+          Only Elastic Beanstalk.
+          Only ECS containers.
+          Various AWS and on-premises sources. ✔️
+      Q4:
+        The question:
+          It is recommended to ??? access keys regularly and avoid sharing them.
+        Options:
+          Create.
+          Rotate. ✔️
+          Delete.
+          Duplicate.
+      Q5:
+        The question:
+          What does Amazon CodeGuru Reviewer primarily identify?
+        Options:
+          CPU utilization spikes.
+          CloudWatch log anomalies.
+          Hard-to-find bugs and security vulnerabilities. ✔️
+          Network traffic patterns.
