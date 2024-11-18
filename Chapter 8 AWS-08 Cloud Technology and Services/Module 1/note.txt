@@ -1,0 +1,375 @@
+AWS Global Infrastructure Overview - Regions, Availability Zones, Edge Locations and more:
+  Introduction:
+    The AWS global infrastructure forms the foundation of AWS cloud services worldwide.
+  Key Concepts:
+    Regions:
+      Independent, geographically distant physical locations.
+      Connected via a high-bandwidth, redundant global network.
+      Each region contains at least 3 Availability Zones -AZs-.
+      Each region located within a single country. 
+        Adheres to the specific legal, compliance, and regulatory requirements of the country.
+    Availability Zones -AZs-:
+      Clusters of one or more data centers with redundant power, cooling, and networking.
+      Provide high availability and fault tolerance.
+      Resources can be deployed across AZs for redundancy.
+    Subnets:
+      Created within one AZs and can be public or private.
+      Support deployment of resources for high availability.
+    Data centers:
+      Each one has redundant power sources and redundant networking.
+        Lot of redundancy for cooling, networking, and all resources the cloud services depend on.
+  Specialized Zones:
+    Local Zones: 
+      Extend AWS services closer to end users for lower latency.
+      Essentially data centers that AWS deploys in specific geographic locations. 
+        Usually near major cities or areas with high demand for low-latency services.
+      Bring AWS services closer to end users in specific cities or areas. 
+        Where AWS doesn't have a full region.
+      Contain a subset of essential AWS services, such as: 
+        Compute -EC2-, storage -EBS-, and databases -RDS-. 
+          Providing those services closer to the end users or devices that require them.
+      While Local Zones are not full AWS regions, they are extensions of an AWS region. 
+        They are connected to the parent region via the AWS global network. 
+          This connection allows you to seamlessly access other services in the AWS region. 
+      The key idea is to reduce network latency for latency-sensitive applications. 
+        Position resources closer to end users without routing the traffic to a distant region.
+    Outposts: 
+      AWS service.
+      Extension of the AWS cloud into your physical premises, providing a hybrid cloud environment.
+      Run AWS services and infrastructure in your on-premises data center.
+        The services are running on AWS hardware that you manage in your own environment. 
+          Rather than on AWS's cloud data centers.
+      Bring AWS infrastructure -hardware and services-. 
+        Directly into your on-premises data center or edge locations.
+      It is suitable for:
+        Apps that have latency, residency, or data locality requirements. 
+          Can't be met by a remote AWS region.
+    Wavelength Zones: 
+      AWS service.
+      AWS infrastructure exist in the communication service provider -csp-. 
+      Relocating AWS Services to the Edge of Telecom Networks:
+        AWS compute resources like EC2.. are deployed at the edge of telecom networks. 
+          Instead of being located in centralized AWS regions they are placed closer to user. 
+            At or near the telecom network's edge -telecom providers infrastructure-. 
+            This placement minimizes latency, providing faster access to AWS services for users.
+      Enabling Users to Connect via 5G Networks:
+        Leverages 5G networks to connect end users to AWS services. 
+          Since it has low latency and are designed to support high-speed, real-time applications. 
+        Enables end users devices -mobile/IoT- to interact with AWS resources directly over 5G. 
+          Creating a fast and responsive experience for applications requiring low-latency access.
+      Leverage 5G networks to deliver single-digit millisecond latency. 
+        For mobile and edge use cases like live video, machine learning, AR and VR.
+  CloudFront:
+    AWS Service for Content Delivery Network -CDN-.
+    Caches data closer to users for faster access.
+    Reduces latency for tasks like video streaming and image delivery.
+    CloudFront Network -entire infrastructure Amazon CloudFront uses to deliver content-:
+      Regional Edge Caches:
+        Larger caches located in major AWS regions -typically in large cities or data hubs-.
+        Cache less time-sensitive content compared to Edge Locations. 
+          But still aim to reduce latency for content that isn’t required instantly.
+        For content that can accept higher latency and is cached for longer periods. 
+          Still improving performance, but it's not as urgent. 
+        Could store things like: 
+          Large media files or heavy static content that doesn't change as often.
+      Edge Locations: 
+        smaller data centers designed for caching highly-requested content.
+        Primary purpose is to serve content as quickly as possible to end users.
+        Placed in locations closer to end users.
+          To deliver content like images, videos, and static files.
+  General Notes:
+    AWS global infrastructure is constantly expanding. 
+      With changing numbers of regions, AZs, and edge locations.
+    Understanding basic concepts is sufficient; memorizing exact numbers is unnecessary.
+AWS Global Infrastructure A Deep Dive:
+  Global application:
+    Application deployed in multiple geographies.
+    We use global infrastructure for:
+      Decreased latency:
+        Deploy your applications closer to your users. 
+      Disaster Recovery:
+        If an AWS region goes down -earthquake, storms, etc-, can fail-over to another region. 
+          Having your application still working. 
+      Attack protection: 
+        Distributed global infrastructure is harder to attack, and that because:
+          Redundancy: 
+            Multiple regions and AZ. 
+              It difficult to impact the entire system. 
+              If one part is attacked, others can continue functioning.
+          Decentralization: 
+            Infrastructure spread across different locations, there's no single point of failure.
+          Traffic Distribution: 
+            Traffic can be distributed across various locations. 
+              Making it harder for attackers to target a specific point effectively.
+  AWS Infrastructure:
+    Regions:
+      Geographical locations around the world where AWS has data centers. 
+      Each region is a separate geographic area with multiple availability zones.
+    Availability Zones -AZs-:
+      Isolated locations within AWS regions. 
+      Engineered to be operationally independent of each other. 
+      They have their own power, cooling, and networking infrastructure.
+    They provide redundancy and fault tolerance.
+  Edge Locations:
+    Locations around the world to cache copies of data closer to users for faster access.
+Learn Amazon Route53 - Beginner Overview of the AWS DNS service:
+  What is DNS:
+    Stands for Domain Name System.
+    Translates human-friendly domain names like -example.com- into IP addresses. 
+      For network communication.
+    Helps systems communicate over the internet, as devices use IP addresses, not domain names.
+  Amazon Route 53: 
+    AWS's DNS -Domain Name System- service.
+    Integrates with AWS services like: 
+      CloudFront and load balancers for optimized traffic routing and high availability.
+    Maps domain names to resources like EC2 instances within AWS.
+    When a user tries to visit a website: 
+      Their device queries a DNS resolver to find the corresponding IP address.
+      If the resolver doesn't have the IP, it may asks Route 53 for the mapping.
+    Routing policies: 
+      Control how traffic is directed to different resources. Some key policies include:
+        Geolocation Routing: 
+          Directs users to different resources based on their geographic location.
+            using their IP address.
+        Latency Routing: 
+          Sends traffic to the region with the lowest latency for the user.
+        Weighted Routing: 
+          Distributes traffic across multiple resources based on specified weights.
+        Failover Routing: 
+          Routes traffic to a primary resource.
+            Automatically shifts to a secondary if the primary fails.
+Global Applications in AWS:
+  DNS:
+    A system of rules and records that helps clients reach a server via URLs.
+  What are Health Checks in Route 53:
+    Used to monitor the availability and performance of your resources like web servers or apps. 
+    Health Checks ensure only healthy resources receive traffic.
+  AWS Route53
+    Highly available and scalable Domain Name System -DNS- web service. 
+    Connects user requests to internet applications running on AWS or on-premises.
+    Routing Policies -Methods controlling how traffic is directed to resources based on criteria-:
+      Simple routing policy:
+        Does not require health checks. 
+        Simply directs all traffic to a single resource or distributes it.
+          Without checking its status.
+      Weighted Routing: 
+        Can use health checks.
+        Distributes traffic across multiple resources based on weight values you assign. 
+          Allowing you to control the proportion of traffic sent to each resource.
+      Latency-Based Routing: 
+        Uses health checks.
+        Routes traffic to the resource with the lowest latency from the user's location. 
+          Optimizing performance for end users.
+      Failover Routing: 
+        Requires health checks.
+        Automatically directs traffic to a standby resource in the event of a failure or outage. 
+          Ensuring high availability.
+  Origin Access Control -OAC- and Origin Access Identity -OAI-: 
+    Mechanisms of secure. 
+    Secure access to an Amazon S3 bucket used as the origin for a CloudFront distribution. 
+    Ensuring content is accessed only through CloudFront and not directly.
+      Blocking direct public access to the bucket.
+    Key Difference:
+      OAI: 
+        Older Mechanisms, Basic mechanism limited to S3 buckets.
+      OAC: 
+        Newer Mechanisms, More secure and feature-rich successor. 
+        Compatible with modern AWS security standards and offering broader functionality.
+      Usage in CloudFront Distributions -configuration of the CloudFront service-:
+        Configure OAC or OAI to ensure your S3 bucket is not publicly accessible.
+        All requests to the bucket must go through CloudFront.
+          Providing an additional layer of security and control.
+  AWS CloudFront:
+    Content delivery network -CDN-= service. 
+    Built for high performance, security, and developer convenience.
+    Content cached at the edge locations -global data centers- to improves user performance.
+    S3 Bucket: 
+      Used for file distribution and caching at edge locations.
+    Utilizes CloudFront Origin Access Control -OAC-, replacing Origin Access Identity -OAI.
+    CloudFront as Ingress: 
+      Ingress model:
+        When you upload data using CloudFront as the entry point. 
+        CloudFront:
+          Takes care of the upload traffic and sends it to your S3 bucket using AWS global network.
+          Determines the best path to ensure the upload happens quickly. 
+            By connecting to the nearest CloudFront edge location.
+      CloudFront Origin:
+        The source of the content that CloudFront will deliver.
+        Essentially the server or service that holds the original version of your content.
+      Custom Origin Options with CloudFront:
+        Application Load Balancer -ALB-.
+          Cache static content served by your ALB, like images, CSS, JavaScript files, etc.
+          Dynamic content isn't cached by default, but it can be.
+        EC2 Instance.
+          Caching and distributing content from your EC2 instance. 
+        S3 Website -requires enabling as a static website-.
+        HTTP Backend.
+          Can cache both: 
+            Static content images, videos, etc.
+            Dynamic content like API responses or HTML pages served from any HTTP-S- endpoint.
+  S3 Cross-Region Replication (CRR):
+    AWS S3 feature. 
+    Automatically replicates objects from one Amazon S3 bucket to other in a different AWS region. 
+    Improving: 
+      Data availability.
+      Resilience.
+      Compliance.
+      Latency for users across different geographical regions.
+  The Difference Between CloudFront and S3 Cross Region Replication: 
+    CloudFront:
+      Global Edge network.
+      Files cached for a TTL -Time To Live- for example one day.
+      Ideal for static content requiring global availability.
+    S3 Cross Region Replication:
+      Requires setup for each region where replication is needed.
+      Files update in near real-time.
+      Read-only access.
+      Suitable for dynamic content requiring low-latency access in specific regions.
+  S3 Transfer Acceleration:
+    Amazon S3 feature that speeds up the transfer of files to and from your S3 bucket. 
+      By using Amazon CloudFront's globally distributed edge locations.
+    How it works:
+      Data Routing Through Edge Locations: 
+        When you upload data to your S3 bucket using S3 Transfer Acceleration. 
+        Data is first routed to the nearest CloudFront edge location.
+      Optimized Path to the S3 Bucket: 
+        From the edge location. 
+          Data travels over AWS's optimized, high-speed global network to reach the target bucket.
+    Speeds up content transfers to and from Amazon S3. 
+      By as much as 50-500% for long-distance transfer of larger objects.
+    Mobile & web application uploads.
+    Downloads Distributed office transfers.
+    Data exchange with trusted partners.
+  Anycast Ips:
+    Unique IP addresses assigned to your application. 
+    When users connect to these IPs. 
+      Their traffic is automatically routed to the closest and most optimal AWS edge location. 
+        Using AWS's network.
+  AWS Global Accelerator:
+    Enhance your application's availability and speed worldwide with AWS's global network.
+    Use AWS's network to find the best path for your application. 
+      Resulting in a 60% boost in performance.
+    Your application gets two special IP addresses -Anycast IPs-. 
+      Directing traffic through Edge Locations. 
+      2 Anycast IP are created for your application and traffic is sent through Edge Locations.
+        2 IPs provide redundancy and high availability. 
+          If one IP or its route encounters an issue, the other IP ensures traffic continues.
+    Traffic is then routed from Edge Locations to your application, ensuring efficient delivery.
+  CloudFront vs Global Accelerator:
+    Both: 
+      Utilize the AWS global network.
+      Their edge locations worldwide and integrate with AWS Shield for DDoS protection.
+    CloudFront:
+      Acts as a Content Delivery Network.
+      Enhancing performance for cacheable content like Images and videos.
+        By serving them from edge locations.
+    Global Accelerator:
+      Does not cache content.
+      Proxies packets at the edge to applications in one or more AWS Regions.
+        Taking the traffic from the edge location and delivering it to the appropriate backend app. 
+          Which may be in a different AWS region. 
+        It optimizes the flow of traffic by choosing the best route.
+  AWS Outposts:
+    Server racks that offers the same AWS infrastructure, services, APIs & tools. 
+      To build your own applications on-premises just as in the cloud. 
+    Enables organizations to run AWS services locally.
+      Providing a consistent hybrid cloud experience across on-premises and the cloud.
+    Seamless, local data processing.
+    Fully managed, capacity-based pricing.
+    Low-Latency Applications: 
+      Perfect for apps needing quick access to on-premises data or processing. 
+    Data Residency Compliance: 
+      Meets data sovereignty requirements by keeping data on-premises.
+    Benefits:
+      Low-latency access to on-premises systems.
+      Local data processing.
+      Data residency.
+      Easier migration from on-premises to the cloud.
+      Fully managed service.
+  AWS WaveLength:
+    Brings AWS infrastructure to the edge of 5G networks. 
+    Enabling ultra-low latency applications by processing data closer to end-users.
+    Edge computing use cases.
+    Ensures compliance with data residency requirements.
+    High-bandwidth and secure connection to the parent AWS Region.
+    No additional charges or service agreements.
+  AWS Local Zones:
+    Bring AWS services closer to large population, industry, and IT centers.
+    Latency-sensitive applications:
+      Run apps that require single-digit millisecond latency to end-users or local data processing.
+AWS Global Applications Architecture
+  Single Region, Single AZ: 
+    All app resources and data are hosted in a single AWS region and a single AZ in that region.
+    The most basic configuration and offers limited fault tolerance and resilience. 
+    Ranking:
+      ❌ High Availability.
+      ❌ Global Latency.
+      🟢 LESS Instance Difficulty.
+  Single Region, Multi AZ: 
+    App resources are deployed across multiple AZs within a single AWS region. 
+    Higher fault tolerance and resilience compared to the first while maintaining simplicity. 
+    Ranking:
+      🟢 High Availability.
+      ❌ Global Latency. 
+      🟠 Instance Difficulty.
+  Multi Region, Active-Passive: 
+    Apps are deployed across multiple AWS regions. 
+      One region serving as the primary active region and others as passive standby regions. 
+    The primary region hosts the active workload and serves user traffic. 
+    Standby regions are kept in sync as failover targets in case of disaster or regional outages. 
+    Ranking:
+      🟢 Global Reads Latency.
+      ❌ Global Writes Latency.
+      🟠 Instance Difficulty.
+  Multi Region, Active-Active: 
+    Apps are deployed across multiple AWS regions all actively serving user traffic simultaneously. 
+    High availability, fault tolerance, and scalability.
+      By distributing the workload across geographically diverse regions. 
+    Ranking:
+      🟢 Reads Latency. 
+      🟢 Writes Latency. 
+      🔴 Instance Difficulty.
+Review your knowledge:
+  Quiz Q&A:
+    Q1:
+      The question:
+        What does AWS Outposts provide to organizations?
+      Options:
+        Low-latency access to cloud services.
+        On-premises infrastructure identical to AWS cloud. ✔️
+        Dedicated network connections to AWS regions.
+        High-bandwidth connections to 5G networks.
+    Q2:
+      The question:
+        AWS WaveLength brings AWS infrastructure to the edge of ???,
+        enabling ultra-low latency applications.
+      Options:
+        4G networks.
+        Satellite networks.
+        5G networks. ✔️
+        Fiber optic networks.
+    Q3:
+      The question:
+        Which AWS service 
+        connects user requests to internet applications running on AWS or on-premises?
+      Options:
+        AWS Outposts.
+        AWS Route53. ✔️
+        AWS Global Accelerator.
+        AWS CloudFront.
+    Q4:
+      The question:
+        What are the benefits of AWS Local Zones?
+      Options:
+        Low-latency access to on-premises systems.
+        Global traffic routing.
+        High-bandwidth connections to 5G networks.
+        Low-latency access to cloud services. ✔️
+    Q5:
+      The question:
+        What is the purpose of AWS Global Accelerator?
+      Options:
+        Enhance application's availability and speed worldwide. ✔️
+        Provide low-latency access to cloud services.
+        Connect user requests to internet applications.
+        Provide disaster recovery solutions.
