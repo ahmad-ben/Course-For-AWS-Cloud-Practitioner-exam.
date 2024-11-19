@@ -1,0 +1,182 @@
+Summary  
+  Deploying and Managing Infrastructure
+    AWS CodeCommit: 
+      A managed source control service that hosts secure Git-based repositories. 
+        Making it easier for teams to collaborate on code.
+    AWS CodeBuild: 
+      A fully managed continuous integration service.
+      Compiles source code, runs tests, and produces software packages ready for deployment.
+    AWS CodePipeline: 
+      Automates the build, test, and deploy phases of your release process. 
+        Every time there is a code change, based on the release model you define.
+    AWS CodeArtifact: 
+      A managed artifact repository service.
+      Makes it easy for organizations to store, share, and manage software packages.
+    AWS Cloud9: 
+      A cloud-based integrated development environment -IDE-. 
+      Lets you write, run, and debug your code with just a browser.
+    AWS Systems Manager: 
+      Offers visibility and control of your infrastructure on AWS. 
+      Enabling resource management and operational insights.
+    SSM Parameter Store -part of AWS Systems Manager-: 
+      Provides secure, hierarchical storage. 
+        Configuration data management - management of configuration data- and secrets management.
+      Allowing you to keep passwords, database strings, and license codes securely.
+  AWS Global Infrastructure:
+    Route53: 
+      AWS DNS service for routing traffic efficiently.
+    CloudFront: 
+      AWS content delivery network for fast and secure content delivery.
+    S3 Transfer Acceleration: 
+      Speeds up file transfers to Amazon S3 using optimized network paths.
+    AWS Global Accelerator: 
+      Improves global application availability and performance. 
+        By routing traffic over AWS's global network.
+    AWS Outposts: 
+      Brings AWS infrastructure and services to on-premises environments. 
+        For hybrid cloud deployments.
+    AWS Wavelength: 
+      Deploys AWS infrastructure at the edge of 5G networks. 
+        For ultra-low latency applications.
+    AWS Local Zones: 
+      Extension of AWS infrastructure.
+        To deliver low-latency services in metropolitan areas.
+    Global Applications Architecture: 
+      Design and implementation of distributed apps across multiple regions. 
+        For high availability and performance.
+  Other Compute Services Summary:
+    Docker: 
+      Container technology used to run applications.
+    ECS -Elastic Container Service-: 
+      Allows running Docker containers on EC2 instances.
+    Fargate:
+      Enables running Docker containers without provisioning the infrastructure.
+      Offers a serverless approach, eliminating the need for EC2 instances.
+    ECR -Elastic Container Registry-: 
+      A private repository for Docker images.
+    Batch: 
+      Executes batch jobs on AWS using managed EC2 instances.
+    Lightsail: 
+      Provides predictable and low pricing for simple application and database stacks.
+  Lambda Summary:
+    Lambda:
+      Serverless, Function as a Service -FaaS- platform.
+      Seamless scaling and reactive execution.
+    Lambda Billing:
+      Based on execution time multiplied by the RAM provisioned.
+      Charged per number of invocations.
+    Language Support:
+      Supports many programming languages, excluding arbitrary Docker containers.
+        Cannot bring a containerized environment or runtime that isn't supported by the service. 
+        You're limited to the predefined runtimes or options provided by the service.
+    Invocation Time:
+      Functions can run for up to 15 minutes.
+    Use Cases:
+      Creating thumbnails for images uploaded to S3.
+      Running serverless cron jobs.
+      API Gateway:
+        Can expose Lambda functions as HTTP APIs.
+Review your knowledge:
+  Quiz Q&A:
+    Q1:
+      The question:
+        Which AWS service is a highly available and scalable DNS web service?
+      Options:
+        Amazon VPC.
+        Amazon CloudFront.
+        Amazon Route 53. ✔️
+    Q2:
+      The question:
+        A company is planning to run a global marketing application in the AWS Cloud. 
+        The application will feature videos that can be viewed by users. 
+        The company must ensure that all users can view these videos with low latency. 
+        Which AWS service should the company use to meet this requirement?
+      Options:
+        AWS Auto Scaling.
+        Amazon Kinesis Video Streams.
+        Elastic Load Balancing.
+        Amazon CloudFront. ✔️
+    Q3:
+      The question:
+        Which AWS services make use of global edge locations?
+      Options:
+        AWS Fargate.
+        Amazon CloudFront.
+        AWS Global Accelerator.
+        Amazon CloudFront and AWS Global Accelerator. ✔️
+    Q4:
+      The question:
+        A company wants to migrate a critical application to AWS. 
+        The application has a short runtime.
+        The application is invoked by changes in data or by shifts in system state. 
+        The company needs a compute solution that 
+        maximizes operational efficiency and minimizes the cost of running the application. 
+        Which AWS solution should the company use to meet these requirements?
+      Options:
+        Amazon EC2 On-Demand Instances.
+        AWS Lambda. ✔️
+        Amazon EC2 Reserved Instances.
+        Amazon EC2 Spot Instances.
+    Q5:
+      The question:
+        A company is migrating its public website to AWS. 
+        The company wants to host the domain name for the website on AWS. 
+        Which AWS service should the company use to meet this requirement?
+      Options:
+        AWS Lambda.
+        Amazon Route 53. ✔️
+        Amazon CloudFront.
+        AWS Direct Connect.
+    Q6:
+      The question:
+        A company wants the ability to quickly upload its applications to the AWS Cloud
+        without needing to provision underlying resources. 
+        Which AWS service will meet these requirements?
+      Options:
+        AWS CloudFormation.
+        AWS Elastic Beanstalk. ✔️
+        AWS CodeDeploy.
+        AWS CodeCommit.
+    Q7:
+      The question:
+        A company needs to install an application in a Docker container. 
+        Which AWS service eliminates the need to provision and manage the container hosts?
+      Options:
+        AWS Fargate. ✔️
+        Amazon FSx for Windows File Server.
+        Amazon Elastic Container Service (Amazon ECS). ❌ Manara potetial error.
+        Amazon EC2.
+    Q8:
+      The question:
+        A developer wants to deploy an application on a container-based service. 
+        The service must automatically provision and manage the backend instances. 
+        The service must provision only the necessary resources. 
+        Which AWS service will meet these requirements?
+      Options:
+        Amazon EC2.
+        Amazon Lightsail.
+        Amazon Elastic Kubernetes Service (Amazon EKS).
+        AWS Fargate. ✔️
+    Q9:
+      The question:
+        A company has multiple applications and is now building a new multi-tier application. 
+        The company will host the new application on Amazon EC2 instances. 
+        The company wants the network routing and traffic between the various applications 
+        to follow the security principle of least privilege. 
+        Which AWS service or feature should the company use to enforce this principle?
+      Options:
+        Security groups. ✔️
+        AWS Shield.
+        AWS Global Accelerator.
+        AWS Direct Connect gateway.
+    Q10:
+      The question:
+        A company is developing a distributed application that includes a 
+        decoupling component between the microservices to handle large, unpredictable workloads.
+        They need a service that allows them to send, store, and receive messages 
+        between software components without losing messages. 
+        Which AWS service should the company use to meet these requirements?
+      Options:
+        Amazon SNS (Simple Notification Service).
+        Amazon SQS (Simple Queue Service). ✔️
+        Amazon Kinesis.
