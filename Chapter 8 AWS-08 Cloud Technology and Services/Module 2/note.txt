@@ -1,0 +1,196 @@
+Other Compute Services:
+  Docker
+    Software development platform used to deploy applications.
+  Applications are packaged in containers that can run on any operating system.
+  Apps exhibit consistent behavior regardless of their deployment environment.
+  Ensures no compatibility issues across different machines.
+  Results in predictable behavior, reducing workload.
+  Simplifies maintenance and deployment processes.
+  Compatible with any programming language, operating system, and technology.
+  Allows for rapid scaling of containers, with adjustments taking just seconds.
+  Docker Images
+    Stored in Docker Repositories, which can be public or private.
+    Public Repository: 
+      Docker Hub:
+        Popular public repository where you can find base images for various technologies and OS: 
+          Ubuntu, MySQL, NodeJS, Java, and more.
+        Its like: https://hub.docker.com/
+    Private Repository: 
+      Amazon ECR -Elastic Container Registry- 
+        Private repository service provided by AWS. 
+        Allowing users to store and manage their own Docker images securely.
+  Elastic Container Service -ECS-:
+    A service that allows you to launch Docker containers on AWS.
+    You are responsible for provisioning and maintaining the infrastructure, like EC2 instances.
+    AWS takes care of starting and stopping containers for you.
+  Fargate:
+    Launch Docker containers on AWS without provisioning the infrastructure.
+      Eliminating the need to manage EC2 instances.
+    Simplifies the deployment process as it is a serverless offering.
+    AWS automatically runs containers for you based on the specified CPU and RAM requirements.
+      The compute resources that are allocated to the container running in the Fargate service.
+  Elastic Container Registry -ECR-: 
+    A private Docker registry service on AWS.
+    Used to store your Docker images securely. 
+      Allowing them to be easily accessed and run by ECS -Elastic Container Service- or Fargate.
+  Serverless:
+    Computing terminology where developers focus on deploying code or functions. 
+      Without managing servers. 
+    Originally, serverless was synonymous with FaaS -Function as a Service-. 
+    Pioneered by AWS Lambda.
+    The serverless concept now encompasses managed services for databases, messaging, storage, etc.
+    The term -serverless- doesn't imply the absence of servers. 
+      It means that the servers are managed by the provider, making them invisible to developers.
+  Lambda:
+    Eliminates the need for provisioning or managing servers.
+    Triggers functions in response to events from various AWS services.
+    Limited by time -short executions-.
+      Lambda functions are designed for short-duration executions. 
+      The maximum execution time allowed for a single Lambda invocation is 15 minutes. 
+        Any Lambda function that runs for longer than this will be automatically stopped.
+    Automatically scales based on demand, handling any number of requests.
+    Charges only for the compute time used, with no cost when idle.
+    Seamlessly integrates with other AWS services for comprehensive solutions.
+    Benefits:
+      Simple Pricing Structure:
+        Charges based on each request and the amount of compute time used.
+        Includes a generous free tier offering: 
+          Up to 1,000,000 AWS Lambda requests and 400,000 GB-seconds of compute time.
+            Compute time: 
+              In the context of AWS Lambda refers to the amount of time your function is running. 
+              Calculated in milliseconds -ms-.
+      Event-Driven Architecture:
+        Functions are automatically triggered by AWS as required.
+      Broad Programming Support:
+        Compatible with numerous programming languages.
+      Effortless Monitoring:
+        Seamless integration with AWS CloudWatch for convenient tracking and management.
+      Scalable Performance:
+        Easily upgrade resources per function, with up to 10GB of RAM available.
+      Enhanced RAM capacity boosts both CPU performance and network capabilities.
+    Pricing:
+      AWS charges for Lambda based on: 
+        How long the function runs and how much memory it consumes during that time. 
+        The compute time is the duration your Lambda function executes. 
+          From the moment it starts until it finishes -or is stopped for exceeding time limits-.
+      Pricing: 
+        The charge is based on the amount of compute time used. 
+          Calculated by multiplying the execution duration -seconds- by the allocated memory -GB-.
+      Pay per calls:
+        First 1,000,000 requests are free.
+        $0.20 per 1 million requests thereafter -$0.0000002 per request-.
+        Pay per duration -in increment of 1 ms-:
+          AWS charges for the duration in 1 ms increments. 
+            If your Lambda function runs for 200 ms, you'll be billed for 200 ms, not 0.2 seconds.
+          400,000 GB -seconds of compute time per month for FREE, it equals:
+            400,000 seconds if function is 1GB RAM.
+            3,200,000 seconds if function is 128 MB RAM.
+        After that $1.00 for 600,000 GB-seconds
+        It is usually very cheap to run AWS Lambda so it’s very popular
+  Amazon API Gateway:
+    Fully managed service for API management.
+    Serverless and scalable.
+    Supports RESTful and WebSocket APIs.
+    Includes security, user authentication, and API throttling.
+    Provides API keys and monitoring features.
+  AWS Batch
+    Fully managed batch processing -batch computing workloads- at any scale.
+      Refers to the execution of large numbers of batch jobs, which are typically: 
+        Automated, non-interactive, and long-running tasks. like: 
+          Data processing, image analysis, video encoding, or scientific simulations.
+    Can efficiently run hundreds of thousands of computing batch jobs on AWS.
+    Batch jobs have a defined start and end, as opposed to continuous jobs.
+    Dynamically launches EC2 instances or Spot Instances as needed.
+    Automatically provisions the required amount of compute and memory resources.
+    Allows submission or scheduling of batch jobs, with AWS Batch handling the execution.
+    Batch jobs are defined as Docker images and run on ECS -Elastic Container Service-.
+    Helps optimize costs and reduces focus on infrastructure management.
+Lambda vs. Batch
+  Batch:
+    No execution time limit.
+    Supports any runtime packaged as a Docker image.
+      runtime refers to the software environment that executes your code. 
+        It includes: 
+          The programming language interpreter or compiler.
+          Any libraries or dependencies required to run the code.
+    Uses EBS or instance store for disk space.
+    Relies on EC2 self-managed or AWS-managed.
+  Lambda:
+    Time-limited execution.
+    Supports only specific runtimes.
+    Limited temporary disk space.
+    Fully serverless.
+  AWS Lightsail:
+    Provides virtual servers, storage, databases, and networking.
+    Offers low and predictable pricing.
+    Simpler alternative to using EC2, RDS, ELB, EBS, Route 53, etc.
+    Ideal for individuals with limited cloud experience.
+    Allows setup of notifications and monitoring for Lightsail resources.
+    Use Cases:
+      Simple web applications with templates for LAMP, Nginx, MEAN, Node.js, etc.
+      Websites with templates for WordPress, Magento, Plesk, Joomla, etc.
+      Development and testing environments.
+      Offers high availability but lacks auto-scaling and has limited AWS integrations.
+Review your knowledge
+  Quiz Q&A:
+    Q1:
+      The question:
+        Docker is a platform used to deploy applications 
+        by packaging them in ??? that can run on any operating system.
+      Options:
+        Virtual Machines.
+        Databases.
+        Containers. ✔️
+        Scripts.
+    Q2:
+      The question:
+        Which feature of Docker ensures 
+        that applications exhibit consistent behavior regardless of their deployment environment?
+      Options:
+        Scalability.
+        Predictable behavior. ✔️
+        High availability.
+        Automation.
+    Q3:
+      The question:
+        Which of the following is a popular public repository for Docker images?
+      Options:
+        Amazon ECR.
+        Docker Hub. ✔️
+        GitHub.
+        Bitbucket.
+    Q4:
+      The question:
+        ECS -Elastic Container Service- on AWS allows you to ???.
+      Options:
+        Store Docker images securely.
+        Launch Docker containers without provisioning infrastructure.
+        Launch Docker containers and manage the infrastructure. ✔️
+    Q5:
+      The question:
+        Fargate allows you to run Docker containers on AWS without ???.
+      Options:
+        Ensuring security.
+        Managing EC2 instances. ✔️
+        Using Docker images.
+        Configuring networks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
