@@ -1,0 +1,151 @@
+Why do we need to integrate our accounts?
+  Which accounts:
+    AWS Accounts.
+    When deploying multiple apps across different environments or accounts. 
+      Integration is necessary to enable secure communication and collaboration between those apps.
+    For example:
+      Multiple AWS Accounts: 
+        Organizations often use multiple AWS accounts. 
+          For better management and security -separate accounts for dev, staging, production-. 
+          Integration ensures apps different accounts can share data or trigger actions securely.
+      Application Ecosystem: 
+        In modern architectures, applications often rely on each other, for instance: 
+          An e-commerce app might have separate components for:
+            User management, order processing, and inventory tracking. 
+              These need to communicate seamlessly.
+  When we start deploying multiple applications, they need to communicate with one another.
+  There are two patterns of application communication
+    Synchronous communications -application to application-.
+      One application directly calls another, can be via an API call for example.
+        A web application calls a payment service API to process a transaction.
+      It can be problematic during sudden spikes in traffic.
+    Asynchronous / Event based -application to queue to application-.
+      An app push a task to an intermediate service for the second service to take it from later.
+        App submits a payment order to a queue and the payment service processes the payment async. 
+          By polling the queue for new payment orders.
+    Decoupling applications using AWS services -implement async communication and decouple apps-:
+      SQS: 
+        Queue model for managing message queues.
+        Temporary storage of messages for processing by other applications.
+      SNS: 
+        Pub/sub -publish/subscribe- model for sending messages to multiple recipients.
+      Kinesis: 
+        Real-time data streaming model for processing large amounts of data.
+        Log processing, real-time analytics, and IoT data handling.
+    Decoupling applications benefits:
+      Enable scalable architectures where each component can scale based on its needs.
+        These services allow scaling independently from the application.
+      Ensure loose coupling between services, making your app easier to maintain and evolve.
+  Amazon SQS –Simple Queue Service-:
+    Fully managed, serverless service used to decouple applications.
+    It's follows the FIFO -First In First Out- ordering, ordering of messages in the queue.
+      Messages are processed in order by the consumer.
+    Can scale from handling 1 message per second to 10,000s per second. 
+    Messages have a default retention of 4 days, with a maximum of 14 days. 
+    There's no limit to the number of messages in the queue.
+    Messages are deleted after they're successfully processed by consumers. 
+    Offers low latency, with less than 10 ms on publish and receive operations.
+      Publish: Time a message takes to be added to the queue by a sender like an app or service.
+      Receive: Time a message takes to be retrieved from the queue by a receiver like another app.
+    Consumers can share the workload to read messages, allowing for horizontal scaling.
+      Increase the number of receivers to handle a higher volume of messages. 
+        Without overloading any single receiver.
+  What is Real-Time Big Data Streaming?
+    The process of continuously collecting, processing, and analyzing data as it is generated. 
+      Rather than waiting for it to be stored or batched.
+    Example: 
+      Analyzing live sensor data, tracking user activity on a website, ect.
+  Amazon Kinesis:
+    Kinesis is a managed service for real-time big data streaming.
+    It collects, processes, and analyzes real-time streaming data at any scale.
+    It offers several components:
+      Kinesis Data Streams: 
+        Low-latency streaming to ingest data at scale from hundreds of thousands of sources.
+        Primarily ingests and streams data in real-time from multiple sources.
+          Such as devices or applications.
+        It does not process or analyze the data directly.
+          It acts as a high-throughput, low-latency streaming service.
+            Temporarily store data and forward it to other services for processing.
+        Forwarding Data: 
+          Allows you to send data to other services for processing, like: 
+            Kinesis Data Analytics, AWS Lambda, or Amazon S3.
+      Kinesis Data Firehose: 
+        Loads streams into S3, Redshift, ElasticSearch, etc.
+          Either just forward the data as-is or process it before delivering it to the destination.
+      Kinesis Data Analytics: 
+        Real-time analytics on data from Kinesis Data Streams or Kinesis Data Firehose.
+        Processes the incoming streaming data using SQL queries. 
+          Extract insights, perform transformations, and detect patterns or anomalies in the data.
+        Forwarding Data: 
+          After data processing, results can be forward to Amazon S3, Redshift, or Elasticsearch.
+        Performs real-time analytics on streams using SQL.
+        Lets you run SQL queries on streaming data to derive insights in real time.
+      Kinesis Video Streams: 
+        Monitors real-time video streams for analytics or ML.
+        Primarily for capturing and storing video data. 
+          Enables you to store and later analyze video using other tools.
+        It doesn’t perform direct analytics.
+  Amazon SNS:
+    In SNS, event publishers send messages to one SNS topic.
+    Basically, sending one message to many users.
+    There can be multiple event subscribers listening to the SNS topic notifications.
+    Each subscriber receives all the messages sent to the topic.
+    SNS supports up to 12,500,000 subscriptions per topic and has a limit of 100,000 topics.
+  Message broker services:
+    Intermediary system that enables communication between services or apps by decoupling them. 
+    Allows the services to communicate asynchronously. 
+      The sender doesn't have to wait for a response before continuing. 
+      The message broker stores and forwards messages. 
+    Often enabling multiple receivers.
+      Providing scalability, reliability, and improved response times for users.
+    Key benefits include:
+      Decoupling: 
+        Services can operate independently, making the system more flexible.
+      Asynchronous communication: 
+        Services can process messages at their own pace without blocking other tasks.
+      Multiple receivers: 
+        Different services or workers can consume the same message queue. 
+          Process tasks in parallel.
+      Scalability: 
+        Easily scale the number of consumers or workers to handle varying loads.
+    Services Example:
+      SQS -Simple Queue Service-: 
+        Fully managed message queue service. 
+        Allows asynchronous communication between services. It uses a queue-based model.
+      SNS -Simple Notification Service-: 
+        A pub/sub -publish/subscribe- service for sending messages to multiple subscribers, like: 
+          Applications, email, SMS. 
+        It is used for broadcasting messages to many recipients.
+      Amazon MQ: 
+        Managed message broker service. 
+        Supports traditional messaging protocols like MQTT, AMQP, etc. 
+        Suitable for migrating legacy messaging applications to the cloud.
+      RabbitMQ: 
+        An open-source message broker that supports AMQP. 
+        Often used for more complex messaging patterns with queues and routing.
+      ActiveMQ: 
+        Open-source message broker that supports multiple protocols like AMQP, OpenWire, and STOMP.
+        Used for high-throughput, asynchronous messaging in distributed systems.
+      Summary:
+        While all of these services handle message passing. 
+          SQS and SNS are AWS-specific services. 
+          RabbitMQ and ActiveMQ are open-source that can be used both on-premises and in the cloud.
+  Amazon MQ
+    SQS and SNS are AWS proprietary protocols for cloud-native services.
+    Traditional applications on-premises may use open protocols like: 
+      MQTT, AMQP, STOMP, Openwire, WSS.
+    Amazon MQ is a managed message broker service for migrating traditional apps to the cloud.
+      Moving traditional on-premises apps that use messaging protocols like MQTT to Amazon MQ. 
+        Taking advantage of cloud benefits like: 
+          Scalability, high availability, and reduced administrative overhead.
+    Amazon MQ doesn't scale as much as SQS/SNS.
+    Amazon runs on servers supporting Multi-AZ with failover.
+    Amazon MQ offers both queue features -SQS- and topic features -SNS-.
+    Amazon MQ is a managed message broker service for:
+      RabbitMQ.
+      ActiveMQ.
+        Hosts and operates RabbitMQ and ActiveMQ brokers for you.  
+          While RabbitMQ and ActiveMQ are open-source message broker systems.
+            You need to set them up, maintain, and scale them on your own infrastructure or VM.
+        Amazon MQ provides a managed version of these brokers.
+          Taking care of the operational overhead, like setup, maintenance, scaling.
