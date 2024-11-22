@@ -1,0 +1,473 @@
+Sharing Your Resources in AWS
+  AWS Organizations
+    AWS management service. 
+    It enables you to consolidate multiple AWS accounts into an -organization-. 
+      That you create and centrally manage. 
+    It includes account management and consolidated billing capabilities.
+      Enable you to better meet the budgetary, security, and compliance needs of your business.
+    Manages multiple AWS accounts. 
+    Acts as the central master account.
+    Cost Benefits -Consolidated Billing-:
+      Single payment method across all accounts.
+      Discounts from aggregated usage of some services like  EC2, S3.
+      Reserved Instance Pooling:
+        Optimal savings with pooled EC2 instances.
+        If you purchase a Reserved Instance under the master account or any linked account: 
+          The discounted pricing can be shared across all accounts in the organization.
+          Other accounts can use the RI pricing benefit if: 
+            They launch EC2 instances that match the RI specifications, like:
+              instance type, region, etc.
+    Automation:
+      Automate AWS account creation and management via APIs.
+    Control Access: 
+      Restrict account privileges using Service Control Policies -SCP-.
+      Set guardrails to restrict or allow specific actions across accounts for governance.
+  Multi Account Strategies:
+    Create separate accounts for each department, cost center, and environment -dev/test/prod-.
+    Implement Service Control Policies -SCP- for regulatory compliance.
+    Use VPCs for resource isolation within each account.
+    Manage separate service limits for each account.
+      Service Limits: 
+        Setting and managing the maximum resources or services that each AWS account can use.
+      In a multi-account setup, you can control the limits of each account separately.
+      For example:
+        Department A's AWS account may be allowed to launch only 10 EC2 instances.
+        Department B's account can launch 50 EC2 instances.
+    Establish a dedicated logging account.
+      An AWS Account that holds the data from all the other AWS accounts.
+        By doing the following steps:  
+          Establish the CloudTrail and CloudWatch Logs in each account.
+          Make all CloudTrail and CloudWatch Logs send their data to the logging account. 
+      Enable AWS CloudTrail in all accounts; direct logs to a central S3 bucket.
+      Centralize CloudWatch Logs to a dedicated logging account.
+    Choose between multi-account or single account with multiple VPCs based on needs.
+    Standardize tagging for efficient billing management.
+      What Standardized Tagging Does:
+        Organizes Resources:
+          Help identify the purpose of a resource, for example:
+            Environment:Test, Team:Marketing, or Project:AppX.
+        Tracks Costs:
+          Tags allow you to filter cost reports, for example:
+            All Environment:Test resources cost $X this month.
+        Improves Management:
+          Tags help manage resources by identifying their owner, usage, or expiration, for example: 
+            Owner:JohnDoe, Status:DecommissionSoon.
+        Enables Automation:
+          Automated scripts can use tags to perform actions, for example:
+            Shutting down all Environment:Test resources after 6 PM.
+  Organizational Units
+    Within AWS Organizations you can simplify account management by: 
+      Grouping related accounts into Organizational Units -OUs-. 
+    Allowing for uniform policy administration and streamlined operations.
+    Apply Policies Easily:
+      Use Service Control Policies to enforce rules and restrictions across all accounts in an OU. 
+        For example blocking access to specific services.
+    Streamline Management:
+      Makes it easier to manage multiple accounts by applying changes at the OU level. 
+        Rather than individually.
+    Useful whitepaper here: 
+      https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html
+  Service Control Policies -SCP-:
+    Powerful feature of AWS Organizations.
+    Allow you defining what AWS services and actions are allowed or denied across accounts and OUs.
+    Whitelist or blacklist IAM actions.
+      Whitelist: a way an SCP is written, Specify what is allowed; everything else is denied.
+      Blacklist: a way an SCP is written, Specify what is denied; everything else is allowed.
+    Applied at the OU or Account level, excluding the Master Account -management account-.
+      The account that creates and manages the AWS Organization.
+    Affects all Users and Roles, including the Root user.
+      Overrides permissions, even for the root user -unlike IAM policies-.
+    Does not impact service-linked roles.
+      Service-linked roles: 
+        AWS Identity and Access Management -IAM- roles that: 
+          Predefined by AWS and directly.
+          Associated with specific AWS services. 
+        These roles allow AWS services to perform actions on your behalf in your AWS account.
+        Key Characteristics:
+          Predefined by AWS: 
+            You don't need to manually create these roles. AWS creates and manages them for you.
+          Service-Specific: 
+            They are tied to a particular AWS service, such as EC2, RDS, or Lambda.
+              Enable those services to function correctly.
+          Automatically Managed: 
+            AWS automatically creates, manages, and deletes these roles as needed.
+          Limited Permissions: 
+            Permissions granted to a service-linked role are only what the service requires.
+              To perform its tasks.
+        Examples of Use:
+          EC2 Auto Scaling: 
+            The role AWSServiceRoleForAutoScaling. 
+              Allows EC2 Auto Scaling to create or terminate instances.
+          RDS: 
+            The role AWSServiceRoleForRDS. 
+              Lets Amazon RDS manage resources for tasks like backups or updates.
+          CloudWatch: 
+            The role AWSServiceRoleForCloudWatch. 
+              Allows CloudWatch to read metrics or manage logs.
+        Benefits:
+          Simplified Management: 
+            AWS automatically creates and attaches the required policies to the role.
+          Security: 
+            Permissions are scoped tightly, so the service can only perform necessary actions.
+          Integration: 
+            Services can seamlessly perform their operations without manual intervention.
+        Real Scenario: 
+          When you use Amazon EC2 Auto Scaling. 
+          AWS might automatically create a service-linked role called AWSServiceRoleForAutoScaling.
+            To allow the service to manage EC2 instances on your behalf. 
+          You don't need to manage its permissions, it's taken care of by AWS.
+    SCPs must have explicit Allow rules.
+      SCPs require that actions be explicitly allowed; otherwise, they're implicitly denied.
+    Use cases include: 
+      Restricting access to specific services.
+        Block the use of RDS in all non-production accounts.
+      Enforcing compliance standards, such as PCI.
+        Example: Ensure only PCI-compliant regions and services are accessible.
+          PCI stands for Payment card industry.
+      Control Billing:
+        Example: Prevent users from creating expensive resources like GPU EC2 instances.
+  AWS Organizations -Consolidated Billing-:
+    When activated, AWS Organizations offers consolidated billing, which allows for:
+      Combined Usage: 
+        Aggregates usage across all accounts within the organization. 
+          Leveraging volume pricing, Reserved Instances, and Savings Plans discounts collectively.
+            Examples of how Savings Plans can benefit an AWS Organization:
+              Compute Savings Plans:
+                Scenario: 
+                  An organization has multiple accounts. 
+                  The are using various EC2 instance families, sizes, and OS in a specific region.
+                Benefit:
+                  The Master account purchases a Compute Savings Plan with a 1/3 years commitment.
+                  The discount applies across all EC2 instances used in the organization.
+                    Since the instance usage matches the Savings Plan criteria for compute usage.
+              EC2 Instance Savings Plans:
+                Scenario: 
+                  The organization uses a specific EC2 instance type for example m5.large. 
+                  They use it heavily in a particular region across several accounts.
+                Benefit:
+                  The MA purchases an EC2 Instance Savings Plan for m5.large in us-east-1 region.
+                  Any workload:
+                    In the organization including the management account. 
+                    Matches this instance type and region. 
+                      Receives the discount.
+            Key Points:
+              Savings Plans are shared by default across all member accounts in the organization. 
+                Unless the management account disables sharing.
+              Discounts apply on a first-come, first-served basis.
+              Discounts apply on accounts with matching workloads. 
+                Until the commitment is fully utilized. 
+              Remaining workloads are charged at standard rates.
+      Single Bill: 
+        Consolidated billing into one invoice for all AWS accounts within the organization.
+      Control over Discounts: 
+        The management account can disable the sharing of Reserved Instances discounts. 
+          For any account within the organization, including itself.
+  AWS Control Tower
+    Offers a streamlined solution for: 
+      Establishing and managing a secure and compliant multi-account AWS environment. 
+    Incorporating industry best practices.
+    Advantages include:
+      Automates environment setup with minimal configuration steps.
+      Automates ongoing policy enforcement using guardrails to maintain compliance.
+      Identifies policy breaches and initiates corrective actions automatically.
+      Provides an interactive dashboard for: 
+        Monitoring and ensuring adherence to compliance standards.
+    Use cases include: 
+      Restricting access to specific services and enforcing compliance standards such as PCI.
+  Transit Gateway Attachments: 
+    Feature in AWS Transit Gateway.
+    Enabling connectivity between different network resources, like: 
+      VPCs, on-premises data centers, or other AWS services.
+  What is AWS Transit Gateway?
+    Central hub.
+    Connects VPCs, on-premises networks, and even VPN connections into a single, unified network.
+    Simplifies network management.
+    Reduces the complexity of managing multiple peering connections.
+  What are Transit Gateway Attachments?
+    Attachments: 
+      The connections between the Transit Gateway and other network resources, like: 
+        VPCs, VPNs, or Direct Connect gateways.
+    They allow these resources to communicate through the Transit Gateway. 
+      Making it the central point for routing traffic between multiple networks.
+      Types of Attachments:
+        VPC Attachment:
+          Used to connect a VPC to a Transit Gateway.
+        VPN Attachment: 
+          Connects a VPN connection to the Transit Gateway. 
+          Allowing on-premises networks to connect securely to the cloud.
+        Direct Connect Attachment: 
+          Provides connectivity between AWS and on-premises data centers via AWS Direct Connect. 
+            Which bypasses the public internet for: 
+              More secure, reliable, and high-performance connections.
+        Peering Attachments:
+          Used to connect two Transit Gateways across different AWS accounts or regions.
+    Use Case:
+      If a company has multiple VPCs in different AWS accounts or regions. 
+      It can use a Transit Gateway with VPC Attachments.
+        Ensure seamless communication between those VPCs. 
+        Eliminating the need to set up individual peering connections between each pair of VPCs.
+  AWS Resource Access Manager -AWS RAM-:
+    Feature provided by certain AWS services.
+    Share AWS resources with other AWS accounts or within your organization.
+    Prevent resource duplication and foster collaboration.
+    Supported resources include: 
+      Aurora databases.
+      VPC subnets.
+      Transit Gateway attachments.
+        Use Case Example:
+          If an organization has multiple accounts. 
+          The account with the Transit Gateway can: 
+            Allow other accounts to attach their VPCs to the same Transit Gateway.
+              Accounts within the organization.
+          The account with the Transit Gateway would create the attachments. 
+          Other accounts would use those attachments to connect their VPCs.
+      Route 53 hosted zones.
+        The practice of centralizing DNS management in one AWS account. 
+          Then sharing access to it across other accounts within the same organization.
+      EC2 Dedicated Hosts.
+      License Manager configurations -share license usage-.
+    Choose between sharing with specific accounts or within your AWS Organization.
+    Enhance resource utilization.
+    Streamline management.
+    Improve collaboration with shared resources.
+    Ensure security with robust IAM policies.
+      Use IAM policies to ensure shared resources are accessed securely.
+    Regular resource usage monitoring for better tracking of resources consuming.
+  AWS Service Catalog:
+    AWS Service. 
+    Allows organizations to manage and control the use of AWS resources in a centralized way. 
+    Users can access a catalog of pre-approved AWS products and services. 
+      That are compliant with organizational policies.
+    New AWS users often face numerous options, resulting in non-compliant or inconsistent stacks.
+    Some users prefer a simple self-service portal for accessing pre-approved products.
+    AWS Service Catalog provides a solution by: 
+      Offering access to pre-defined virtual machines, databases, storage options, etc.
+Pricing Models:
+  Pricing Models in AWS -AWS has 4 pricing models-:
+    Pay as you go: 
+      Pay for actual usage, ensuring agility and responsiveness to scale demands.
+    Save when you reserve:
+      AWS reservations are available for these services:
+        EC2 Reserved Instances:
+          Commit to using a specific instance type and region for virtual servers -EC2-.
+          Offers up to 75% savings compared to on-demand pricing.
+          All instance usage within the reserved commitment benefits from the discounted rate.
+        DynamoDB Reserved Capacity:
+          Commit to a specific amount of read/write capacity for DynamoDB tables.
+          Ideal for predictable workloads, ensuring cost-effective pricing.
+        ElastiCache Reserved Nodes:
+          Reserve cache nodes for Amazon ElastiCache, a managed caching service.
+          Helps reduce costs for in-memory data storage and retrieval solutions.
+        RDS Reserved Instances:
+          Reserve database instances for Amazon RDS -Relational Database Service-.
+          Applies to databases like MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB.
+        Redshift Reserved Nodes:
+          Reserve nodes for Amazon Redshift, AWS's data warehousing service.
+          Achieve cost savings for analytics and big data workloads.
+    Pay less by using more: 
+      volume-based discounts.
+    Pay less as AWS grows.
+  Free services & free tiers in AWS:
+    IAM VPC.
+    Consolidated Billing.
+    Elastic Beanstalk.
+    CloudFormation.
+    Auto Scaling Groups.
+    Check out the free tier from the following link: 
+      Manara potential error ❌, there is no link there.
+  Compute Pricing -EC2-:
+    Only charged for what you use:
+      Number of instances.
+      Instance configuration.
+      Physical capacity.
+      Region OS and software Instance type and Instance size. 
+        ❌ Manara potential Error, it was `typeInstance `.
+        Costs vary depending on the AWS region.
+        Different OS -Win Or Lin- and additional licensed software like SQL Server impact pricing.
+        Instance type refers to the hardware configuration, such as: 
+          General-purpose -t2.micro-, compute-optimized -c5.large-, etc.
+        Instance size refers to the amount of vCPU and memory like medium, large. 
+          Larger instances are costlier.
+      ELB running time and amount of data processed.
+      Detailed monitoring.
+        Standard monitoring through CloudWatch is free.
+        Detailed monitoring -granular metrics every minute- incurs extra charges.
+    On-demand instances:
+      Minimum of 60 seconds.
+      Pay per second for Linux/Windows or per hour for other operating systems.
+    Reserved instances:
+      Up to 75% discount compared to on-demand hourly rate.
+      Offered with 1 or 3 years commitments.
+      Payment options include all upfront, partial upfront, or no upfront
+    Spot instances:
+      Up to 90% discount compared to on-demand hourly rate.
+      Bid for unused capacity.
+    Dedicated Host:
+      Available on-demand.
+      Reservation options include 1 year or 3 years commitments.
+      Savings plans offer an alternative to save on sustained usage.
+  Storage Pricing -S3-:
+    Storage classes: 
+      S3 Standard.
+      S3 Infrequent Access.
+      S3 One-Zone IA.
+      S3 Intelligent Tiering.
+      S3 Glacier.
+      S3 Glacier Deep Archive.
+    Pricing factors:
+      Number and size of objects -tiered pricing based on volume-.
+        Number of Objects: 
+          S3 charges you based on how many objects you store, with no minimum storage size.
+        Size of Objects: 
+          Costs increase with the total size of stored objects.
+        Tiered Pricing: 
+          Discounts are applied as storage volume increases, for example: 
+            The first 50 TB may cost more per GB than the next 450 TB.
+      Number and type of requests.
+        Type pf requests:
+          PUT, COPY, POST, and LIST requests: Charged per request.
+          GET and SELECT requests: Charged based on the number of requests and data returned.
+            The amount of data retrieved from S3 storage for certain types of requests like: 
+              GET, SELECT, or similar.
+              For example:
+                If you request a 1 GB object using a GET operation. 
+                  You are charged for 1 GB of data retrieved.
+                If you use the SELECT feature. 
+                  S3 may scan a larger dataset but only return a subset of the data. 
+                    You are charged for:
+                      The data scanned for example scanning 100 GB.
+                      The data returned to you for example 1 GB returned.
+                This cost is: 
+                  Distinct from storage costs.
+                  Reflects the computational effort and bandwidth needed to retrieve the data.
+          More intensive operations like analytics or processing may cost more.
+      Data transfer OUT of the S3 region.
+        Inbound Data -uploaded to S3- is free.
+        Outbound Data -data sent out of the S3 region- 
+          Incurs additional charges based on the volume and destination.
+      S3 Transfer Acceleration.
+      Lifecycle transitions.
+        Lifecycle Rules: 
+          Automatically move objects between storage classes to save costs, for example: 
+            From Standard to Glacier.
+        Transition Costs: 
+          Moving objects between classes incurs charges for the lifecycle transition itself.
+      Similar service: 
+        EFS -pay per use, offers infrequent access, and lifecycle rules-.
+        Lifecycle Rules:
+          Automatically transitions files to lower-cost tiers. 
+            Reducing costs for less frequently accessed files for example:
+              From EFS Standard to EFS Infrequent Access.
+          Transition Costs: 
+            Moving objects between classes Doesn't incur charges.
+  Database Pricing -RDS-:
+    Per hour billing.
+    Database characteristics:
+      Engine.
+      Size.
+      Memory class.
+        Memory class of the database instance determining the compute capacity like CPU and RAM:
+          db.t4g.micro instance: 
+            Small instance class with 2 vCPUs and 1 GB of RAM.
+          db.r6g.2xlarge instance: 
+            Larger instance class with 8 vCPUs and 64 GB of RAM.
+    Purchase type:
+      On-demand
+      Reserved instances 1 or 3 years with required up-front.
+    Backup Storage: 
+      No additional charge for backup storage up to 100% of your total DB storage for a region.
+    Additional storage -per GB per month-.
+    Number of input and output requests per month.
+    Deployment type -storage and I/O are variable-:
+      Single AZ.
+      Multiple AZs.
+    Data transfer:
+      Inbound is free.
+      Outbound data transfer are tiered for volume discounts.
+        Within the same AWS Region: 
+          Communicating with other AWS services like EC2 instances within the same VPC is free.
+        Incurs costs and follows tiered pricing, meaning: 
+          The more data transferred, the lower the per-GB cost in higher tiers.
+  Content Delivery -CloudFront Pricing-:
+    Geographic Pricing Variation -Costs differ across various regions-.
+    Based on the amount of data transferred out to viewers.
+    Charges are aggregated for each edge location before billing.
+      All the data transfer and requests processed by a particular edge location are summed up.
+    Volume discounts apply.
+    Request Counting, Charges based on the number of HTTP/HTTPS requests.
+  Data Transfer Costs -Simplified-:
+    Data transfer in -always FREE-.
+    Opt for private instead of public IPs for cost savings and improved network performance.
+    Choose the same AZ for maximum savings, though it may reduce high availability.
+  Savings Plan:
+    EC2 Savings Plan:
+      Commit a specified dollar amount per hour for 1 or 3 years.
+      Offers up to a 72% discount compared to On-Demand rates.
+      Applies to specific instance families like C5, M5 in one region.
+      Includes any AZ, size from m5.xl to m5.4xl, OS is Linux or Windows, and tenancy.
+        Tenancy refers to how the underlying physical hardware is allocated for your instance:
+          Shared Tenancy:
+            The default option. 
+            Your EC2 instance runs on a physical server shared with instances from other customers. 
+            Multiple EC2 instances -from different customers- can share the same physical hardware.
+          Dedicated Tenancy:
+            Your EC2 instance runs on physical hardware that is dedicated solely to your account.
+              No other customers instances will share that hardware.
+      Payment options: all upfront, partial upfront, or no upfront.
+    Compute Savings Plan:
+      Up to 66% discount compared to On-Demand pricing.
+      Flexible across any instance family, region, size, OS, tenancy, and compute options.
+      Includes EC2, Fargate, and Lambda usage.
+    Machine Learning Savings Plan:
+      Sagemaker.
+       AWS services, which are used for machine learning workloads. 
+      Allows you to save money by committing to a specific amount of ML usage over time.
+    Setup and Pricing:
+      Easily set up via the AWS Cost Explorer console.
+        Helps you: 
+          Visualize and track your usage.
+          Estimate potential savings.
+          Choose the right plan for your needs.
+Review your knowledge
+  Quiz Q&A:
+    Q1:
+      The question:
+        Which AWS pricing model allows you to pay only for the resources you actually use?
+      Options:
+        Pay as you go. ✔️
+        Reserved Instances.
+        Spot Instances.
+        Savings Plans.
+    Q2:
+      The question:
+        What is the primary benefit of using consolidated billing in AWS Organizations?
+      Options:
+        Creating virtual private clouds.
+        Aggregating usage across multiple accounts to leverage volume pricing. ✔️
+        Automating deployment of applications.
+        Managing server infrastructure.
+    Q3:
+      The question:
+        AWS Control Tower automates the setup of a secure and compliant multi-account environment
+        using ???.
+      Options:
+        IAM Policies.
+        CloudFormation Templates.
+        Guardrails. ✔️
+        S3 Buckets.
+    Q4:
+      The question:
+        ??? allows sharing AWS resources like Aurora databases and VPC subnets across accounts.
+      Options:
+        AWS Service Catalog.
+        AWS Control Tower.
+        AWS Resource Access Manager (RAM). ✔️
+        AWS Migration Hub.
+    Q5:
+      The question:
+        What is the function of Service Control Policies (SCP) in AWS Organizations?
+      Options:
+        Monitoring application performance.
+        Automating account creation.
+        Restricting account privileges. ✔️
+        Managing EC2 instances.

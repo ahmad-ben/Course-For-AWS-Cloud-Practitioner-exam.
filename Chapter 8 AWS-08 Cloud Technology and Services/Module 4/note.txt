@@ -180,3 +180,18 @@ Review your knowledge:
         Amazon SNS (Simple Notification Service).
         Amazon SQS (Simple Queue Service). ✔️
         Amazon Kinesis.
+  Additional services:
+    AWS Elastic Beanstalk:
+      Platform-as-a-Service -PaaS-.
+      Helps you deploy and manage apps like a web app on AWS. 
+        Without worrying about the underlying infrastructure.
+      Use case: 
+        Simplifies deployment for developers by handling scaling, load balancing, and monitoring.
+      Supported platforms: 
+        Includes Java, Python, Node.js, PHP, and more.
+    Amazon Elastic Kubernetes Service -EKS-:
+      A managed Kubernetes service for running containerized applications using Kubernetes on AWS.
+      Use case: 
+        Allows you to orchestrate -deploy, scale, and manage- containers with Kubernetes.
+      Why EKS: 
+        AWS handles the Kubernetes control plane, so you only manage your apps and worker nodes.
