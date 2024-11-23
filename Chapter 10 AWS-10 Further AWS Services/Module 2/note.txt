@@ -1,0 +1,97 @@
+Machine Learning Offerings:
+  Natural language processing -NLP-: 
+    Subfield of computer science and artificial intelligence -AI-. 
+    It uses machine learning to enable computers to understand and communicate with human language.
+  Overview of key AWS machine learning services relevant for the AWS CCP exam:
+    Amazon Comprehend: 
+      Uses natural language processing -NLP- and machine learning to: 
+        Analyze text, perform sentiment analysis, and identify key topics and phrases. 
+      Example use case:
+        Analyzing social media for sentiment.
+    Amazon Kendra: 
+      An intelligent search service.
+      Query data using natural language. 
+      Allows querying of unstructured and semi-structured data like PDFs, CSVs.
+        Using natural language.
+    Amazon Lex: 
+      Enables the creation of chatbots for voice and text input. 
+      Useful for automating customer service tasks like: 
+        Refunds, flight changes, and password resets.
+  Amazon Polly: 
+    Converts text to speech using deep learning. 
+    Providing natural-sounding voice output in multiple languages. 
+    Can be used for accessibility purposes or social media posts.
+  Amazon Rekognition: 
+    Uses pre-trained ML models to analyzes images and videos for:
+      Facial detection, object recognition, and content moderation. 
+    Use cases include identity verification and harmful content detection.
+  Amazon SageMaker: 
+    A comprehensive machine learning platform for building, training, and deploying models. 
+    It supports end-to-end workflows, including:
+      Data import, model selection, and automatic tuning.
+  Amazon Textract:
+    Use ML to process text. 
+    Extracts text and data from documents like PDFs, forms, images. 
+    Useful for document processing like verifying identity.
+  Amazon Transcribe:
+    Use ML to process text. 
+    Converts speech to text for: 
+      Generating subtitles.
+      Meeting notes.
+      Transcribing audio content.
+  Amazon Translate:
+    Use ML to process text.
+    Takes text as input. This could be plain text or text within structured formats like HTML. 
+    The output is also text. 
+      It provides the translated version of the input text in the chosen target language. 
+      It does not produce audio output -speech-.
+    Performs machine translation in over 70 languages.
+    Customizable for specific terminology.
+      A company can ensure:
+        Its brand names, product names, or industry-specific terminology are correctly translated. 
+    Useful for translating documents or real-time customer support.
+Review your knowledge:
+  Quiz Q&A:
+    Q1:
+      The question:
+        Amazon ??? is a fully managed service that enables developers and data scientists to 
+        build, train, and deploy machine learning models quickly.
+      Options:
+        Redshift.
+        SageMaker. ✔️
+        DynamoDB.
+        Athena.
+    Q2:
+      The question:
+        Amazon ??? provides a service for natural language processing 
+        that can analyze text and extract insights.
+      Options:
+        Comprehend. ✔️
+        Rekognition.
+        Polly.
+        Lex.
+    Q3:
+      The question:
+        Amazon ??? is a fully managed service for 
+        building conversational interfaces using voice and text.
+      Options:
+        Polly.
+        Translate.
+        Lex. ✔️
+        Transcribe.
+    Q4:
+      The question:
+        Which AWS service is used for image and video analysis?
+      Options:
+        Amazon Lex.
+        Amazon Comprehend.
+        Amazon Rekognition. ✔️
+        Amazon Polly.
+    Q5:
+      The question:
+        What is the primary purpose of Amazon Polly?
+      Options:
+        Text translation.
+        Image recognition.
+        Text-to-speech conversion. ✔️
+        Sentiment analysis.
