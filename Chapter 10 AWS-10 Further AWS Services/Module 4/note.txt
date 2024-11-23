@@ -1,0 +1,158 @@
+Summary:
+  Advanced Identity Summary:
+    Security Token Service -STS-: 
+      Offers temporary credentials with restricted privileges for AWS resource access.
+    Cognito: 
+      Establishes a user database for both mobile and web applications.
+    Directory Services: 
+      Allows for the integration of Microsoft Active Directory within AWS.
+    IAM Identity Center: 
+      Offers a centralized login for multiple AWS accounts and applications.
+  Machine Learning Summary:
+    Rekognition: 
+      Face detection, labeling, and celebrity recognition.
+    Transcribe: 
+      Converts audio to text like for subtitles.
+    Polly: 
+      Converts text to audio.
+    Translate: 
+      Provides translation services.
+    Lex: 
+      Builds conversational bots, like chatbots.
+    Connect: 
+      Amazon Connect.
+      A cloud-based contact center solution. 
+      Uses machine learning to enhance customer interactions and streamline support processes.
+    Comprehend: 
+      Natural language processing.
+    SageMaker: 
+      Machine learning for developers and data scientists.
+    Forecast: 
+      AWS Forecast.
+      Uses ML to build highly accurate forecasts for metrics like: 
+        Sales, inventory demand, financial planning, based on historical data.
+    Kendra: 
+      ML-powered search engine.
+    Personalize: 
+      Amazon Personalize Service.
+      Provides real-time personalized recommendations for customers, such as: 
+        Product or content suggestions, based on user behavior and preferences.
+    Textract: 
+      Detects text and data in documents.
+  Further AWS Services Summary:
+    Amazon WorkSpaces: Managed desktop-as-a-service solution.
+    Amazon AppStream 2.0: Desktop application streaming service.
+    AWS IoT Core: Easily connect IoT devices to the AWS Cloud.
+    AWS AppSync: Build scalable and secure GraphQL APIs.
+    AWS Amplify: Develop and deploy full stack web and mobile apps.
+    AWS Application Composer: Build serverless visual workflows.
+    AWS Device Farm: Test mobile apps on real devices in the cloud.
+    AWS Backup: Fully managed backup service.
+    Disaster Recovery Strategies: Strategies for recovering from disasters. 
+      Backup and Restore, Pilot Light, Warm Standby, Multi-Site/Hot Site.
+    AWS Elastic Disaster Recovery (DRS): Manage disaster recovery workflows.
+    AWS DataSync: Simplify and automate data transfer between on-premises and AWS.
+    AWS Application Discovery Service: Plan and track migrations to AWS.
+    AWS Application Migration Service (MGN): Accelerate migration to AWS.
+    AWS Step Functions: Build serverless visual workflows to orchestrate Lambda functions.
+Review your knowledge
+  Quiz Q&A:
+    Q1:
+      The question:
+        A company needs to implement identity management 
+        for a fleet of mobile apps that are running in the AWS Cloud.
+         Which AWS service will meet this requirement?
+      Options:
+        Amazon Cognito. ✔️
+        AWS Security Hub.
+        AWS Shield.
+        AWS WAF.
+    Q2:
+      The question:
+        A company needs to manage multiple logins across AWS accounts within the same organization 
+        in AWS Organizations. Which AWS service should the company use to meet this requirement?
+      Options:
+        Amazon VPC.
+        Amazon GuardDuty.
+        Amazon Cognito.
+        AWS IAM Identity Center (AWS Single Sign-On). ✔️
+    Q3:
+      The question:
+        A company is developing an application that uses multiple AWS services. 
+        The application needs to use temporary, limited-privilege credentials 
+        for authentication with other AWS APIs. 
+        Which AWS service or feature should the company use 
+        to meet these authentication requirements?
+      Options:
+        Amazon API Gateway.
+        IAM users.
+        AWS Security Token Service (AWS STS). ✔️
+        IAM instance profiles.
+    Q4:
+      The question:
+        A developer is writing a program that must switch between multiple IAM roles. 
+        Which AWS services or features can the program use to meet this requirement? (Choose two.)
+      Options:
+        AWS CLI. ✔️
+          Manara potential error ❌, choose just once and it's a correct answer.
+        IAM inline policies.
+        AWS Organizations.
+        AWS Trusted Advisor.
+    Q5:
+      The question:
+        Which AWS service can be used to turn text into lifelike speech?
+      Options:
+        Amazon Polly. ✔️
+        Amazon Kendra.
+        Amazon Rekognition.
+        Amazon Connect.
+    Q6:
+      The question:
+        Which AWS service provides machine learning capability 
+        to detect and analyze content in images and videos?
+      Options:
+        Amazon Connect.
+        Amazon Lightsail.
+        Amazon Personalize.
+        Amazon Rekognition. ✔️
+    Q7:
+      The question:
+        A company has a social media platform 
+        in which users upload and share photos with other users. 
+        The company wants to identify and remove inappropriate photos.
+        The company has no machine learning (ML) scientists 
+        and must build this detection capability with no ML expertise. 
+        Which AWS service should the company use to build this capability?
+      Options:
+        Amazon SageMaker.
+        Amazon Lightsail.
+        Amazon Personalize.
+        Amazon Rekognition. ✔️
+    Q8:
+      The question:
+        Which AWS service provides a highly accurate and easy-to-use enterprise search service 
+        that is powered by machine learning (ML)?
+      Options:
+        Amazon Kendra. ✔️
+        Amazon SageMaker.
+        Amazon Augmented AI (Amazon A2I).
+        Amazon Polly.
+    Q9:
+      The question:
+        Which AWS service provides machine learning capability to 
+        detect and analyze content in images and videos?
+      Options:
+        Amazon Connect.
+        Amazon Lightsail.
+        Amazon Personalize.
+        Amazon Rekognition. ✔️
+    Q10:
+      The question:
+        A company is looking for a managed machine learning (ML) service 
+        that can recommend products based on a customer’s previous behaviors. 
+        Which AWS service meets this requirement?
+      Options:
+        Amazon Personalize. ✔️
+        Amazon SageMaker.
+        Amazon Pinpoint.
+        Amazon Comprehend.
