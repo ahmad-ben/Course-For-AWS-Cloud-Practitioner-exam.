@@ -1,0 +1,280 @@
+Other AWS Services Part 1:
+  Amazon WorkSpaces:
+    Managed Desktop as a Service -DaaS- solution.
+    Easily provision Windows or Linux desktops.
+    Eliminates the management of on-premise VDI -Virtual Desktop Infrastructure-.
+    Fast and scalable to thousands of users.
+    Secures data and integrates with KMS -Key Management Service-.
+    Pay-as-you-go service with monthly or hourly rates.
+  Amazon AppStream 2.0:
+    Desktop application streaming service.
+    Deliver applications to any computer without acquiring or provisioning infrastructure.
+      Apps are hosted and run on AWS infrastructure.
+      Users access the apps via a web browser, eliminating the need for local installations.
+    Applications are delivered from within a web browser.
+      Administrators configure and deploy applications in AppStream 2.0.
+      Users access the apps through a URL provided by the admin. 
+        This URL opens in their web browser.
+  Amazon AppStream 2.0 vs WorkSpaces
+    Workspaces: 
+      Fully managed Virtual Desktop Interface with desktop access.
+      Users connect to the VDI and open native or web applications.
+      Can be on-demand or always on.
+    AppStream 2.0: 
+      Stream desktop applications to web browsers.
+      Works with any device that has a web browser.
+      Allows configuration of instance types per application type -CPU, RAM, GPU-.
+  AWS IoT Core
+    Connect IoT devices to AWS Cloud.
+    Serverless, secure, and scalable to billions of devices.
+    Applications can communicate with devices even when offline.
+      Offline Communication:
+        Allows apps to interact with IoT devices even when those devices are offline. 
+        It buffers and queues messages for when the devices reconnect.
+    Integrates with various AWS services -Lambda, S3, SageMaker-.
+    Build IoT applications for data gathering, processing, analysis, and action.
+    IoT: 
+      Internet of Things.
+      A network of devices that can communicate with each other over the internet. 
+        Devices like sensors, appliances. 
+  Real-time data-driven applications: 
+    Software systems or platforms. 
+    Designed to process, analyze, and react to data as it is generated. 
+    Providing updates or responses immediately -or with minimal latency-. 
+    These applications continuously receive and process data streams from: 
+      Users, devices, or systems. 
+        Delivering up-to-date information or trigger instant actions.
+  AWS Amplify:
+    A development platform. 
+    Designed to help developers build and deploy full-stack web and mobile apps. 
+      Quickly and efficiently. 
+    Provides tools and services for frontend and backend development. 
+      Focusing on seamless integration with AWS resources.
+    Key Features of AWS Amplify:
+      Frontend Development:
+        Supports frameworks like React, Vue.js, Angular, and Next.js.
+        Simplifies frontend development with tools to: 
+          Connect apps to the cloud, configure authentication, and manage data.
+      Backend as a Service -BaaS-:
+        Offers managed backend resources like:
+          Authentication: Integrates with Amazon Cognito to manage users.
+          APIs: GraphQL and REST APIs powered by AWS AppSync or Amazon API Gateway.
+          Storage: File storage using Amazon S3, or database storage with DynamoDB or Aurora.
+          Real-time Data: Easily incorporate live updates using AppSync subscriptions.
+      Amplify Studio:
+        A visual development environment for: 
+          Designing app UIs.
+          Configuring backend services without writing code.
+        Generates code for React components and connects them to the cloud.
+      CLI Toolchain:
+        The Amplify CLI allows you from your development environment to: 
+          Configure cloud resources and backend environments directly.
+      Hosting:
+        Provides fully managed CI/CD.
+        Provides hosting services for deploying web apps and static websites.
+      Offline and Real-time Features:
+        Enables offline capabilities and data synchronization with AppSync.
+        Automatically syncs data when devices reconnect to the internet.
+  AWS AppSync:
+    Store and sync data across mobile and web apps in real-time.
+    Uses GraphQL -mobile technology from Facebook-. 
+    Client code can be automatically generated.
+      How AppSync Auto-Generates Client-Side Code:
+        Define a GraphQL Schema:
+          In AppSync, you start by defining a GraphQL schema. 
+            Which specifies the structure of your: 
+              Data, queries, mutations -updates-, and subscriptions -real-time updates-.
+        Integrate with Front-End Development Tools:
+          AppSync integrates with tools like: 
+            AWS Amplify and frameworks like React, Angular, or Vue.js.
+        Generate Front-End Code:
+          AppSync uses the defined schema to: 
+            Generate the client-side code for interacting with the GraphQL API. This includes:
+              Query methods for fetching data.
+              Mutation methods for modifying data.
+              Subscription setup for real-time updates.
+        SDKs or Libraries:
+          Using the AWS Amplify CLI, you can configure your AppSync API so you can:
+            Automatically generate front-end GraphQL client code. 
+              Compatible with JavaScript frameworks.
+    Integrates with DynamoDB and Lambda.
+    Real-time subscriptions for data updates.
+      Enables subscriptions, where clients receive automatic updates when data changes. 
+        Ideal for features like live dashboards or collaborative editing.
+    Offline data synchronization, replacing Cognito Sync.
+      Allows apps to work offline by syncing data automatically when reconnected. 
+        This functionality has replaced Cognito Sync.
+      Cognito Sync:
+        Component within Cognito that had the offline data synchronization as a feature.
+        It's deprecated and replaced.
+    Fine-grained security controls.
+      Offers detailed access controls. 
+      Ensuring that users access only the data they’re authorized to view or modify.
+    AWS Amplify can utilize AWS AppSync in the background.
+      Can use AppSync in the background to simplify GraphQL API management for developers.
+Other AWS Services Part 2:
+  AWS Amplify
+    Comprehensive toolkit for building and launching scalable web and mobile apps.
+    Includes: 
+      Authentication.
+      Storage.
+      API -REST.
+      GraphQL-.
+      CI/CD.
+      PubSub.
+      Analytics.
+      AI/ML predictions.
+      monitoring.
+    Integrates with AWS, GitHub, and other sources for seamless development and deployment.
+  What is SAM -Serverless Application Model-:
+    Open-source framework for building and deploying serverless applications on AWS. 
+    Extends AWS CloudFormation by adding features specifically designed for serverless resources.
+    Key Points:
+      Simplified Syntax: 
+        Makes it easier to define resources like Lambda, API Gateway, DynamoDB, etc.
+      Built-in CLI: 
+        The SAM CLI lets you build, test, and deploy applications locally or in the cloud.
+      Supports IaC: 
+        Translates the simplified SAM templates into standard CloudFormation templates.
+    Why Use It:
+      Makes developing and managing serverless applications faster and more efficient. 
+        By reducing boilerplate code and providing tools for local testing and deployment.
+  AWS Application Composer:
+    Visual tool for quickly designing and building serverless applications on AWS.
+    Simplifies deployment of AWS infrastructure code without requiring deep AWS expertise.
+    Configure resource interactions.
+      Facilitates configuring complex resource interactions, such as: 
+        Setting up event-driven architectures or serverless applications.
+    Generate Infrastructure as Code -IaC- using CloudFormation.
+    Supports importing existing CloudFormation or SAM templates for visualization.
+  AWS Device Farm:
+    Fully-managed service.
+    Test and interact with your mobile and web apps on real devices hosted in the cloud.
+    Tests your web and mobile apps against desktop browsers, real mobile devices, and tablets.
+    Run tests concurrently on multiple devices -speed up execution-.
+    Ability to configure device settings -GPS, language, Wi-Fi, Bluetooth, etc.
+      Configure device settings to simulate real-world conditions during testing.
+  AWS Backup:
+    Fully managed service for centralized and automation backup management across AWS services.
+    Simplify the process of backing up your AWS resources.
+    Offers on-demand and scheduled backups for flexibility.
+    Supports Point-in-Time Recovery -PITR- for precise restoration.
+    Features: 
+      Retention periods:
+        You can set retention policies to specify how long backups should be kept.
+      Lifecycle management:
+        Automates the transition of backups to cheaper storage tiers over time, for example: 
+          Moving backups to Amazon S3 Glacier for long-term storage.
+      Customizable backup policies:
+        Allows you to: 
+          Define backup schedules and lifecycle rules according to your business needs.
+    Facilitates cross-region backup for enhanced data redundancy and disaster recovery.
+    Enables cross-account backup using AWS Organizations.
+      Streamlined data protection across multiple accounts.
+  Disaster Recovery Strategies:
+    Backup and Restore: 
+      Regular backups of data and applications to prevent data loss.
+      Enables quick restoration of data and applications in case of failure or disaster.
+      Ensures business continuity and data integrity.
+    Pilot Light:
+      Maintains a minimal version of the infrastructure like database, essential services. 
+        In a standby state.
+      Enables rapid scaling up of infrastructure to full capacity in case of a disaster.
+      Helps reduce costs compared to maintaining a fully active backup infrastructure.
+    Warm Standby Cost:
+      Involves maintaining a partially active secondary site with scaled-down infrastructure.
+      Incurs higher costs compared to pilot light due to the partially active state.
+      Provides faster recovery times and greater capacity compared to pilot light.
+    Multi-Site -Hot Site-:
+      Maintaining a fully redundant and active secondary site in a different geographic location.
+      Offers the highest level of resilience and availability.
+      Incurs higher costs but provides the quickest recovery times and minimal downtime.
+        In case of a disaster.
+  Block-level replication:
+    The process of copying data at the block level rather than the file level. 
+    In storage systems, data is organized into blocks.
+    Blocks are small units of data that can be read or written independently.
+    In block-level replication:
+      Only the changes made to the data -the blocks- are replicated in real-time. 
+      Ensuring that data is protected and synchronized across multiple locations.
+      More efficient and faster than file-level replication. 
+        Because it focuses on replicating the underlying blocks. 
+          A lower-level operation in the storage system.
+      Allows for a consistent, near real-time copy of the data. 
+      Since the data is replicated in its raw block form, it can be used to: 
+        Restore or recover an exact copy of the original system in case of disaster.
+  AWS Elastic Disaster Recovery -DRS-:
+    Used to be named -CloudEndure Disaster Recovery-.
+    Enables rapid recovery of servers into AWS in case of data loss or disaster.
+    Provides protection for critical databases and enterprise applications.
+    Uses continuous block-level replication for real-time data protection.
+Other AWS Services Part 3:
+  AWS DataSync:
+    Facilitates the transfer of large amounts of data from on-premises to AWS.
+    Supports synchronization with various AWS storage services like S3, EFS, and FSx for Windows.
+    Offers scheduled replication tasks, with incremental updates after the initial full load.
+  AWS Application Discovery Service:
+    Tool helps plan migration projects by collecting data from on-premises data centers.
+    Agentless discovery:
+      Collects information about your -VMs- without requiring any software agent to be installed.
+      It gathers basic data like:
+        VM inventory, configuration, and performance history.
+    Agent-based discovery: 
+      It gathers advanced data, like:
+        System configuration.
+        Performance.
+        Running processes.
+        Network connection details. 
+    Resulting data can be viewed within AWS Migration Hub.
+      After collecting the data, the results can be viewed and managed within AWS Migration Hub.
+        AWS Migration Hub.
+          Hub gives you a centralized view of your migration progress. 
+          Making it easier to track which apps and workloads are ready for migration.
+          Manage the entire process.
+  AWS Application Migration Service -MGN-:
+    MGN stands for Migration.
+    Lift-and-shift -rehost- solution which simplifies migrating applications to AWS.
+    Converts your physical, virtual, and cloud-based servers to run natively on AWS.
+    Supports wide range of platforms, Operating Systems, and databases.
+    Minimal downtime, reduced costs.
+  AWS Migration Evaluator:
+    Assists in creating a data-driven business case for migrating to AWS.
+    Offers a detailed view of the current on-premises environment.
+    Installs an Agentless Collector for: 
+      AC installed only once in your environment like on a single dedicated machine. 
+        Does not interfere with the servers being monitored.
+      The collector tool gathers data by remotely connecting to the servers.
+      Broad-based discovery.
+      Capturing on-premises footprint.
+        Including server configurations and usage patterns.
+      Server dependencies.
+    Analyzes the current state.
+      Identify inefficiencies or underutilized resources.
+    Defines the target state.
+      Defines the target state in AWS, considering the optimal resources and configurations.
+    Helps develop a migration plan.
+      Helps develop a migration plan, including cost estimates and resource mappings.
+  What is SAP: 
+    Stands for Systems, Applications, and Products in Data Processing. 
+    Widely used enterprise software platform that helps businesses manage key functions like: 
+      Finance.
+      Logistics.
+      Human resources.
+      Supply chain.
+      Customer relationship management -CRM-.
+  AWS Migration Hub:
+    Acts as a central repository for collecting servers and apps inventory data for:
+      Assessing, planning, and tracking migrations to AWS.
+    Accelerates migration to AWS and automates lift-and-shift processes.
+    Provides pre-built templates through AWS Migration Hub Orchestrator
+    Saving time and effort for migrating enterprise apps such as SAP and Microsoft SQL Server.
+    Supports migration status updates from Application Migration Service -MGN-.
+  AWS Step Functions:
+    Allows you to build serverless visual workflows to orchestrate Lambda functions.
+    Features include sequence, parallel execution, conditions, timeouts, and error handling.
+    Integrates with various AWS services such as: 
+      EC2, ECS, on-premises servers, API Gateway, and SQS queues.
+    Can implement human approval features.
+      Include tasks in a workflow that require human intervention or decision-making.
+    Use cases include: 
+      Order fulfillment, data processing, web applications, and any workflow automation needs.
