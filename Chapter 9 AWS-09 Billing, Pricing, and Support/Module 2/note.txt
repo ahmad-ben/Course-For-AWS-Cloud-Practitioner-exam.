@@ -1,0 +1,384 @@
+Estimating and Tracking Costs:
+  Pricing Calculator:
+    Free web-based planning tool that you can use to create cost estimates for using AWS services.
+    You can use AWS Pricing Calculator for the following use cases:
+      Model your solutions before building them.
+      Explore AWS service price points.
+      Review the calculations behind your estimates.
+      Plan your AWS spend.
+      Find cost saving opportunities.
+  Tracking Costs:
+    Billing Dashboard:
+      Feature -tool- of the AWS Management Console. 
+      Part of AWS's Billing and Cost Management system. 
+        Designed to help users monitor, analyze, and manage their costs and usage.
+      Dynamic, regularly updated interface that reflects your ongoing AWS charges.
+      AWS Bills page provides a monthly view of your AWS charges. 
+        For monthly billing periods that have not yet closed. 
+      The page will display the most recent estimated charges based on services metered to date.
+    AWS Free Tier Dashboard:
+      Feature -tool- of the AWS Management Console. 
+      Focuses on monitoring and managing usage of free-tier-eligible AWS services.
+      Check out all the free services AWS provides.
+        Elastic BeanStalk, CloudFormation, and AutoScaling groups.
+          You have to pay for the resources you create!
+          Services like Elastic Beanstalk or Auto Scaling provision and orchestrate resources.
+            Such as EC2 instances or S3 buckets, which are not always included in the free tier.
+          Example:
+            If you use Elastic Beanstalk to deploy an application:
+              Elastic Beanstalk itself is free.
+              If it launches EC2 instances or provisions an RDS database for your app: 
+                You will incur charges for those resources unless they fall under the free tier.
+    Cost Allocation Tags:
+      Feature provided under the AWS Billing and Cost Management service.
+      Use cost allocation tags to track your AWS costs on a detailed level.
+      AWS generated tags:
+        Automatically applied to the resource you create
+        Starts with Prefix aws for example: 
+          aws: createdBy
+            Indicates which service or user created the resource.
+      User-defined tags:
+        Manually created and applied by you. 
+        Categorize resources in a way that suits your business needs.
+        Starts with Prefix user, for example:
+          user:Department.
+            To associate resources with specific departments like Marketing or Engineering.
+    Tagging and Resource Groups:
+      A feature under the AWS Resource Groups and Tagging service.
+      Tags for Organization: 
+        Utilize tags to organize various resources such as:
+          EC2 instances, images, load balancers, and security groups.
+      Apply tags to RDS, VPC resources, Route 53, IAM users, etc.
+      Resources created by CloudFormation are tagged uniformly.
+        How:
+          When you create resources using AWS CloudFormation. 
+            It can apply stack-level tags to all resources in the stack. 
+          This ensures uniform tagging for better organization and cost tracking. 
+          For example: 
+            If you define tags at the stack level, such as Environment=Production or Team=DevOps. 
+            CF propagates these tags to all the resources it creates as part of that stack.
+      Common tags include Name, Environment, Team.
+      Use tags to create and manage groups of resources with common tags, aka Resource Groups.
+        What Are Resource Groups:
+          Collections of AWS resources that share common tags. 
+          Instead of managing individual resources across multiple services. 
+            Resource Groups let you view and manage resources as a single logical group. 
+              Making it easier to perform actions like monitoring, automation, and cost allocation.
+          For example:
+            A -Project Alpha- resource group might include: 
+              EC2 instances, S3 buckets, and DynamoDB tables tagged with Project=Alpha.
+          How to Create and Use Resource Groups:
+            Create Tags:
+              Apply consistent tags to the AWS resources you want in the group.
+            Access Resource Groups:
+              Go to the Resource Groups section in the AWS Management Console.
+            Create a Group:
+              Define a query that includes resources with specific tags. For example:
+                Select all resources where Environment=Production.
+                Select all resources where Project=Alpha.
+            Use Resource Groups:
+              Search and Filter: 
+                Quickly locate resources based on their tags.
+              Monitor: 
+                View metrics for the resources in the group using CloudWatch.
+              Automation: 
+                Use AWS Systems Manager to automate tasks across the group.
+              Access Management: 
+                Control permissions for the group as a whole.
+      Create, maintain, and view a collection of resources that share a common tag.
+      Utilize the Tag Editor for efficient tag management.
+        What Is the Tag Editor and What Can It Do?
+          What Is the Tag Editor?
+          A tool in the AWS Management Console that helps you:
+            Manage tags across multiple AWS resources in one place.
+            Search for resources that need tagging or whose tags need updating.
+            Edit or remove tags for existing resources.
+          What Can the Tag Editor Do?
+            Search and Filter Resources:
+              Find resources across multiple AWS services by applying search criteria like Tag: 
+                Key=Environment or Tag Value=Production.
+            Add or Edit Tags:
+              Add new tags or update existing ones for multiple resources at once.
+            Remove Tags:
+              Delete unwanted or outdated tags from resources.
+            Bulk Tag Management:
+              Apply or modify tags for hundreds of resources in a single operation. 
+                Saving time and ensuring consistency.
+            Cost Allocation and Reporting:
+              Use tags managed through ir for detailed cost allocation in AWS Cost Explorer.
+    Cost and Usage Reports -CUR-:
+      Tool provided by AWS.
+      Gain deeper insights into your AWS costs and usage.
+      The AWS Cost & Usage Report offers comprehensive data on AWS cost and usage. 
+        Including additional metadata on AWS services, pricing, and reservations like RIs.
+      Itemizes AWS usage for each service category used by an account. 
+        The data is broken down by service category and associated with your IAM users. 
+          Individuals or groups within your AWS account.
+        Service Categories: 
+          You'll see categories like EC2, S3, etc. 
+          Each showing the cost of usage for that specific service.
+        IAM Users: 
+          Within those categories, you can track the cost associated with each IAM user or group.
+          For instance: 
+            If you have an EC2 instance running you can see: 
+              Which IAM user initiated or is responsible for that instance, and how much it costs.
+          User Groups: If your users are part of groups like admin, developers, etc. 
+            You can see the costs associated with those groups as well. 
+              Depending on how you've set up your usage tracking.
+      Hourly or Daily Line Items:
+        The term -Line Items- refers to individual entries or details in a report.
+        The report provides data broken down by specific time intervals either hourly or daily. 
+          Each line item represents a distinct record of cost or usage during that period.
+        For example:
+          It might show how much you were charged for an EC2 instance for each hour or day.
+        Providing granular insight into usage patterns and cost fluctuations.
+      Cost Allocation Tags:
+        If you use cost allocation tags to track costs at a more detailed level.
+          The report will include this data.
+          tags like department, project, etc.       
+        This helps to analyze costs related to specific resources or projects.
+      Integration with Other AWS Services for Analysis:
+        CUR can be integrated with other AWS analytics services for more advanced analysis, like:
+          Amazon Athena: 
+            Query and analyze the cost and usage data using SQL-like queries.
+          Amazon Redshift: 
+            Perform deeper analytics using Redshift's data warehouse capabilities.
+          Amazon QuickSight: 
+            Use visualizations to analyze the data and generate reports and dashboards.
+    Cost Explorer:
+      Tool under the AWS Cost Management service.
+      Gain insight into your AWS costs and usage trends over time.
+      Generate custom reports to analyze cost and usage data according to your needs.
+        Analyze data at various levels: 
+          Total costs and usage across all accounts. 
+          Detailed monthly or hourly breakdowns at the resource level.
+      Optimize costs by selecting the most suitable Savings Plan based on your usage patterns.
+      Forecast usage for up to 12 months based on historical usage data.
+      Cost Explorer -Monthly Resource-:
+        A report. 
+        Shows your costs and usage broken down by month and resource. 
+        Understanding: 
+          How much you're spending each month.
+          Which resources are contributing to the total cost.
+        Useful for tracking monthly expenses and managing your budget.
+      Cost Explorer -Hourly & Resource Level-:
+        A report. 
+        Drill down into your costs on an hourly basis and see them at the resource level. 
+        This report provides a more granular look at how your costs accumulate throughout the day.
+      Cost Explorer -Forecast Usage-:
+        A report. 
+        Shows forecasts of your AWS costs and usage based on historical data. 
+        Helps predict future costs and resource usage, allowing you to plan ahead. 
+        Uses machine learning to estimate future usage and spending patterns.
+  Monitoring Costs:
+    Billing Alarms in CloudWatch:
+      CloudWatch stores billing data metrics in the us-east1 region.
+      This data encompasses the total worldwide AWS costs incurred.
+      It reflects actual costs, not projected costs.
+        The alarms are triggered based on the actual charges that have been incurred. 
+          Rather than forecasting or predicting future costs.
+      Suitable for basic alarms.
+      It lacks the robust features of AWS Budgets for comprehensive cost management.
+    AWS Budgets:
+      Service that helps you set custom budgets and send alarms when costs exceeds the budget.
+      Up to 5 SNS notifications per budget.
+        Notify you when your usage crosses certain thresholds.
+      4 types of budgets: Usage, Cost, Reservation, Savings Plans.
+        Usage Budget:
+          Tracks the usage of AWS services, such as: 
+            How much data is transferred.
+            How many instances are used.
+        Cost Budget:
+          Tracks the costs of the AWS services you use.
+        Reservation Budget:
+          Helps track the utilization of Reserved Instances -RIs-, can be used to monitor: 
+            How much of your Reserved Instances are being used compared to what you have purchased.
+        Savings Plans Budget:
+          Tracks the utilization and savings from Savings Plans that you've purchased.
+            Utilization:
+              The amount of your Savings Plan that you're using. 
+              The percentage of your plan that is being applied to your usage.
+            Savings:
+              The amount of money you've saved by using the Savings Plan.
+                Instead of paying the regular On-Demand prices for those resources.
+      For Reserved Instances -RI-:
+        Specifically available for services like EC2, ElastiCache, RDS, and Redshift.
+        Track utilization.
+          Monitor how much of your purchased Reserved Instances are being used. 
+            Compared to what you are actually consuming.
+      Budgets can be filtered by: 
+        Service: Focus on costs or usage for a specific AWS service like EC2, S3.
+        Linked Account: For organizations with multiple accounts, filter budgets by account.
+        Tags: If you use tags to label resources, you can filter based on those tags.
+        Purchase Option: Differentiate between On-Demand, Reserved Instances, or Savings Plans.
+        Instance Type: Focus on specific EC2 instance types like m5.large.
+        Region/Availability Zone: Track costs or usage for specific AWS Regions or AZ.
+        API Operation: Analyze costs for specific API calls.
+      Same options as AWS Cost Explorer!
+        Set filters and track specific services, resources, and regions across your account.
+        Helps you ensure that you are managing and optimizing your AWS spending effectively.
+      2 budgets are free, then $0.02/day/budget.
+    AWS Cost Anomaly Detection:
+      AWS Service.
+      Designed to help you identify unexpected spikes or drops in your AWS spending or usage.
+      Utilize machine learning to continuously monitor your cost and usage.
+      ML algorithms learn your historical spending patterns to detect anomalies, including: 
+        One-time spikes.
+        Continuous increases. 
+          Without the need for predefined thresholds.
+      Monitor various aspects such as: 
+        AWS services, member accounts, cost allocation tags, or cost categories.
+          AWS Services: 
+            You can track anomalies for individual services like EC2, S3, or Lambda.
+          Member Accounts: 
+            For organizations with multiple linked accounts. 
+              You can monitor spending patterns for each account.
+          Cost Allocation Tags: 
+            Track anomalies for resources grouped by tags like -Environment: Production-, etc.
+          Cost Categories: 
+            Monitor custom-defined cost groupings.
+            Such as grouping all "Storage Services" into a single category.
+      Receive anomaly detection reports with root-cause analysis.
+      Choose to be notified with individual alerts or daily/weekly summaries via SNS.
+        Individual Alerts: Immediate notifications when an anomaly is detected.
+    AWS Service Quotas:
+      Quota:
+        AWS resource limits.
+        Every AWS service has predefined quotas. 
+          Defining the maximum amount of resources you can use.
+        Example:
+          The number of EC2 instances you can run.
+          The maximum size of an S3 bucket.
+          The number of API Gateway requests per second.
+      Notify you when you're close to a service quota value threshold.
+      Create CloudWatch Alarms on the Service Quotas console.
+      Example like Lambda concurrent executions.
+        The number of function invocations running simultaneously at a given time.
+      Request a quota: 
+        Increase from AWS Service Quotas.
+        Shutdown resources before limit is reached.
+    Trusted Advisor:
+      Conduct a comprehensive assessment of your AWS accounts without the need for installation.
+      Receive recommendations across six key categories: 
+        Cost optimization.
+        Performance.
+        Security.
+        Fault tolerance.
+        Service limits.
+        Operational excellence.
+      Available for users with Business or Enterprise Support plans.
+      Includes a full set of checks and offers programmatic access via the AWS Support API.
+        AWS Trusted Advisor performs various checks to analyze your AWS environment.
+Review your knowledge
+  Quiz Q&A:
+    Q1:
+      The question:
+        What is the primary function of the AWS Pricing Calculator?
+      Options:
+        Managing AWS resources.
+        Creating cost estimates for using AWS services. ✔️
+        Monitoring AWS performance.
+        Setting up AWS security policies.
+    Q2:
+      The question:
+        AWS ??? provides a monthly view of your AWS charges 
+        and estimates based on services metered to date.
+      Options:
+        Cost Explorer.
+        Billing Dashboard. ✔️
+        Budgets.
+        Trusted Advisor.
+    Q3:
+      The question:
+        Which type of tags does AWS automatically apply to resources you create?
+      Options:
+        User-defined tags.
+        Resource tags.
+        AWS generated tags. ✔️
+        Cost allocation tags.
+    Q4:
+      The question:
+        AWS Cost Explorer allows you to ??? usage 
+        for up to 12 months based on historical usage data.
+      Options:
+        Visualize.
+        Monitor.
+        Forecast. ✔️
+        Optimize.
+    Q5:
+      The question:
+        AWS Cost Anomaly Detection uses ??? to continuously monitor your cost and usage, 
+        learning historical spending patterns to detect anomalies.
+      Options:
+        Predefined thresholds.
+        Manual inputs.
+        Machine learning. ✔️
+        User rules.
+Support Plans:
+  AWS offers five support plans: 
+    Basic, Developer, Business, Enterprise On-Ramp, and Enterprise. 
+    Vary in cost and feature set as follows:
+      Support Access:
+        Basic: 
+          Email support for billing and account queries only.
+        Developer: 
+          Email support with 1 contact and unlimited cases.
+        Business, Enterprise On-Ramp, and Enterprise: 
+          unlimited contacts and cases.
+          24/7 phone, email, and chat support, plus a Support API for programmatic case management.
+            Programmatic Case Management -PCM-:
+              Connecting with the AWS Support Team using a specific Support API provided by AWS.
+      Response Times:
+        Basic: No case handling.
+        For others:
+          General Guidance: 24 hours.
+          System Impaired: 12 hours.
+          Production System Impaired: 4 hours -Business and higher-.
+          Production System Down: 1 hour.
+          Business-Critical System Down: 
+            30 minutes -Enterprise On-Ramp-. 
+            15 minutes -Enterprise-.
+      Features:
+        Architectural Guidance:
+          Developer: 
+            General guidance only.
+          Business: 
+            Contextual to use cases.
+          Enterprise On-Ramp/Enterprise: 
+            Consultative reviews based on applications -Enterprise allows multiple reviews-.
+        Trusted Advisor Checks:
+          Basic and Developer: 7 core checks.
+          Others: Full checks.
+        AWS Managed Services -AMS-: 
+          Available at additional cost for Business and Enterprise plans.
+            Provides cloud architects. delivery managers. 
+            Security team access for guidance -not part of your team directly-.
+        Enterprise On-Ramp and Enterprise:
+          Access to Technical Account Managers -TAMs-: 
+            A pool in On-Ramp vs. a dedicated TAM in Enterprise.
+          Proactive environment monitoring and personalized assistance in Enterprise.
+      Learning Resources:
+        Enterprise includes access to self-paced labs for training.
+      Pricing:
+        Basic: Free.
+        Developer: Minimum $29/month.
+        Business: Minimum $100/month.
+        Enterprise On-Ramp: $5,500/month.
+        Enterprise: $15,000/month.
+    Key Exam Tips:
+      Memorize the features and distinctions. 
+        Especially regarding Support API, response times, and trusted advisor checks.
+      Understand cost structures and use case suitability for different plans.
+    Use Cases:
+      Developer Plan: 
+        Individual developers or small teams.
+      Business: 
+        Organizations needing 24/7 support with programmatic management.
+      Enterprise: 
+        Large-scale operations requiring: 
+          Personalized support, compliance, and advanced architectural guidance.
+  AWS Managed Services -AMS-: 
+    Service designed to help enterprises operate securely and efficiently in the AWS cloud. 
+    Provides: 
+      Ongoing management of your AWS infrastructure.
+      Automating common operational tasks while ensuring compliance with AWS best practices.
