@@ -1,0 +1,157 @@
+Summary:
+  Pricing Models Summary
+    Compute Pricing -EC2-: 
+      Pay for computing power by the hour or second. 
+      Options for on-demand, reserved, and spot instances.
+    Storage Pricing -S3-: 
+      Pay for storage space used in Amazon S3. 
+      Options for different storage classes and data transfer.
+    Database Pricing -RDS-: 
+      Pay for database usage based on 
+        DB Instance type, storage, and I/O requests.
+      Options for on-demand or reserved instances.
+    AWS Support Plans Pricing: 
+      Choose from Basic, Developer, Business, Enterprise On-Ramp, and Enterprise Support plans. 
+        With varying levels of technical support and response times.
+  Account Best Practices:
+    Utilize AWS Organizations: Manage multiple accounts effectively.
+    Implement SCPs: Restrict account permissions using service control policies.
+    AWS Control Tower: Streamline multi-account setup following best practices.
+    Tagging: Utilize Tags & Cost Allocation Tags for management and billing.
+    IAM Best Practices:
+      Enforce Multi-Factor Authentication -MFA-.
+      Adhere to least-privilege principles.
+      Establish robust password policies and regular rotation.
+    AWS Config: Track resource configurations and compliance over time.
+    Trusted Advisor: Gain insights and tailor your support plan to meet needs.
+    Logging:
+      Direct Service Logs and Access Logs to S3 or CloudWatch Logs.
+      Use CloudTrail to record API calls within your account.
+    Security Response:
+      In case of account compromise: 
+        Change root password, delete and rotate all passwords/keys, contact AWS support.
+    AWS Service Catalog: Enable users to create pre-defined stacks as defined by admins.
+  Pricing Tools Summary:
+    Pricing Calculator: Cost of services on AWS.
+    Billing Dashboard: High level overview + free tier dashboard.
+    Cost Allocation Tags: Tag resources to create detailed reports.
+    Cost and Usage Reports: Most comprehensive billing dataset.
+    Cost Explorer: View current usage -detailed- and forecast usage.
+    Billing Alarms: In us-east-1 track overall and per-service billing.
+    Budgets: More advanced, track usage, costs, RI, and get alerts.
+    Savings Plans: Easy way to save based on long-term usage of AWS.
+    Cost Anomaly Detection: Detect unusual spends using Machine Learning.
+    Service Quotas: Notify you when you’re close to service quota threshold.
+Review your knowledge:
+  Quiz Q&A:
+    Q1:
+      The question:
+        A company wants to review its monthly costs 
+        of using Amazon EC2 and Amazon RDS for the past year. 
+        Which AWS service or tool provides this information?
+      Options:
+        Amazon CloudWatch.
+        AWS Trusted Advisor.
+        Cost Explorer. ✔️
+        Amazon Forecast.
+    Q2:
+      The question:
+        A company has several departments. 
+        Each department has its own AWS accounts for its applications. 
+        The company wants all AWS costs on a single invoice to simplify payment, 
+        but the company wants to know the costs that each department is incurring. 
+        Which AWS tool or feature will provide this functionality?
+      Options:
+        Savings Plans.
+        AWS Cost and Usage Reports.
+        Consolidated billing. ✔️
+        AWS Budgets.
+    Q3:
+      The question:
+        A company needs to generate reports that can break down cloud costs by product,
+        by company-defined tags, and by hour, day, and month. 
+        Which AWS tool should the company use to meet these requirements?
+      Options:
+        AWS Budgets reports.
+        Reserved Instance utilization and coverage reports.
+        Savings Plans utilization reports.
+        AWS Cost and Usage Reports. ✔️
+    Q4:
+      The question:
+        A company is moving multiple applications to a single AWS account. 
+        The company wants to monitor the AWS Cloud costs incurred by each application. 
+        What can the company do to meet this requirement?
+      Options:
+        Set budgets in Cost Explorer.
+        Set up invoiced billing.
+        Use AWS Artifact.
+        Create cost allocation tags. ✔️
+    Q5:
+      The question:
+        A company wants to 
+        forecast future costs and usage of AWS resources based on past consumption.
+        Which AWS service or tool will provide this forecast?
+      Options:
+        AWS Pricing Calculator.
+        AWS Cost and Usage Report.
+        Amazon Forecast.
+        Cost Explorer. ✔️
+    Q6:
+      The question:
+        A company needs to label its AWS resources 
+        so that the company can categorize and track costs.
+        What should the company do to meet this requirement?
+      Options:
+        Use AWS Identity and Access Management (IAM).
+        Use cost allocation tags. ✔️
+        Use AWS Organizations.
+        Use the AWS Cost Management coverage report.
+    Q7:
+      The question:
+        How does consolidated billing help reduce costs 
+        for a company that has multiple AWS accounts?
+      Options:
+        It aggregates usage across accounts so that 
+          the company can reach volume discount thresholds sooner. ✔️
+        It offers an additional 5% discount on purchases of All Upfront Reserved Instances.
+        It provides a simplified billing invoice that 
+          the company can process more quickly than a standard invoice.
+        It gives AWS resellers the ability to bill their customers for usage.
+    Q8:
+      The question:
+        A company has set up its IT infrastructure in the AWS Cloud. 
+        The company wants to receive detailed reports that break down AWS costs by the hour.
+        The reports must be placed in an Amazon S3 bucket. 
+        Which AWS tool will meet these requirements?
+      Options:
+        AWS Cost and Usage Reports. ✔️
+        AWS Pricing Calculator.
+        Cost Explorer.
+        AWS Budgets.
+    Q9:
+      The question:
+        Which AWS service or feature can a company use to 
+        estimate AWS costs before provisioning workloads?
+      Options:
+        AWS Pricing Calculator. ✔️
+        AWS Cost and Usage Report.
+        Cost Explorer.
+        AWS Budgets.
+    Q10:
+      The question:
+        A company has multiple departments. 
+        The company must charge each department for its exact AWS Cloud usage, 
+        including data transfer costs. 
+        How can the company determine these costs by department?
+      Options:
+        Use one AWS account for each department.
+        Use cost allocation tags on services that are used the most often. ✔️
+        Use AWS Trusted Advisor.
+        Use Savings Plans.
+      Manara potential error ❌.
+        If you only tag services that are -used the most often-: 
+          You might miss costs from smaller or sporadically used services. 
+            So you will not have the -exact AWS Cloud usage-.
+        I believe the first answer is the correct, since:
+          It ensures a complete and accurate breakdown of costs at the account level.
+          It's more complex when having multiple account but this is not a concern in the question.
