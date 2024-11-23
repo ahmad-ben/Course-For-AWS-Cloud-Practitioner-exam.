@@ -1,0 +1,124 @@
+Advanced Identity in AWS:
+  AWS STS -Security Token Service-:
+    Creates temporary, limited-privilege security credentials for users and applications.
+    Credentials are short-term and configured with an expiration period.
+    Temporary Credentials include an Access Key ID, a Secret Access Key, and a Session Token.
+    Limited Privileges:
+      The permissions are tied to specific policies. 
+      Ensuring users or applications only have access to what they need for a specific task.
+    Use cases include: 
+      Identity federation.
+        Enable users authenticated via external identity providers to access AWS resources.
+          Temporarily. 
+        External identity providers like SAML or OpenID. 
+        Avoid creating IAM users for each federated user.
+      IAM Roles for Cross/Same Account:
+        Assume an IAM role in the same or another AWS account to perform specific actions, such as: 
+          Deploying resources in a shared account.
+      EC2 Access:
+        Assign an IAM role to an EC2 instance, allowing apps running on the instance to: 
+          Request temporary credentials for accessing AWS services securely.
+  Amazon Cognito:
+    Manages user identity for web and mobile applications, potentially for millions of users.
+    Instead of creating IAM users, you create users in Cognito.
+    Cognito user And IAM user:
+      Both solve different problems. 
+      Cognito can replace the need for IAM users in application-level use cases. 
+      This ensures better scalability, security, and adherence to AWS best practices.
+    Example of Relationship Between Cognito Users and IAM:
+      Scenario:
+        A photo-sharing app allows users to upload images to an S3 bucket.
+      Without Cognito:
+        You may need to create an IAM user for each app user and manage keys/permissions manually.
+          Which is insecure and hard to scale.
+      With Cognito:
+        App users register in Cognito -Cognito user pool-.
+        Once authenticated.
+          Cognito assigns temporary AWS credentials via an IAM role configured for the app.
+        These credentials allow users to interact securely with the S3 bucket, for example: 
+          Uploading images without needing IAM users.
+  Microsoft Active Directory -AD-.
+    Active Directory Domain Services -AD DS- found on any Windows Server with AD DS installed.
+    It serves as a database of objects such as: 
+      User accounts, computers, printers, file shares, and security groups.
+    AD DS enables centralized security management. 
+      Allowing you to create accounts and assign permissions.
+  AWS Directory Services:
+    AWS Managed Microsoft AD:
+      Create your own AD in AWS. 
+      Manage users locally -AWS-. 
+      Supports MFA.
+        When a user tries to access AWS resources or services.
+      Establish trust connections with your on-premise AD.
+  AD Connector:
+    A proxy/gateway that connects AWS resources to your existing on-premise Active Directory.
+    Directory Gateway -proxy- to redirect to on-premise AD. 
+    Users are managed entirely within the on-premise AD.
+    Supports MFA for additional security.
+      When a user tries to access AWS resources or services.
+    Does not store data in AWS, it redirects authentication and queries to your on-premises AD.
+    Simple AD:
+      AD-compatible managed directory on AWS, cannot be joined with on-premise AD.
+  AWS IAM Identity Center:
+    Formerly called AWS Single Sign-On -SSO-.
+    AWS Service.
+    Simplifies managing and authenticating users across multiple AWS accounts and applications.
+    Provides one login for all your AWS accounts in AWS Organizations.
+    Also offers SSO for business cloud applications like Salesforce, Box, and Microsoft 365.
+      The user can use the same credentials to access the business cloud applications.
+    SAML 2.0-enabled applications are supported for single sign-on.
+      If your organization uses other identity management systems that are compatible with SAML.
+        Those can be integrated into the SSO setup for easier authentication.
+      all supported apps, like AWS services and third-party business cloud apps, etc...
+        Can authenticate the user using the same SSO credentials.
+    You can use AWS SSO for logging into EC2 Windows Instances.
+    Identity Providers supported by AWS IAM Identity Center:
+      The built-in identity store: 
+        Allows managing users directly within AWS.
+      Active Directory -AD-: 
+        Can be integrated with existing Active Directory setups for managing user identities.
+      OneLogin and Okta: 
+        Third-party identity management solutions that can be integrated. 
+          To enable SSO -Single Sign-On- for AWS services and other applications.
+  What is the business cloud applications:
+    Software tools and services that are hosted in the cloud. 
+    Designed to help organizations manage their business operations.
+Advanced Identity in AWS
+  Quiz Q&A:
+    Q1:
+      The question:
+        AWS STS creates ??? credentials that are configured with an expiration period.
+      Options:
+        permanent, full-access.
+        temporary, full-access.
+        temporary, limited-privilege. ✔️
+        long-term, limited-privilege.
+    Q2:
+      The question:
+        Instead of creating IAM users, 
+        you create users in ??? when managing user identity for web and mobile applications.
+      Options:
+        Amazon Cognito. ✔️
+        Amazon EC2.
+        AWS Lambda.
+    Q3:
+      The question:
+        AWS Single Sign-On (SSO) provides one login for all your AWS accounts in ???.
+      Options:
+        AWS S3.
+        AWS EC2.
+        AWS Organizations. ✔️
+    Q4:
+      The question:
+        What is AD Connector used for?
+      Options:
+        Storing application data.
+        Creating a local directory on premises.
+        Redirecting to on-premise AD. ✔️
+    Q5:
+      The question:
+        Which of the following services supports SAML 2.0-enabled applications for single sign-on?
+      Options:
+        AWS CloudFormation.
+        AWS SSO. ✔️
+        Amazon S3.
