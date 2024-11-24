@@ -1,0 +1,398 @@
+Questions i got wrong or i didn't be sure about:
+  Q 2:
+    The Question:
+      A security engineer wants a single-tenant AWS solution to 
+      create, control, and manage their own cryptographic keys to 
+      meet regulatory compliance requirements for data security. 
+      Which AWS service should the engineer use?
+    The Options:
+      AWS CloudHSM. ✔️ Correct Answer.
+      AWS Key Management Service (AWS KMS). ❌ What I Chose.
+      AWS Certificate Manager (ACM).
+      AWS Systems Manager.
+    Why, for avoiding this again:
+      AWS CloudHSM:
+        Physical device. 
+          Dedicated hardware security module hosted and managed by AWS in their data centers.
+        Single-tenant. 
+          HSM hardware is dedicated solely to your AWS account. 
+          You do not share the physical hardware with any other AWS customer.
+        HSM solution that allows you to create, control, and manage your cryptographic keys. 
+          You access the HSM remotely via the AWS Cloud.
+        It meets regulatory compliance requirements for data security.
+          Providing full control over the HSMs and the keys stored within them.
+        HSM standards for:
+          Hardware security modules.
+      Why not the others:  
+        AWS Key Management Service -AWS KMS-: 
+          KMS is a multi-tenant service where AWS manages the cryptographic modules. 
+            Which may not meet the strict single-tenant requirements of some regulatory frameworks. 
+        AWS Certificate Manager (ACM): 
+          ACM is used to provision, manage, and deploy SSL/TLS certificates. 
+            Not for managing cryptographic keys.  
+        AWS Systems Manager: 
+          This service is used for operational management and automation.
+            Not cryptographic key management.
+      Key takeaway:
+        For single-tenant and strict regulatory compliance, AWS CloudHSM is the right choice.
+  Q 9:
+    The Question:
+      Which AWS service or feature offers 
+      HTTP attack protection to users running public-facing web applications?
+    The Options:
+      AWS Shield Standard.
+      Security groups.
+      Network ACLs.
+      AWS WAF. ✔️ Correct Answer -It's my choose also, but i was not sure.-.
+    Why, for avoiding this again:
+      While AWS Shield Standard protects against DDoS attacks 
+        Network and transport layer attacks.
+      AWS WAF is the service that specifically focuses on HTTP attacks.
+        Particularly at the application layer.
+      Why AWS WAF is the correct choice for this question:
+        AWS WAF
+          Specifically designed to protect web applications by filtering HTTP traffic. 
+          It can protect against common web exploits such as: 
+            SQL injection, cross-site scripting (XSS), and other HTTP-related attacks. 
+          Allows you to define rules to: 
+            allow, block, or count web requests based on conditions such as: 
+              IP addresses, HTTP headers, URI strings, query string parameters, and body data.
+      AWS Shield Standard vs. AWS WAF:
+        AWS Shield Standard: 
+          Protects against large-scale DDoS attacks. 
+            Which aim to overwhelm the network or service itself. 
+          It's a more general form of protection for AWS resources like EC2, ELB, and Route 53.
+        AWS WAF: 
+          Protects against application layer -HTTP/S- attacks, like: 
+            SQL injection, XSS, and other exploits specific to web applications.
+        So, for the specific case of HTTP attack protection. 
+          AWS WAF is the service you would use. 
+            As it is designed to inspect and filter HTTP requests based on customizable rules.
+  Q 11:
+    The Question:
+      A company needs to 
+      connect multiple VPCs and on-premises networks through a single network connection to
+      the AWS Cloud. 
+      Which solution meets this requirement?
+    The Options:
+      VPC peering.
+      AWS Transit Gateway. ✔️ Correct Answer.
+      AWS Direct Connect. ❌ What I Chose.
+      AWS Client VPN.
+    Why, for avoiding this again:
+      AWS Transit Gateway:
+        Highly scalable and central hub that connects multiple VPCs and on-premises networks. 
+        It simplifies network management by acting as a single connection point.
+          Routing traffic between all the networks, including: 
+            VPCs, Direct Connect, and VPN connections.
+      Why not the others:
+        VPC peering: 
+          Connects two VPCs directly.
+          Does not support connecting multiple VPCs or on-premises networks through a single hub.  
+        AWS Direct Connect: 
+          Establishes a dedicated network connection between an on-premises data center and AWS. 
+          Does not connect multiple VPCs or networks.  
+        AWS Client VPN: 
+          Used for secure remote access to resources in AWS.
+          Does not address the need to connect multiple networks.
+      Key takeaway:
+        AWS Transit Gateway is the ideal solution for: 
+          Connecting multiple VPCs and on-premises networks through a central hub.
+  Q 14:
+    The Question:
+      A company is designing workloads in the AWS Cloud. 
+      The company wants the workloads to 
+      perform their intended function correctly and consistently throughout their lifecycle. 
+      Which pillar of the AWS Well-Architected Framework does this goal represent?
+    The Options:
+      Reliability. ✔️ Correct Answer.
+      Operational excellence . ❌ What I Chose.
+      Security.
+      Performance efficiency.
+    Why, for avoiding this again:
+      The Reliability pillar: 
+        Pillar of the AWS Well-Architected Framework. 
+        Focuses on ensuring that a system can: 
+          Perform its intended function correctly and consistently throughout its lifecycle. 
+            This includes the ability to: 
+              Recover from failures.
+              Dynamically scale resources.
+              Meet reliability goals as workloads evolve.
+      Why not the others:
+        Operational excellence: 
+          Focuses on managing and monitoring systems to deliver business value, including: 
+            Automation and process improvement. 
+              Rather than reliability.  
+        Security: 
+          Focuses on protecting data, systems, and assets through: 
+            Risk assessments, encryption, and secure access management. 
+              Not the consistency of function.  
+        Performance efficiency: 
+          Focuses on using resources efficiently to meet performance requirements. 
+            Not ensuring consistent functionality over time.  
+      Key takeaway:  
+        If the goal is to ensure: 
+          Consistent performance and correct functionality throughout the lifecycle of workloads. 
+            The Reliability pillar is most relevant.
+  Q 15:
+    The Question:
+      A cloud practitioner needs to apply security rules to a subnet for Amazon EC2 instances. 
+      Which AWS service or feature can the cloud practitioner use to meet this requirement?
+    The Options:
+      Network ACLs. ✔️ Correct Answer -It's my choose also, but i was not sure.-.
+      AWS WAF.
+      AWS Managed Services (AMS).
+      Security groups.
+    Why, for avoiding this again:
+      Network ACLs (NACLs): 
+        Used to control traffic at the subnet level. 
+        They act as a firewall for controlling inbound and outbound traffic for subnets. 
+        Network ACLs operate at the network layer -Layer 3-.
+        Can allow or deny traffic based on: 
+          IP protocol, source/destination IP address, and port ranges.
+      Why not the others:
+        AWS WAF (Web Application Firewall): 
+          WAF is used to protect web applications from HTTP/HTTPS attacks.
+          Works at the application layer. 
+          Typically used for managing traffic to web-facing resources like: 
+            Amazon CloudFront and Application Load Balancers (ALBs).
+              Not for subnets or EC2 instances.
+        Security Groups: 
+          Security groups are used to control traffic at the instance level -not subnet level-. 
+          Virtual firewalls for EC2 instances. 
+          Allowing or denying traffic based on rules that specify: 
+            Source IP addresses, ports, and protocols. 
+          However, security groups do not apply to entire subnets but to individual EC2 instances.
+        AWS Managed Services (AMS): 
+          This is a suite of services provided by AWS for managing the infrastructure. 
+            Not specifically used for applying security rules to subnets.
+      Keys takeaway: 
+        To apply security rules to subnets, Network ACLs are the correct choice. 
+        For instance-level security, Security groups are used.
+  Q 27:
+    The Question:
+      Which AWS solution gives companies the ability to 
+      use protocols such as NFS to store and retrieve objects in Amazon S3?
+    The Options:
+      AWS Storage Gateway file gateway. ✔️ Correct Answer.
+      Amazon FSx for Lustre.
+      AWS Storage Gateway volume gateway.
+      Amazon Elastic File System (Amazon EFS). ❌ What I Chose.
+    Why, for avoiding this again:
+      AWS Storage Gateway File Gateway:
+        Allows on-premises apps to access cloud storage through standard file protocols such as: 
+          NFS -Network File System-.
+          SMB -Server Message Block-. 
+        Enables the ability to store and retrieve objects in Amazon S3 using these protocols.
+      Why not the others:
+        Amazon FSx for Lustre: 
+          Fully managed file system optimized for high-performance workloads. 
+          Used for computational tasks.
+          Doesn't directly allow the use of NFS to interact with Amazon S3.
+        AWS Storage Gateway volume gateway: 
+          Used for block-level storage.
+          Integrates with Amazon S3, but it does not use NFS for accessing objects. 
+            Instead, it works with iSCSI protocols.
+        Amazon Elastic File System (Amazon EFS): 
+          Amazon EFS provides scalable file storage for use with EC2 instances.
+          Does not directly integrate with S3 or use NFS to store objects in S3.
+      Key takeaway:
+        Access objects in S3 using NFS is possible by the AWS Storage Gateway file gateway.
+  Q 41:
+    The Question:
+      A company is building a new application on AWS. 
+      The company needs the application to remain available 
+      if an individual application component fails. 
+      Which design principle should the company use to meet this requirement?
+    The Options:
+      Automation.
+      Disposable resources.
+      Rightsizing.
+      Loose coupling. ✔️ Correct Answer, -My choice too, i want to know more about design principles-.
+    Learn more:
+      Loose coupling
+        The design principle that emphasizes minimizing dependencies between components of an app. 
+        By using loose coupling.
+          The failure of one component does not cause the entire system to fail. 
+        This enables the app to remain available even if an individual component fails. 
+          As each component can function independently or recover without impacting the others.
+      Why not the others:
+        Disposable resources: 
+          This principle focuses on using temporary resources that can be replaced easily. 
+            Such as spinning up new instances instead of repairing failed ones. 
+          While it helps in scalability and fault tolerance. 
+            It doesn't directly address the requirement.
+              To keep an app available if a component fails.
+        Automation: 
+          Automation involves using scripts or tools to perform tasks automatically. 
+          While automation can help with failover, scaling, and recovery. 
+            It is not the primary design principle.
+              For ensuring that the system remains available when individual components fail. 
+        Rightsizing: 
+          Rightsizing refers to ensuring that resources are appropriately sized for the workload. 
+          While this helps optimize cost and performance.
+            It does not address the application's availability in the case of failure.
+      Conclusion:
+        Loose coupling: 
+          Is the design principle that ensures components can fail independently. 
+            Without affecting the overall availability of the application.
+  Q 51:
+    The Question:
+      A company recently migrated to the AWS Cloud. 
+      The company needs to determine whether 
+      its newly imported Amazon EC2 instances are the appropriate size and type. 
+      Which AWS service can provide this information to the company?
+    The Options:
+      AWS Trusted Advisor. ✔️ Correct Answer.
+      AWS Auto Scaling.
+      AWS Control Tower.
+      Amazon Forecast. ❌ What I Chose.
+    Why, for avoiding this again:
+      AWS Trusted Advisor: 
+        AWS service.
+        Helps companies optimize their AWS environment.
+          By providing recommendations across various best practices, including: 
+            Cost optimization, security, performance, and service limits. 
+        It can analyze the newly imported Amazon EC2 instances and provide insights on whether: 
+          They are appropriately sized and type for the workload requirements. 
+      Why not the others:
+        AWS Auto Scaling: 
+          Service is used to automatically adjust the number of EC2 instances. 
+            In response to changing traffic and workload demands. 
+          Doesn't assessing the current size and type of EC2 instances.
+        AWS Control Tower: 
+          AWS Service.
+          Managing and governing the setup and configuration of AWS accounts across an organization. 
+          Doesn't analyzing instance sizes and types.
+        Amazon Forecast: 
+          Service is focused on forecasting future trends and patterns like demand forecasting. 
+            Not analyzing instance sizing and type.
+      Key takeaway:
+        If you need to determine whether your EC2 instances are appropriately sized and type. 
+          AWS Trusted Advisor is the right tool to use.
+  Q 52:
+    The Question:
+      A company is using a third-party service to back up 10 TB of data to a tape library. 
+      The on-premises backup server is running out of space. 
+      The company wants to use AWS services for the backups 
+      without changing its existing backup workflows. 
+      Which AWS service should the company use to meet these requirements?
+    The Options:
+      Amazon Elastic Block Store (Amazon EBS). ❌ What I Chose.
+      AWS Storage Gateway. ✔️ Correct Answer.
+      Amazon Elastic Container Service (Amazon ECS).
+      AWS Lambda.
+    Why, for avoiding this again:
+      AWS Storage Gateway: 
+        Hybrid cloud storage service. 
+        Enables on-premises applications to seamlessly connect to cloud storage. 
+        It supports backup workflows by: 
+          Allowing on-premises apps to use cloud-based storage as a virtual tape library (VTL). 
+        This would be ideal for the company's existing backup workflow. 
+          As it allows them to continue using tape-based backups .
+            While taking advantage of AWS cloud storage.
+        Can integrate with existing backup apps.
+          Provide a seamless solution for backing up data to AWS cloud storage (like Amazon S3).
+            Without changing the company's backup processes.
+      Why not the others?
+        Amazon Elastic Block Store (Amazon EBS): 
+          EBS provides block-level storage for EC2 instances.
+            Not specifically designed for backup purposes. 
+              Especially for integrating with on-premises tape libraries.
+        Amazon Elastic Container Service (Amazon ECS): 
+          ECS is used for container orchestration.
+          Is not relevant for backup or managing tape libraries.
+        AWS Lambda: 
+          Lambda is a serverless compute service.
+          It is not suitable for managing backup workflows or connecting to tape libraries.
+      Key takeaway:
+        To continue using tape-based backup workflows and move them to the cloud.
+          AWS Storage Gateway is the appropriate service.
+  Q 54:
+    The Question:
+      A company has a business-critical Amazon RDS for MySQL DB instance 
+      that resides in a single Availability Zone. 
+      Which solution will improve the availability of the DB instance?
+    The Options:
+      Convert the DB instance into a multi-Region deployment. ❌ What I Chose.
+      Create an Amazon Simple Queue Service (Amazon SQS) queue in the same AWS Region 
+        to manage writes to the DB instance.
+      Convert the DB instance into a Multi-AZ deployment. ✔️ Correct Answer.
+      Create an Amazon Simple Queue Service (Amazon SQS) queue in a different AWS Region 
+        to manage writes to the DB instance.
+    Why, for avoiding this again:
+      In Amazon RDS, a Multi-AZ deployment improves the availability of the database by: 
+        Automatically replicating the data to a standby instance.
+          In a different Availability Zone (AZ) within the same region. 
+      If the primary instance fails or becomes unavailable.
+        Amazon RDS will automatically failover to the standby instance with minimal downtime.
+          Ensuring high availability and reliability for business-critical applications.
+    Why not the others?
+      Convert the DB instance into a multi-Region deployment: 
+        This would provide high availability across regions.
+          But it's more complex and generally used for: 
+            Disaster recovery or global scalability. 
+              Rather than just improving availability within a region.
+      Create an Amazon Simple Queue Service (Amazon SQS) queue 
+        in the same AWS Region to manage writes to the DB instance: 
+          SQS is a messaging service. 
+            Not a database solution.
+            Does not directly improve availability for database instances. 
+            Not a relevant solution for improving DB instance availability.
+      Create an Amazon Simple Queue Service (Amazon SQS) queue 
+        in a different AWS Region to manage writes to the DB instance: 
+          Does not directly improve the availability of the DB instance. 
+          SQS can be used for decoupling and scaling workloads. 
+            But is not designed to manage database availability.
+    Key takeaway:
+      To improve the availability of an RDS for MySQL DB instance. 
+        Converting it into a Multi-AZ deployment is the best solution. 
+          This ensures that there is an automatic failover mechanism in case of an AZ failure.
+  Q 65:
+    The Question:
+      A company is planning to 
+      replace its physical on-premises compute servers with AWS serverless compute services. 
+      The company wants to be able to take advantage of advanced technologies quickly after the migration.
+      Which pillar of the AWS Well-Architected Framework does this plan represent?
+    The Options:
+      Security.
+      Performance efficiency. ✔️ Correct Answer.
+      Reliability.
+      Operational excellence. ❌ What I Chose.
+    Why, for avoiding this again:
+      Performance efficiency:
+        Pillar of the AWS Well-Architected Framework. 
+        Focuses on the ability to use AWS resources efficiently. 
+          Taking advantage of the latest technologies to meet system requirements. 
+          Adapt to ever-changing business needs.
+          Optimize performance over time. 
+    Why not the other pillars:
+      Security: 
+        While security is always important.
+        This plan is more about leveraging advanced technologies and resources. 
+          Which is specifically about performance efficiency.
+      Operational excellence: 
+        This pillar focuses on operations, monitoring, and managing workloads. 
+        While operational excellence might be a concern in the company's plan. 
+          The emphasis here is on efficiency and technology adaptation, which ties to performance.
+      Reliability: 
+        This pillar focuses on ensuring that workloads can recover from failures and continue running.
+        While important, the plan is more focused on performance and technology agility.
+    Key takeaway:
+      Company's migration to serverless services to take advantage of new technologies aligns with: 
+        the Performance efficiency pillar. 
+          As it emphasizes efficient resource use and leveraging the latest innovations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

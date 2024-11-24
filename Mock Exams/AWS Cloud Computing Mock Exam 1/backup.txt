@@ -1,0 +1,744 @@
+A company uses Amazon WorkSpaces. Which task is the responsibility of AWS, according to the AWS shared responsibility model?
+
+Question 1 / 65
+1| D. Configure AWS CloudTrail to log API calls and user activity.
+2| A. Set up multi-factor authentication (MFA) for each WorkSpaces user account.
+3| B. Ensure the environmental safety and security of the AWS infrastructure that hosts WorkSpaces.
+4| C. Provide security for WorkSpaces user accounts through AWS Identity and Access Management (IAM).#
+
+A security engineer wants a single-tenant AWS solution to create, control, and manage their own cryptographic keys to meet regulatory compliance requirements for data security. Which AWS service should the engineer use?
+
+Question 2 / 65
+1| C. AWS CloudHSM
+2| A. AWS Key Management Service (AWS KMS)
+3| B. AWS Certificate Manager (ACM)
+4| D. AWS Systems Manager
+
+A company is designing an identity access management solution for an application. The company wants users to be able to use their social media, email, or online shopping accounts to access the application. Which AWS service provides this functionality?
+
+Question 3 / 65
+1| C. Amazon Cognito
+2| A. AWS IAM Identity Center (AWS Single Sign-On)
+3| B. AWS Config
+4| D. AWS Identity and Access Management (IAM)
+
+Select an answer
+
+
+
+Which option is the default pricing model for Amazon EC2 instances?
+Question 4 / 65
+1| C. Spot instances
+2| A. On-Demand Instances
+3| B. Savings Plans
+4| D. Reserved Instances
+
+
+
+
+Which AWS service gives users the ability to combine existing accounts into a centrally managed hierarchy?
+
+Question 5 / 65
+1| C. AWS Config
+2| A. AWS Organizations
+3| B. AWS Identity and Access Management (IAM)
+4| D. Amazon Inspector
+
+Select an answer
+
+
+
+Who enables encryption of data at rest for Amazon Elastic Block Store (Amazon EBS)?
+
+Question 6 / 65
+1| C. AWS Key Management Service (AWS KMS) 
+2| A. AWS Support
+3| B. AWS customers
+4| D. AWS Trusted Advisor 
+
+Select an answer
+
+
+Which AWS design principle emphasizes the reduction of interdependencies between components of an application?
+
+Question 7 / 65
+1| C. Automation
+2| A. Scalability
+3| B. Loose coupling
+4| D. Caching        
+
+Select an answer
+
+
+
+A company is developing an application that uses multiple AWS services. The application needs to use temporary, limited-privilege credentials for authentication with other AWS APIs. Which AWS service or feature should the company use to meet these authentication requirements?
+
+Question 8 / 65
+1| B. IAM users
+2| A. Amazon API Gateway
+3| C. AWS Security Token Service (AWS STS)
+4| D. IAM instance profiles
+
+Select an answer
+
+
+
+
+
+Which AWS service or feature offers HTTP attack protection to users running public-facing web applications?
+
+Question 9 / 65
+1| D. AWS Shield Standard
+2| A. Security groups
+3| B. Network ACLs
+4| C. AWS WAF 
+
+Select an answer
+
+
+
+
+A company wants to troubleshoot and debug a serverless application that is deployed in the AWS Cloud. Which AWS service should the company use to achieve this goal?
+
+Question 10 / 65
+1| C. AWS X-Ray
+2| A. AWS Config
+3| B. AWS CloudFormation
+4| D. AWS CloudTrail
+
+
+
+A company needs to connect multiple VPCs and on-premises networks through a single network connection to the AWS Cloud. Which solution meets this requirement?
+
+Question 11 / 65
+1| C. VPC peering
+2| A. AWS Transit Gateway
+3| B. AWS Direct Connect
+4| D. AWS Client VPN
+
+Next
+
+
+A company needs to continuously monitor its environment to analyze network and account activity and identify potential security threats. Which AWS service should the company use to meet these requirements?
+
+Question 12 / 65
+1| C. AWS Identity and Access Management (IAM)
+2| A. AWS Artifact
+3| B. Amazon Macie
+4| D. Amazon GuardDuty 
+
+
+
+
+Which AWS network service or feature allows CIDR block notation when providing an IP address range?
+
+Question 13 / 65
+1| C. Amazon Elastic Block Store (Amazon EBS)
+2| A. Security groups
+3| B. Amazon Machine Image (AMI)
+4| D. AWS Budgets
+
+Select an answer
+
+
+A company is designing workloads in the AWS Cloud. The company wants the workloads to perform their intended function correctly and consistently throughout their lifecycle. Which pillar of the AWS Well-Architected Framework does this goal represent?
+
+Question 14 / 65
+1| C. Reliability
+2| A. Operational excellence 
+3| B. Security
+4| D. Performance efficiency
+
+Select an answer
+
+
+A cloud practitioner needs to apply security rules to a subnet for Amazon EC2 instances. Which AWS service or feature can the cloud practitioner use to meet this requirement?
+
+Question 15 / 65
+1| B. Network ACLs 
+2| A. AWS WAF
+3| D. AWS Managed Services (AMS)
+4| C. Security groups
+
+Next
+Who is responsible for decommissioning end-of-life underlying storage devices that are used to host data on AWS?
+
+Question 16 / 65
+1| D. Auditing team
+2| A. Customer
+3| B. AWS
+4| C. Account creator
+
+
+
+
+A large company wants to track the combined AWS usage costs of all of its linked accounts. How can this be accomplished?
+
+Question 17 / 65
+1| D. Use the AWS Control Tower dashboard to get a summary report of all inked account costs.
+2| A. Use AWS Trusted Advisor to generate customized summary reports.
+3| B. Use AWS Organizations to generate consolidated billing reports.
+4| C. Use AWS Budgets to set utilization targets and receive summary reports.
+
+Select an answer
+
+
+
+
+
+A company is exploring the use of the AWS Cloud, and needs to create a cost estimate for a project before the infrastructure is provisioned. Which AWS service or feature can be used to estimate costs before deployment?
+
+Question 18 / 65
+1| C. AWS Billing and Cost Management
+2| A. AWS Free Tier
+3| B. AWS Pricing Calculator
+4| D. AWS Cost and Usage Report
+
+Next
+
+
+
+
+A company runs thousands of simultaneous simulations using AWS Batch. Each simulation is stateless, is fault tolerant, and runs for up to 3 hours. Which pricing model enables the company to optimize costs and meet these requirements?
+
+Question 19 / 65
+1| C. On-Demand Instances
+2| A. Reserved Instances
+3| B. Spot Instances
+4| D. Dedicated Instances
+
+Select an answer
+
+A company is storing sensitive customer data in an Amazon S3 bucket. The company wants to protect the data from accidental deletion or overwriting. Which S3 feature should the company use to meet these requirements?
+
+Question 20 / 65
+1| C. S3 bucket policies
+2| A. S3 Lifecycle rules
+3| B. S3 Versioning
+4| D. S3 server-side encryption
+
+Select an answer
+
+
+
+A company is storing sensitive customer data in an Amazon S3 bucket. The company wants to protect the data from accidental deletion or overwriting. Which S3 feature should the company use to meet these requirements?
+
+Question 20 / 65
+1| C. S3 bucket policies
+2| A. S3 Lifecycle rules
+3| B. S3 Versioning
+4| D. S3 server-side encryption
+
+Next
+
+
+
+A company is running applications on Amazon EC2 instances in the same AWS account for several different projects. The company wants to track the infrastructure costs for each of the projects separately. The company must conduct this tracking with the least possible impact to the existing infrastructure and with no additional cost. What should the company do to meet these requirements?
+
+Question 21 / 65
+1| C. Deploy EC2 instances for each project in a separate AWS account.
+2| A. Use a different EC2 instance type for each project.
+3| B. Publish project-specific custom Amazon CloudWatch metrics for each application.
+4| D. Use cost allocation tags with values that are specific to each project.
+
+
+
+
+Which feature of the AWS Cloud gives users the ability to pay based on current needs rather than forecasted needs?
+
+Question 22 / 65
+1| C. Volume discounts
+2| A. AWS Budgets
+3| B. Pay-as-you-go pricing
+4| D. Savings Plans
+
+Select an answer
+
+
+
+
+What can a user accomplish using AWS CloudTrail?
+
+Question 23 / 65
+1| C. Assess the compliance of AWS resource configurations with policies and guidelines.
+2| A. Generate an IAM user credentials report.
+3| B. Record API calls made to AWS services.
+4| D. Ensure that Amazon EC2 instances are patched with the latest security updates.
+
+Select an answer
+
+
+Which AWS service or tool can be used to consolidate payments for a company with multiple AWS accounts?
+
+Question 24 / 65
+1| D. AWS Budgets
+2| A. AWS Cost and Usage Report
+3| B. AWS Organizations
+4| C. Cost Explorer
+
+
+
+
+A company wants to set AWS spending targets and track costs against those targets. Which AWS tool or feature should the company use to meet these requirements?
+
+Question 25 / 65
+1| D. Savings Plans
+2| A. AWS Cost Explorer
+3| B. AWS Budgets
+4| C. AWS Cost and Usage Report
+
+Select an answer
+
+
+
+
+Which Amazon Route 53 routing policy can a company use to route traffic to multiple resources in specified proportions?
+
+Question 26 / 65
+1| C. Failover routing policy
+2| A. Weighted routing policy
+3| B. Multivalue answer routing policy
+4| D. Latency routing policy
+
+
+Which AWS solution gives companies the ability to use protocols such as NFS to store and retrieve objects in Amazon S3?
+
+Question 27 / 65
+1| C. AWS Storage Gateway file gateway
+2| A. Amazon FSx for Lustre
+3| B. AWS Storage Gateway volume gateway
+4| D. Amazon Elastic File System (Amazon EFS) 
+
+
+
+
+Which AWS service provides a scalable data warehouse solution?
+
+Question 28 / 65
+1| C. Amazon Kinesis Data Streams
+2| A. Amazon S3
+3| B. Amazon DynamoDB
+4| D. Amazon Redshift
+
+Select an answer
+
+
+
+
+
+
+
+
+
+
+
+
+
+A company has two AWS accounts in an organization in AWS Organizations for consolidated billing. All of the company’s AWS resources are hosted in one AWS Region. Account A has purchased five Amazon EC2 Standard Reserved Instances (RIs) and has four EC2 instances running. Account B has not purchased any RIs and also has four EC2 instances running. Which statement is true regarding pricing for these eight instances?
+
+Question 29 / 65
+1| C. Five instances will be charged as RIs, and three will be charged as regular instances.
+2| A. The eight instances will be charged as regular instances.
+3| B. Four instances will be charged as RIs, and four will be charged as regular instances.
+4| D. The eight instances will be charged as RIs.
+
+Next
+
+
+
+
+
+
+A company has two AWS accounts in an organization in AWS Organizations for consolidated billing. All of the company’s AWS resources are hosted in one AWS Region. Account A has purchased five Amazon EC2 Standard Reserved Instances (RIs) and has four EC2 instances running. Account B has not purchased any RIs and also has four EC2 instances running. Which statement is true regarding pricing for these eight instances?
+
+Question 29 / 65
+1| C. Five instances will be charged as RIs, and three will be charged as regular instances.
+2| A. The eight instances will be charged as regular instances.
+3| B. Four instances will be charged as RIs, and four will be charged as regular instances.
+4| D. The eight instances will be charged as RIs.
+
+Next
+
+
+
+A company is using Amazon DynamoDB. Which task is the company’s responsibility, according to the AWS shared responsibility model?
+
+Question 30 / 65
+1| C. Manage database access permissions.
+2| A. Patch the operating system.
+3| B. Provision hosts.
+4| D. Secure the operating system.
+
+Next
+
+
+
+Under the AWS shared responsibility model, which task is the customer's responsibility when managing AWS Lambda functions?
+
+Question 31 / 65
+1| C. Scaling Lambda resources according to demand.
+2| A. Creating versions of Lambda functions.
+3| B. Maintaining server and operating systems.
+4| D. Updating the Lambda runtime environment.
+
+
+
+
+
+
+
+Which of the following services is a fully managed AWS service that a company's employees can use to access applications through a virtual interface?
+
+Question 32 / 65
+1| C. Amazon AppStream 2.0
+2| A. Amazon EC2
+3| B. AWS Elastic Beanstalk
+4| D. AWS Lambda
+
+Select an answer
+A company is running a web application on Amazon EC2 instances. The company wants the application's compute capacity to automatically adjust to meet customer demand. Which AWS service or capability should the company use to meet this requirement?
+
+Question 33 / 65
+1| B. AWS Auto Scaling
+2| A. AWS Compute Optimizer
+3| C. AWS Launch Wizard
+4| D. AWS AppConfig
+
+Select an answer
+
+
+
+Which AWS Cloud design principle is a company using when the company implements AWS CloudTrail?
+
+Question 34 / 65
+1| D. Go global in minutes.
+2| A. Activate traceability.
+3| B. Use serverless compute architectures.
+4| C. Perform operations as code.
+
+Select an answer
+
+
+A company wants to manage its infrastructure as code in the AWS Cloud. Which AWS service meets this requirement?
+
+Question 35 / 65
+1| C. AWS Cloud9
+2| A. AWS CloudFormation
+3| B. AWS Elastic Beanstalk
+4| D. AWS CloudShell
+
+Select an answer
+
+
+Which activity can companies complete by using AWS Organizations?
+
+Question 36 / 65
+1| C. Migrate applications to microservices.
+2| A. Troubleshoot the performance of applications.
+3| B. Manage service control policies (SCPs).
+4| D. Monitor the performance of applications.
+
+
+Which task is the responsibility of AWS, according to the AWS shared responsibility model?
+
+Question 37 / 65
+1| C. Patch the operating system of an Amazon EC2 instance.
+2| A. Patch AWS network devices.
+3| B. Set user password rules.
+4| D. Configure security groups.
+
+Select an answer
+
+
+
+A system administrator wants to allow IT department users to access the AWS CLI. What is the MINIMUM credential that is required to achieve this goal?
+
+Question 38 / 65
+1| C. IAM user name and password
+2| A. Multi-factor authentication (MFA) code
+3| B. Key pair
+4| D. AWS access keys
+
+
+
+
+
+
+
+
+Which encryption type can be used to protect objects at rest in Amazon S3?
+
+Question 39 / 65
+1| C. TLS
+2| A. Transparent Data Encryption (TDE)
+3| B. Server-side encryption with AWS KMS managed keys (SSE-KMS)
+4| D. SSL
+
+
+
+
+
+
+
+
+
+Which of the following is pillar of the AWS Well-Architected Framework?
+
+Question 40 / 65
+1| C. Continuous development
+2| A. High availability
+3| B. Performance efficiency
+4| D. Going global in minutes
+
+Select an answer
+
+
+
+
+
+
+
+
+A company is building a new application on AWS. The company needs the application to remain available if an individual application component fails. Which design principle should the company use to meet this requirement?
+
+Question 41 / 65
+1| B. Automation
+2| A. Disposable resources
+3| C. Rightsizing
+4| D. Loose coupling
+
+
+
+
+
+Which component of the AWS global infrastructure does Amazon CloudFront use to speed up the delivery of content to users across the world?
+
+Question 42 / 65
+1| D. AWS Outposts connection
+2| A. Amazon VPC
+3| B. Edge locations
+4| C. Local Zone
+
+
+
+
+
+A company wants to use Amazon EC2 instances to provide a static website to users all over the world. The company needs to minimize latency for the users. Which solution meets these requirements?
+
+Question 43 / 65
+1| C. Use Amazon CloudFront with the EC2 instances configured as the source.
+2| A. Use EC2 instances in a single Availability Zone.
+3| B. Use EC2 instances across multiple Availability Zones in the same AWS Region.
+4| D. Use EC2 instances in the same edge location and the same AWS Region.
+
+
+
+Which of the following AWS services can be used to serve large amounts of online video content with the lowest possible latency?
+
+Question 44 / 65
+1| C. Amazon Elastic File System (EFS)
+2| A. AWS Storage Gateway
+3| B. Amazon S3
+4| D. Amazon Glacier
+
+Select an answer
+
+
+Which of the following AWS services can be used to serve large amounts of online video content with the lowest possible latency?
+
+Question 44 / 65
+1| C. Amazon Elastic File System (EFS)
+2| A. AWS Storage Gateway
+3| B. Amazon S3
+4| D. Amazon Glacier
+
+Next
+
+
+Which of the following is a design principle of the reliability pillar of the AWS Well-Architected Framework?
+
+Question 45 / 65
+1| C. Automatically recover from failure.
+2| A. Scale globally in minutes.
+3| B. Adopt a consumption model.
+4| D. Make frequent, small, reversible changes.
+
+Which AWS service should a cloud engineer use to view API calls to AWS services?
+
+Question 46 / 65
+1| C. AWS Config
+2| A. Amazon CloudWatch
+3| B. AWS CloudTrail
+4| D. AWS Artifact
+
+
+
+
+A company wants to use Amazon EC2 instances to run a stateless and restartable process after business hours. Which instance purchasing option will meet these requirements MOST cost-effectively?
+
+Question 47 / 65
+1| C. Dedicated Hosts
+2| A. Spot Instances
+3| B. Reserved Instances
+4| D. On-Demand Instances
+
+
+
+
+According to the AWS shared responsibility model, which task is the responsibility of the customer?
+
+Question 48 / 65
+1| B. Configure logical access controls for resources, and protect account credentials.
+2| A. Protect the global infrastructure that runs all of the services offered in the AWS Cloud.
+3| D. Patch and back up Amazon Aurora.
+4| C. Configure the security used by managed services.
+
+A cloud engineer wants to store data in Amazon S3. The engineer will access some of the data yearly and some of the data daily. Which S3 storage class will meet those requirements MOST cost-effectively?
+
+Question 49 / 65
+1| D. S3 Intelligent-Tiering
+2| A. S3 Standard
+3| B. S3 Glacier Deep Archive
+4| C. S3 One Zone-Infrequent Access (S3 One Zone-IA)
+
+
+
+A user is using AWS account root user credentials to try to close an AWS account that is managed by AWS Organizations. However, the attempt is unsuccessful. What could cause this attempt to be unsuccessful?
+
+Question 50 / 65
+1| D. The organizational administrator has used a service control policy (SCP) to limit the root user permissions.
+2| A. No multi-factor authentication (MFA) has been configured.
+3| B. The root user is not specifically assigned to the administration group.
+4| C. The root user's password does not meet the minimum password complexity requirements.
+
+
+A company recently migrated to the AWS Cloud. The company needs to determine whether its newly imported Amazon EC2 instances are the appropriate size and type. Which AWS service can provide this information to the company?
+
+Question 51 / 65
+1| C. AWS Trusted Advisor
+2| A. AWS Auto Scaling
+3| B. AWS Control Tower
+4| D. Amazon Forecast
+A company is using a third-party service to back up 10 TB of data to a tape library. The on-premises backup server is running out of space. The company wants to use AWS services for the backups without changing its existing backup workflows. Which AWS service should the company use to meet these requirements?
+
+Question 52 / 65
+1| A. Amazon Elastic Block Store (Amazon EBS)
+2| B. AWS Storage Gateway
+3| C. Amazon Elastic Container Service (Amazon ECS)
+4| D. AWS Lambda
+
+
+
+
+
+Which actions represent best practices for using AWS IAM?
+
+Question 53 / 65
+1| A. Configure a strong password policy.
+2| B. Share the security credentials among users of AWS accounts who are in the same Region.
+3| C. Rotate access keys on a regular basis.
+4| D. A & C
+
+A company has a business-critical Amazon RDS for MySQL DB instance that resides in a single Availability Zone. Which solution will improve the availability of the DB instance?
+
+Question 54 / 65
+1| A. Convert the DB instance into a multi-Region deployment.
+2| B. Create an Amazon Simple Queue Service (Amazon SQS) queue in the same AWS Region to manage writes to the DB instance.
+3| C. Convert the DB instance into a Multi-AZ deployment.
+4| D. Create an Amazon Simple Queue Service (Amazon SQS) queue in a different AWS Region to manage writes to the DB instance.
+
+
+
+
+
+
+A customer needs to run a MySQL database that easily scales. Which AWS service should they use?
+
+Question 55 / 65
+1| A. Amazon Aurora
+2| B. Amazon Redshift
+3| C. Amazon DynamoDB
+4| D. Amazon ElastiCache
+
+Which of the following components of the AWS Global Infrastructure consists of one or more discrete data centers interconnected through low latency links?
+
+Question 56 / 65
+1| A. Availability Zone
+2| B. Edge location
+3| C. Region
+4| D. Private networking
+
+A company is running a monolithic on-premises application that does not scale and is difficult to maintain. The company has a plan to migrate the application to AWS and divide the application into microservices. Which best practice of the AWS Well-Architected Framework is the company following with this plan?
+
+Question 57 / 65
+1| A. Integrate functional testing as part of AWS deployment.
+2| B. Use automation to deploy changes.
+3| C. Deploy the application to multiple locations.
+4| D. Implement loosely coupled dependencies.
+
+Which of the following is a benefit of using an AWS managed service?
+
+Question 58 / 65
+1| A. Reduced operational overhead for a company's IT staff
+2| B. Increased fixed costs that can be predicted by a finance team
+3| C. Removal of the need to have a backup strategy
+4| D. Removal of the need to follow compliance standards
+
+How many Availability Zones should compute resources be provisioned across to achieve high availability?
+
+Question 59 / 65
+1| A. A minimum of one
+2| B. A minimum of two
+3| C. A minimum of three
+4| D. A minimum of four or more
+
+What does the concept of agility mean in AWS Cloud computing?
+
+Question 60 / 65
+1| A. The speed at which AWS resources are implemented
+2| B. The speed at which AWS creates new AWS Regions
+3| C. The ability to experiment quickly
+4| D A & C
+
+
+Which AWS service or feature can control VPC traffic?
+
+Question 61 / 65
+1| A. Security groups
+2| B. AWS Direct Connect
+3| C. Amazon GuardDuty
+4| D. Amazon Connect
+
+
+What is the lowest-cost, durable storage option for retaining database backups for immediate retrieval?
+
+Question 62 / 65
+1| A. Amazon S3
+2| B. Amazon Glacier
+3| C. Amazon EBS
+4| D. Amazon EC2 Instance Store
+
+
+A company is looking for a scalable data warehouse solution. Which of the following AWS solutions would meet the company's needs?
+
+Question 63 / 65
+1| A. Amazon Simple Storage Service (Amazon S3)
+2| B. Amazon DynamoDB
+3| C. Amazon Kinesis
+4| D. Amazon Redshift
+
+Which of the following are benefits of migrating to the AWS Cloud?
+
+Question 64 / 65
+1| A. Operational resilience
+2| B. Discounts for products on Amazon.com
+3| C. Business agility
+4| D. A & C
+
+A company is planning to replace its physical on-premises compute servers with AWS serverless compute services. The company wants to be able to take advantage of advanced technologies quickly after the migration. Which pillar of the AWS Well-Architected Framework does this plan represent?
+
+Question 65 / 65
+1| A. Security
+2| B. Performance efficiency
+3| D. Reliability
+4| C. Operational excellence
