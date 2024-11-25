@@ -1,0 +1,51 @@
+Exam Study Strategies:
+  7 Days before the exam:
+    Review Key Concepts: 
+      Focus on AWS core services like EC2, S3, RDS, VPC and the AWS pricing models.
+    Study AWS Whitepapers: 
+      Focus on the most recent AWS overview and best practices documents.
+    Create Summary Notes: 
+      Condense your notes into key points that are easy to review.
+  1 Day before the exam:
+    Light Review Only: 
+      Go over your summary notes and revisit any tricky concepts
+    Check Exam Logistics: 
+      Verify the exam time. 
+      Location or setup for online proctored exam. 
+      Required IDs.
+    Rest Well: 
+      Ensure you get a full night’s sleep to be well-rested for the exam.
+  On Exam Day:
+    Arrive Early: 
+      Get to the exam center early to avoid any last-minute stress.
+    Read Questions Carefully: 
+      Take your time to understand each question and watch out for keywords.
+Types of Questions on the Exam:
+  Two types:
+    Multiple Choice Questions:
+      These have one correct answer and three incorrect options. 
+      Make sure to select only one response.
+    Multiple Response Questions:
+      These require you to select two or more correct answers from five or more options. 
+      Note that the exam software won't indicate if you've chosen the correct number of answers.
+        Though the question will specify how many to select.
+    See:
+      ./assets/questions-type.png
+Exam Answering Tips & Tricks:
+  Proceed by Elimination.
+  Expect high-level pick-a-service questions for the most part.
+  Eliminate obviously incorrect answers first.
+  Sometimes, AWS makes up services. 
+    Make sure you know all the ones we have covered so you don’t choose those!
+  Choose the most sensible option from the remaining answers.
+  Few trick questions; avoid overthinking.
+  Complicated solutions which may work, but require a lot of work/processing are likely incorrect.
+  No Penalty for Guessing: 
+    There’s no negative scoring for incorrect answers.
+      So it’s better to guess than to leave a question blank.
+  Attempt Every Question: 
+    It’s crucial to answer every question since unanswered ones are marked incorrect.
+  If need be, you can flag questions so you can come back to them at a later stage.
+  Flagging Questions: 
+    If you’re unsure about a question and want to revisit it later, use the flag feature. 
+      This allows you to easily find and review these questions once you’ve answered all others.
