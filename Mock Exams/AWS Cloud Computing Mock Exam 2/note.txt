@@ -1,0 +1,562 @@
+Questions i got wrong or didn't be sure about:
+  Q 8:
+    Question:
+      A company needs to use standard SQL to 
+      query and combine exabytes of structured and semi-structured data across a
+      data warehouse, operational database, and data lake. 
+      Which AWS service meets these requirements?
+    Options:
+      Amazon Aurora.
+      Amazon DynamoDB.
+      Amazon Athena.
+      Amazon Redshift. ✔️ Correct answer, the same as mine, just wanna review the Redshift service.
+    Why Amazon Redshift:
+      Fully managed data warehouse service.
+      Supports querying and combining large-scale data using standard SQL. 
+      It is designed to handle structured and semi-structured data. 
+      It can integrate with operational databases and data lakes.
+        Using features like Redshift Spectrum. 
+      It can process and analyze exabytes of data effectively.
+      Redshift Spectrum allows querying data directly in Amazon S3 -data lake- without moving it.  
+      It integrates with AWS Glue Data Catalog to query semi-structured data.  
+      It supports federated queries to operational databases like Aurora or RDS.  
+    Why not others:
+      Amazon Aurora: 
+        Relational database service that supports standard SQL.
+        Primarily designed for transactional and operational databases.
+          Not large-scale analytics across diverse data sources.  
+      Amazon DynamoDB: 
+        A NoSQL database designed for low-latency operations. 
+          Not for querying large-scale structured or semi-structured data using SQL.  
+      Amazon Athena: 
+        Athena is great for querying data directly from S3 using SQL.
+          Not designed for combining data across a: 
+            Data warehouse, operational databases, and a data lake at the exabyte scale.  
+  Q 10:  
+    Question:  
+      A batch workload takes 5 hours to finish on an Amazon EC2 instance. 
+      The amount of data to be processed doubles monthly and the processing time is proportional.
+      What is the best cloud architecture to address this consistently growing demand?  
+    Options:  
+      Run the application on a bigger EC2 instance size.  
+      Switch to an EC2 instance family that better matches batch requirements.  
+      Distribute the application across multiple EC2 instances and run the workload in parallel. 
+        ✔️ Correct answer, the same as mine i just want to make sure about it.  
+      Run the application on a bare metal EC2 instance.  
+    Why Distribute the application across multiple EC2 instances and run the workload in parallel:  
+      Allows the application to handle growing data volumes more efficiently. 
+        By processing different parts of the workload concurrently.  
+      Often called horizontal scaling. 
+        Ensures that increasing demand is met by adding more compute capacity.  
+      Parallel processing: 
+        Reduces overall execution time.
+        Makes the system more scalable and cost-efficient in the long term.  
+      Running workloads in parallel is ideal for batch processing. 
+        Where tasks are independent and can be processed simultaneously.
+    Why not others:  
+      Run the application on a bigger EC2 instance size: 
+        This approach -vertical scaling- provides more power, but:
+          Cannot handle the rapid data growth effectively since there are hardware limitations. 
+          The scaling is limited by the instance size available.  
+        Switch to an EC2 instance family that better matches batch requirements: 
+          Changing instance families might improve efficiency slightly.
+            But Will not address the fundamental scalability issue of rapidly growing data volumes.
+        Run the application on a bare metal EC2 instance: 
+          Bare metal instances provide direct hardware access. 
+            But do not inherently improve scalability or parallel processing capabilities. 
+            They are better suited for workloads requiring hardware-level control.  
+  Q 11:  
+    Question:  
+      A company is building a serverless architecture 
+      that connects application data from multiple data sources. 
+      The company needs a solution that does not require additional code. 
+      Which AWS service meets these requirements?  
+    Options:  
+      Amazon CloudWatch.  
+      AWS Lambda.  
+      Amazon Simple Queue Service (Amazon SQS).  
+      Amazon EventBridge. ✔️ Correct answer, the same as mine i just want to make sure about it.  
+    Why Amazon EventBridge:  
+      Fully managed event bus service.
+      Connects applications using events from multiple sources, including: 
+        AWS services, SaaS applications, and custom applications.  
+      Enables serverless architectures. 
+        By allowing seamless integration of data sources. 
+          Without requiring developers to write additional code.  
+      Automatically routes and transforms events between producers and consumers. 
+        Making it an ideal solution for this scenario.  
+    Why not others:  
+      Amazon CloudWatch:
+        Primarily used for monitoring and observability, such as collecting logs and metrics. 
+        Not designed for integrating data from multiple sources in a serverless architecture.  
+      AWS Lambda: 
+        Lambda can process data and integrate sources.
+          But it requires writing custom code to handle integration.  
+      Amazon Simple Queue Service (Amazon SQS): 
+        SQS is a message queuing service. 
+        Requires additional logic and code to manage the integration of multiple data sources. 
+        It does not inherently support event-driven architecture as EventBridge does.  
+  Q 15:
+    Question:  
+      A company has identified a high-risk network security issue 
+      during an AWS Well-Architected review. 
+      The company needs a managed solution that the company can use to 
+      deploy essential network protections for all of its VPCs. 
+      Which AWS service or feature meets these requirements?  
+    Options:  
+      Network ACLs.  
+      Security groups.  
+      Amazon VPC Network Access Analyzer.  
+      AWS Network Firewall. ✔️ Correct answer, the same as mine.  
+    Why AWS Network Firewall:  
+      Managed network protection solution designed to secure VPCs.  
+      Provides advanced network protections, such as: 
+        Stateful inspection.
+        Intrusion detection and prevention (IDS/IPS).
+        Traffic filtering across all VPCs.  
+      It integrates with AWS Firewall Manage.
+        Enabling centralized management of firewall rules across multiple accounts and VPCs. 
+          Which aligns with the company's needs for essential network protections.  
+    Why not others:  
+      Network ACLs:  
+        Control traffic at the subnet level and provide basic stateless filtering.  
+        Lack advanced security features like: 
+          Intrusion detection, traffic inspection, and centralized management for multiple VPCs.  
+      Security groups:  
+        Provide instance-level protections. 
+          But limited to controlling inbound and outbound traffic.  
+        They do not offer centralized management or other advanced features like IDS/IPS.  
+      Amazon VPC Network Access Analyzer:  
+        Tool that identifies potential security and compliance risks in your VPC configurations.  
+        It does not actively provide network protections.
+          It is a diagnostic tool, not a preventive or protective solution.  
+  Q 16:
+    Question:  
+      A company is running a critical workload on an Amazon RDS DB instance. 
+      The company needs the DB instance to be highly available 
+      with a recovery time of less than 5 minutes. 
+      Which solution will meet these requirements?  
+    Options:  
+      Modify the DB instance to be a Multi-AZ deployment. ✔️ Correct answer, the same as mine.  
+      Create a read replica of the DB instance.  
+      Create a template of the DB instance by using AWS CloudFormation.  
+      Take frequent snapshots of the DB instance. Store the snapshots in Amazon S3.  
+    Why Multi-AZ deployment:  
+      Provide high availability. 
+        By automatically replicating the database to a standby instance in a different AZ.  
+      If the primary DB instance fails.
+        Amazon RDS automatically promotes the standby instance to become the new primary instance. 
+          Ensuring minimal downtime and a recovery time within the required less than 5 minutes.  
+      This solution is designed for critical workloads needing high availability and durability.  
+    Why not others:  
+      Create a read replica:  
+        Read replicas are designed for read scalability, not high availability.  
+        In the event of a failure.
+          Do not automatically replace the primary DB instance and would require manual promotion. 
+            Causing significant downtime.
+      Create a template with CloudFormation:  
+        CloudFormation templates are useful for deploying and managing resources.
+          Not directly enhance availability or reduce recovery time.  
+        Recovery from a failure using CloudFormation would involve redeployment.
+          Which takes longer than 5 minutes.  
+      Frequent snapshots:  
+        Snapshots are used for data backup and recovery, not for high availability.  
+        Restoring a database from snapshots is time-consuming.
+          Cannot meet the 5-minute recovery requirement.  
+  Q 18:  
+    Question:  
+      A company needs to reserve a certain amount of Amazon EC2 compute resources 
+      in a specific Availability Zone within an AWS Region. 
+      Which purchasing option should the company use to meet this requirement?  
+    Options:  
+      Regional Reserved Instances.
+      EC2 Instance Savings Plans.
+      Compute Savings Plans.
+      Zonal Reserved Instances. ✔️ Correct answer.
+    Why Zonal Reserved Instances:  
+      Allow you to reserve EC2 capacity in a specific AZ.  
+      Ensure that the requested compute resources are available in that specific zone. 
+        Ideal for workloads that require high availability or specific placement strategies.  
+      Option guarantees capacity reservation. 
+        Unlike Regional Reserved Instances or Savings Plans. 
+          Which are more flexible but do not lock resources to a specific Availability Zone.  
+    Why not others:  
+      Regional Reserved Instances:
+        Provide reserved capacity across all AZ in a region.
+          Do not guarantee reservation in a specific Availability Zone.  
+        Offer flexibility in moving resources between zones.
+          But do not meet the requirement for zone-specific reservations.  
+      EC2 Instance Savings Plans:
+        Savings Plans provide cost savings for specific EC2 instance usage.
+          Do not reserve capacity or guarantee availability in any AZ.  
+      Compute Savings Plans:
+        Compute Savings Plans are broader and apply to any compute usage.
+          Such as EC2, Fargate, or Lambda. 
+        They do not include capacity reservation or zone-specific guarantees.  
+  Q 21:
+    Question:  
+      Which AWS service gives users the ability to 
+      build interactive business intelligence dashboards that include machine learning insights?
+    Options:
+      Amazon QuickSight. ✔️ Correct answer.
+      Amazon Athena.
+      Amazon Kendra.
+      Amazon Redshift.
+    Why Amazon QuickSight:
+      Fully managed business intelligence -BI- service.
+      Allows users to build interactive dashboards and visualizations.  
+      Supports ML insights using built-in ML models to provide: 
+        Anomaly detection and forecast future trends based on the data.
+      Integrates with a variety of data sources, including: 
+        Amazon S3, Redshift, and Athena. 
+          Making it ideal for creating BI dashboards with machine learning capabilities.
+    Why not others:
+      Amazon Athena: 
+        Query service for data in Amazon S3.
+        It does not provide the capabilities to: 
+          Create business intelligence dashboards or include ML insights in them. 
+        Primarily for querying data using SQL.
+      Amazon Kendra: 
+        This is an intelligent search service.
+        Uses machine learning to provide accurate search results. 
+        It is not designed for building interactive dashboards or BI reports.
+      Amazon Redshift: 
+        Data warehouse service used for big data analytics. 
+        While it stores and processes data.
+          It doesn't directly create dashboards or integrate ML insights into them. 
+        It can be used as a data source for QuickSight.
+  Q 23:
+  Question:  
+    Which AWS service allows users to model and provision AWS resources 
+    using common programming languages?
+  Options:
+    AWS Cloud Development Kit (AWS CDK). ✔️ Correct answer.
+    AWS CloudFormation.
+    AWS CodePipeline.
+    AWS Systems Manager.
+  Why AWS Cloud Development Kit (AWS CDK):
+    Allows users to model and provision AWS resources using familiar programming languages like: 
+      TypeScript, Python, Java, and C#. 
+    It is a framework for defining cloud infrastructure using code.
+      Making it easier for developers to use high-level languages to work with AWS resources.
+    Helps you write reusable, maintainable, and scalable infrastructure as code.
+  Why not others:
+    AWS CloudFormation: 
+      Allows you to model and provision AWS resources.
+      But it uses JSON or YAML to define infrastructure.
+        Rather than general-purpose programming languages.
+    AWS CodePipeline: 
+      CodePipeline is a continuous integration and continuous delivery (CI/CD) service. 
+        Automating code deployments. 
+      It does not handle infrastructure provisioning using programming languages.
+    AWS Systems Manager: 
+      Service for operational management and automation of tasks, such as patch management. 
+        It does not focus on modeling and provisioning AWS resources using programming languages.
+  Q 26:
+    Question:  
+      A company needs to create and manage a portfolio of IT workloads 
+      that the company approves for use on AWS. 
+      Which AWS service provides this functionality?
+    Options:
+      AWS Systems Manager.
+      AWS Config.
+      AWS Service Catalog. ✔️ Correct answer.
+      AWS CloudFormation.
+    Why AWS Service Catalog:
+      Allows organizations to create and manage a portfolio of IT workloads approved for AWS use. 
+        IT workloads like Applications, solutions, and infrastructure.
+      Provides centralized control over the cloud resources and services. 
+        That can be used across teams and ensures compliance with corporate policies.
+      You can define and maintain a catalog of approved resources and offer them to users.
+        For provisioning in a controlled way.
+    Why not others:
+      AWS Systems Manager: 
+        Provides tools for: 
+          Managing and automating the configuration and operation of AWS resources.
+        It does not specifically offer portfolio management for workloads.
+      AWS Config: 
+        AWS Config helps you track resource configurations and monitor changes.
+        It doesn't allow for portfolio creation.
+        It doesn't offer the management of approved workloads for use in the cloud.
+      AWS CloudFormation: 
+        Service for provisioning and managing infrastructure as code.
+        Not specifically focused on managing a portfolio of approved workloads across AWS services.
+  Q 29:
+    Question:  
+      A company needs to monitor compute usage 
+      and receive an email message notification every time an Amazon EC2 instance starts or stops. 
+      Which AWS service should the company use to meet these requirements?
+  Options:
+    Amazon Simple Email Service (Amazon SES).
+    Amazon EventBridge. ✔️ Correct answer.
+    Amazon WorkMail.
+    AWS Trusted Advisor.
+  Why Amazon EventBridge:
+    Serverless event bus service.
+    Enables you to monitor and respond to events across AWS services, including: 
+      EC2 instances starting or stopping.
+    You can configure EventBridge rules to capture events like EC2 instance state changes.
+      for Example when an instance starts or stops. 
+    After capturing an event ypu can trigger an action, such as sending an email notification.
+    You can easily integrate EventBridge with Amazon Simple Notification Service Amazon SNS.
+      To send email notifications to recipients whenever an EC2 instance state change occurs.
+  Why not others:
+    Amazon Simple Email Service (Amazon SES): 
+      SES is an email service for sending bulk or transactional emails. 
+      While SES can send emails.
+        It doesn't monitor EC2 instances or trigger notifications based on instance state changes.
+    Amazon WorkMail: 
+      Managed business email and calendaring service. 
+      It is not intended for event monitoring or notification of EC2 instance state changes.
+    AWS Trusted Advisor: 
+      Trusted Advisor provides best practices and recommendations for AWS resources.
+      Does not specifically: 
+        Monitor EC2 instance state changes.
+        Send notifications based on those changes.
+  Q 30:
+    Question:  
+      A company wants to reduce the physical compute footprint that developers use to run code. 
+      Which service would meet that need by enabling serverless architectures?
+  Options:
+    Amazon DynamoDB.
+    Amazon Elastic Compute Cloud (Amazon EC2).
+    AWS Lambda. ✔️ Correct answer.
+    AWS CodeCommit.
+  Why AWS Lambda:
+    Fully managed serverless compute service.
+    Allows you to run code without provisioning or managing servers. 
+    You can upload your code, and it automatically handles everything required to run and scale it. 
+      Including managing the infrastructure.
+    Eliminates the need for physical compute resources.
+    Reducing the footprint.
+      Minimizing the amount of physical infrastructure or resources required.
+    Enabling developers to focus on writing code without worrying about servers.
+  Why not others:
+    Amazon DynamoDB: 
+      Managed NoSQL database service, not a compute service. 
+      While it reduces the need for managing servers for database workloads.
+        It does not meet the requirement of enabling serverless compute.
+    Amazon Elastic Compute Cloud (Amazon EC2): 
+      EC2 provides virtual servers (instances) that need to be provisioned and managed. 
+        So it doesn't meet the reducing the physical compute footprint with serverless computing.
+    AWS CodeCommit: 
+      Source control service for storing and managing code repositories. 
+      It doesn't provide compute capabilities.
+        So it does not help in reducing the physical compute footprint.
+  Q 36:
+  Question: 
+    Which AWS service is designed to 
+    help users orchestrate a workflow process for a set of AWS Lambda functions?
+  Options:
+    AWS Batch.
+    Amazon DynamoDB.
+    AWS CodePipeline.
+    AWS Step Functions. ✔️ Correct answer.
+  Why AWS Step Functions:
+    Allows users to coordinate multiple AWS services, into serverless workflows.
+      Including AWS Lambda functions.
+    It makes it easy to: 
+      Sequence Lambda functions and control the execution flow of complex workflows. 
+    Enables error handling, retries, and parallel execution within workflows.
+      Making it ideal for orchestrating Lambda functions.
+  AWS Step Functions Vs AWS Amazon EventBridge:
+    Both are used for orchestration and event-driven architectures in AWS. 
+    AWS Step Functions:
+      Purpose: 
+        Primarily used to orchestrate workflows. 
+        Coordinate multiple AWS services into a series of steps that define the flow of your app.
+          Including AWS Lambda.
+      Workflow: 
+        Designed for building stateful, step-by-step workflows.
+          Where each step can be a function, service, or API. 
+        You can define: 
+          Conditional branches.
+          Retries.
+          Parallel execution.
+          Error handling within the workflow.
+      Use Case: 
+        Ideal for complex workflows where the steps need to be executed in a defined sequence.
+          Often involving Lambda functions and other AWS services. 
+      Example use cases: 
+        Order processing, and data processing workflows.
+    Amazon EventBridge:
+      Purpose: 
+        Event bus service that facilitates event-driven architectures. 
+        It allows you to ingest, filter, and route events from: 
+          AWS services, integrated applications, or custom sources.
+        It allows you to route events to various targets like: 
+          AWS Lambda, Step Functions, and more.
+      Event-Driven: 
+        Listens for events and triggers actions based on those events. 
+          Events like changes to resources or new data.
+        It doesn't define specific workflows like Step Functions.
+          But is instead focused on reacting to changes in your system.
+      Use Case: 
+        Building event-driven apps where actions need to be triggered in response to events. 
+      Example use case:
+        When an object is uploaded to an S3 bucket. 
+          EventBridge can route that event to a Lambda function to process the file.
+    Key Differences:
+      EventBridge is about reacting to events.
+      Step Functions is about orchestrating the flow of tasks in a sequential or conditional order.
+        Tasks like Lambda functions.
+    Complexity:
+      EventBridge is focused on routing events to targets without managing the flow of tasks.
+      Step Functions can handle more complex logic, including retries, branching, and waiting.
+    Use Together:
+      These services can be used together. For example: 
+        EventBridge could trigger an event.
+        Step Functions could orchestrate a series of tasks in response to that event.
+  Q 38:
+    Question:  
+      Where should a company go to search software listings from independent software vendors 
+      to find, test, buy, and deploy software that runs on AWS?
+    Options:  
+      AWS Marketplace. ✔️ Correct answer.
+      Amazon Lumberyard.
+      AWS Artifact.
+      Amazon CloudSearch.
+  Why AWS Marketplace:  
+    Is an online store.
+    Customers there can find, test, buy, and deploy third-party software and services. 
+      That run on AWS. 
+    It offers a wide range of software solutions from independent software vendors -ISVs-. 
+      For various purposes, including: 
+        Security, networking, storage, and machine learning.
+  Why not others:  
+    Amazon Lumberyard: 
+      Free, cross-platform game engine that is primarily designed for developing games. 
+        Not for searching and deploying software from independent vendors.
+    AWS Artifact: 
+      Service that provides access to AWS compliance reports and agreements.
+      Not a marketplace for third-party software.
+    Amazon CloudSearch: 
+      Fully-managed search service for building search functionality into applications.
+      Not a platform for software listings from independent vendors.
+  Q 43:
+    Question:  
+      In which categories does AWS Trusted Advisor provide recommended actions?
+    Options:  
+      Operating system patches.
+      Cost optimization.
+      Service quotas.
+      B & C. ✔️ Correct answer.
+    Why D (B & C):  
+      Offers recommendations across multiple categories to help optimize your AWS environment. 
+      It provides insights into: 
+        Cost optimization.
+        Service quotas ensuring that you stay within your limits and avoid service interruptions. 
+      It also provides recommendations for: 
+        Security, fault tolerance, and performance.
+      But Operating system patches is not a category covered by Trusted Advisor.
+Q 51:
+  Question:
+    A company has set up a VPC in its AWS account and has created a subnet in the VPC. 
+    The company wants to make the subnet public. 
+    Which AWS features should the company use to meet this requirement?
+  Options:
+    Amazon VPC internet gateway.
+    Amazon VPC NAT gateway.
+    Amazon VPC route tables.
+    A & C. ✔️ Correct answer.
+  Why A & C:  
+    Amazon VPC internet gateway: 
+      Feature provides the necessary connection between the VPC and the internet. 
+        Enabling instances in the VPC to access the internet.  
+    Amazon VPC route tables: 
+      Ensure that the subnet can route traffic to the internet.
+      You must configure the route table for that subnet to point to the internet gateway.  
+    Why not others:
+      Used to allow private instances to access the internet.
+        But it does not make a subnet public. 
+      Public subnets need direct access to the internet via an internet gateway.
+  Q 58:
+    Question:  
+      A company wants its AWS usage to be more sustainable. 
+      The company wants to track, measure, review, and forecast polluting emissions 
+      that result from its AWS applications. 
+      Which AWS service or tool can the company use to meet these requirements?
+  Options:  
+    AWS Health Dashboard.
+    AWS customer carbon footprint tool. ✔️ Correct answer.
+    AWS Support Center.
+    Amazon QuickSight.
+  Why AWS customer carbon footprint tool:  
+    It a tool helps organizations track, measure, review, and forecast carbon emissions. 
+      Resulting from their AWS usage. 
+    It provides a detailed view of the carbon footprint based on the AWS services used.
+    Helps organizations make informed decisions on reducing their environmental impact.  
+  Why not others:  
+    AWS Health Dashboard: 
+      Provides alerts and notifications about the health of AWS services.
+      It does not offer tools to measure or forecast carbon emissions.  
+    AWS Support Center: 
+      The AWS Support Center provides customer support and management for AWS accounts.
+      It does not track sustainability or carbon emissions.  
+    Amazon QuickSight: 
+      Business intelligence service for data visualization and reporting. 
+      It does not specifically track or forecast carbon emissions from AWS usage.  
+  Q 60:
+    Question:  
+      A company wants to give its customers the ability to view specific data 
+      that is hosted in Amazon S3 buckets. 
+      The company wants to 
+      keep control over the full datasets that the company shares with the customers. 
+      Which S3 feature will meet these requirements?  
+    Options:  
+      S3 Storage Lens.
+      S3 Cross-Region Replication (CRR).
+      S3 Versioning.
+      S3 Access Points. ✔️ Correct answer.
+    Why S3 Access Points:  
+      Allow creating unique access configurations for specific applications or customers. 
+      Each access point provides a unique hostname and policies.
+        Enabling granular control over what data is accessible. 
+          Ensuring customers can view specific data without exposing the entire bucket dataset.  
+    Why not others:  
+      S3 Storage Lens: 
+        Provides visibility into storage usage and activity metrics.
+        Does not facilitate controlled access to specific data.  
+      S3 Cross-Region Replication (CRR): 
+        Automatically replicates S3 objects across regions for durability and availability.
+        Does not offer data access management.  
+      S3 Versioning: 
+        Maintains multiple versions of objects in a bucket, enabling recovery.
+        Does not control or manage customer-specific data access.  
+  Q 61:  
+    Question:  
+      A company needs to optimize the cost of its compute resources. 
+      Which type of workload should the company run on Amazon EC2 Reserved Instances?  
+    Options:  
+      A steady-state workload that requires a particular EC2 instance configuration 
+        for a long period of time. ✔️ Correct answer.  
+      A short-term workload that can be interrupted.  
+      A steady-state workload that does not require a long-term commitment.  
+      A short-term workload that cannot be interrupted.  
+    Why Steady-state workload with a long-term commitment:  
+      Amazon EC2 RIs: 
+        Designed for workloads that require: 
+          Consistent and predictable compute capacity for an extended period. 
+        They provide significant cost savings: 
+          Up to 75% compared to On-Demand instances in exchange for a 1 or 3 year commitment.  
+        Ideal for steady-state apps such as: 
+          Web servers, databases, or backend processing that run continuously.  
+    Why not others:  
+      Short-term workload that can be interrupted: 
+        Spot Instances are cost-effective for workloads that can tolerate interruptions.  
+          Not Reserved Instances.  
+      Steady-state workload without long-term commitment: 
+        On-Demand Instances are better suited for this scenario. 
+          As they offer flexibility without long-term commitments.  
+      Short-term workload that cannot be interrupted: 
+        On-Demand Instances would be a better option here, since they: 
+          Don't require a long-term commitment.
+          Provide uninterrupted compute resources.
+===================================================================================================
+Manara potential error ❌.
+  Until now, all the question that has an option referring to two options.
+    That option is always the correct choice.
+  Example:
+    We have four options:
+      1- A And 2- B And 3- C And 4- A & C 
+        The option 4 is referring to two options so it will be the right now.

@@ -1,4 +1,4 @@
-Questions i got wrong or i didn't be sure about:
+Questions i got wrong or didn't be sure about:
   Q 2:
     The Question:
       A security engineer wants a single-tenant AWS solution to 
@@ -382,17 +382,3 @@ Questions i got wrong or i didn't be sure about:
       Company's migration to serverless services to take advantage of new technologies aligns with: 
         the Performance efficiency pillar. 
           As it emphasizes efficient resource use and leveraging the latest innovations.
-
-
-
-
-
-
-
-
-
-
-
-
-
-  

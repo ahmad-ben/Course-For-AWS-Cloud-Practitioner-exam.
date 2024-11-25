@@ -129,10 +129,10 @@ Amazon EC2 Pricing Options:
       There are two types:
         Compute Savings Plan: 
           Covers Fargate, Lambda, and EC2 across any region, family, size, tenancy, and OS.
-          EC2 Savings Plan: 
-            Specifically for EC2 with hourly usage. 
-              Applicable within a selected region and instance family. 
-              Allows any size, tenancy, and operating system combination.
+        EC2 Savings Plan: 
+          Specifically for EC2 with hourly usage. 
+            Applicable within a selected region and instance family. 
+            Allows any size, tenancy, and operating system combination.
     Spot Block: 
       Enables a fixed duration -1 to 6 hours- for Spot Instances, discounted but non-interruptible.
         30% to 45% less then On-demand, less than Spot Instances but without interruption.
