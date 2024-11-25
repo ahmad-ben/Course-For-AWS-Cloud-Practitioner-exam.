@@ -1,0 +1,29 @@
+Voucher Information & Deadlines.
+  Next Steps
+    After Completing this course your next step is to take the exam registration quiz.
+    You must get a score of 100% on the Quiz in order to request your AWS Exam Voucher.
+    We will begin voucher distribution in Week 5 of the program.
+      Week 5 is counted from your live session start date.
+      If you finish the program early and request your voucher.
+        You will not receive it until week 5.
+    You will not be able to request your voucher after the program deadline.
+      You will have to re-enroll in a future live session.
+    Once Voucher distribution begins in week 5.
+      You will receive your Voucher code on email with the Subject line:
+        AWS Voucher + Next Steps.
+    When you receive your voucher.
+      You will have exactly 48 hours to redeem your voucher and book your exam.
+    No extension can be made to voucher redemption
+    From your Registration day. 
+      You will have 1 week to sit for the exam and report back your results.
+    As a reminder you do not need to take the exam as soon as you book it with the voucher. 
+      You can redeem and register in the future. Example: 
+        You Receive your voucher on the 15th of October. 
+        You redeem the voucher anytime before the 17th of October. 
+        You sit for the exam anytime before the 23rd of October.
+    If you do not redeem your voucher.
+      You are putting yourself at risk of losing your benefits.
+    After Sitting for the exam you need to report back your result to Manara.
+      Through the Report Result section of the learning path
+    You will need to report on your Exam status Pass/Fail.
+      If you passed you need to upload a screenshot of your exam result.
