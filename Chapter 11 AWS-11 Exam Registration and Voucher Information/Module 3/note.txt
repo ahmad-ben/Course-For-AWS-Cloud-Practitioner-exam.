@@ -1,0 +1,100 @@
+Before the Exam:
+  AWS will email you with all these details.
+    But we want you to know what to do before the big day.
+  Run the system test prior to your exam.
+    Using the link in the Appointment Details section of this email. 
+  The system test should be run even if you have previously taken an online proctored exam. 
+    This is because the online proctoring software is updated regularly. 
+  Be sure to run it on the same network and computer you will use on exam day.
+  Review the OnVUE technical requirements drop-down menu.
+    Ensuring your system is compatible with the online proctoring software.
+    Link:
+      https://www.pearsonvue.com/us/en/aws/onvue.html
+  Review the following drop-down sections: 
+    Pearson VUE policies and procedures.
+    Frequently asked questions.
+    The Additional policies and FAQs for AWS.
+      From the following website:
+        https://www.pearsonvue.com/us/en/aws/onvue.html
+    These sections cover:
+      How to prepare your workspace.
+      What is and is not allowed on test day.
+      How to access technical support.
+  Note these troubleshooting tips that can resolve most issues:
+    Chat with OnVUE technical support if you have an issue during or after exam check-in.
+      Link:
+        https://home.pearsonvue.com/onvuehelp
+    Try a different computer, such as a personal computer, instead of a work computer.
+    Close all applications before opening the OnVUE application, including your internet browser.
+    Disable application updates.
+    Disconnect from your VPN.
+    Switch from Wi-Fi to a wired connection via ethernet cable.
+    Do not take the exam while on a mobile hotspot.
+    If testing from home.
+      Have others in the household disconnect from the internet during your exam.
+    Restart the OnVUE application via your downloads folder.
+    Ask Pearson VUE support to resume your exam.
+      If you had an issue leading to exam stop. 
+    Confirm your browser and operating system meet the OnVUE technical requirements.
+    Make sure you are in your exam appointment window.
+      From 30 minutes before to 15 minutes after your appointment start time.
+  Appointment Details Image:
+    ./assets/appointment-details-image.png
+Identification Guidelines
+  ID Guidelines
+    Please be prepared to show: 
+      A valid form of unexpired, Government-issued personal ID. 
+        The Government-issued ID must have your signature and must have your photo.
+    The name on the registration must match the names on the Government issued ID exactly. 
+    Please verify that your name listed on your confirmation email matches your identification. 
+    If your identification is not considered valid.
+      You will not be permitted to complete your exam and are unlikely to receive a refund.
+    Examples of acceptable identification:
+      Passport.
+      Driver’s license.
+      Identification card -national or local-.
+      Registration card -such as green card, permanent resident, visa-
+  By law, certain IDs must not be photocopied, digitized, or captured on camera. 
+    Because of this, Pearson VUE cannot accept restricted IDs as identification for online testing.
+      Restricted IDs Including but not limited to U.S. military or certain secure access IDs. 
+  The first name/given name and the last name/surname must be identical to: 
+    The first and last names on the valid forms of identification. 
+      You are required to present at your exam appointment or you will not be permitted to test.
+How to Book your AWS Certification Exam – A Step by Step Guide:
+  Link:
+    https://digitalcloud.training/how-to-book-your-aws-certification-exam/
+Exam Rules & Regulations:
+  Guidance on how to prepare for and take an AWS online proctored exam:
+    Before Scheduling:
+      Understand the technical requirements like computer specs, reliable internet, private space. 
+      Testing rules -environmental and behavioral restrictions-.  
+      Perform the System Test. 
+        On the computer you'll use to ensure compatibility with OnVUE software.  
+      Use a personal computer instead of a work computer to avoid firewall or network restrictions.  
+    Workspace and Technical Preparation:
+      Ensure your workspace is clutter-free and private.  
+      Use a hardwired Ethernet connection for reliable internet.  
+      If using an external monitor.
+        Close the laptop and connect an external keyboard, mouse, and webcam.  
+      Keep your computer plugged in during the exam.  
+    Testing Rules:
+      Strict isolation: 
+        No other people or interruptions are allowed in the room during the exam.  
+      Prohibited items: 
+        Watches, books, notes, notepads, earbuds, whiteboards, and food. A beverage is allowed.  
+      Use the exam browser’s Whiteboard or Comments feature. 
+        For note-taking, no physical scratch paper.  
+      You cannot read questions aloud, stand, or leave the workspace during the exam.
+        Including for restroom breaks.  
+    Exam Day Check-In Process:
+      You can begin the check-in process up to 30 minutes before your exam time.  
+      Close all applications except the OnVUE application during check-in.  
+      Take and upload photos of your ID and testing environment using your phone or webcam. 
+        Your ID must match your registered name.  
+      If needed, update your name on your AWS account at least two business days before the exam. 
+    During the Exam:
+      Your workspace will be reviewed by a proctor, who will launch the exam after approval.  
+      You will be continuously monitored through audio and video.  
+    Support:
+      If issues arise during check-in or the exam.
+        Contact Pearson VUE’s 24/7 OnVUE support for help.
