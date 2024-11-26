@@ -160,4 +160,42 @@ Characteristics and Cloud Computing:
     Measured service: 
       Resource usage is tracked, and users are charged based on their consumption.
         Insuring cost efficiency.
+  Private cloud Vs On-premises:
+    A private cloud can be on-premises, but it doesn't have to be. Here's the distinction:
+      Private Cloud:
+        Definition: 
+          Cloud environment dedicated to a single customer.
+          Offering the same scalability, elasticity, and self-service features as public cloud.
+            But in an isolated infrastructure.
+        Where It Runs:
+          On-Premises: 
+            Hosted in the company's own data centers.
+          Third-Party Hosted: 
+            A cloud provider like AWS, VMware, or IBM. 
+              Runs and manages the private cloud for the customer in their data centers.
+          Key Features: 
+            Virtualized resources, automation, and flexibility—similar to a public cloud.
+      On-Premises:
+        Definition: 
+          IT infrastructure physically located at the customer’s site. 
+            Without the features of cloud computing, like: 
+              Automation, elasticity, or self-service capabilities.
+        Where It Runs: 
+          Always in the company’s own data centers.
+        Key Features: 
+          Usually relies on static infrastructure, with manual provisioning and scaling.
+    Private cloud: 
+      Can run on-premises but it’s more advanced than traditional on-premises infrastructure. 
+        Because it incorporates cloud-like features:
+          Scalability, automation, and self-service. 
+        Examples:
+          AWS Outposts.
+            AWS Service. 
+            Allows customers to extend their AWS infrastructure into their on-premises DC. 
+            Run workloads with the same APIs and services as in AWS data centers.
+              But with dedicated hardware.
+      Can be hosted off-premises by a provider while remaining dedicated to one customer.
+        EC2 Dedicated Host.
+          EC2 instances to run on physically isolated hardware dedicated to them. 
+            But still in AWS data centers.
 ===================================================================================================
