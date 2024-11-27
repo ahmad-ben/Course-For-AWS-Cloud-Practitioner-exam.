@@ -65,9 +65,16 @@ EC2 Instances and Instance Types:
       Concentrates on high throughput and low latency for accessing large datasets stored on disk. 
         Suitable for data-intensive applications that require fast read/write operations.
     Accelerated Computing.
-    HPC Optimized.
-    Instance Features.
+      Provide hardware accelerators like GPUs or FPGAs. 
+      For tasks like machine learning, graphics processing, or scientific computations.
+    Instance Features. 
+      Manara potential error ❌.
+      This term is not an EC2 instance type.
+      It refers to attributes like: 
+        Storage options, networking capabilities, or customizability. 
     Measuring Instance Performance.
+      Manara potential error ❌.
+      Measuring performance is an action or methodology, not an EC2 instance type.
   AWS Right Sizing
     Selecting the most powerful isn't always the best due to the cloud's elasticity.
     Right sizing involves: 
@@ -177,7 +184,7 @@ EC2 Purchasing Options + How to Choose the Right Purchasing Option
         Batch jobs.
         Data analysis.
         Image processing.
-    Dedicated Hosts
+    Dedicated Hosts:
       Physical servers dedicated to a single customer's use. 
       Providing isolation and control over instance placement.
       Offers compliance and regulatory requirements by: 
@@ -185,7 +192,7 @@ EC2 Purchasing Options + How to Choose the Right Purchasing Option
       Use cases:
         Ideal for applications with licensing restrictions or regulatory constraints.
         Sensitive data. 
-    Dedicated Instances
+    Dedicated Instances:
       Physical servers exclusively dedicated to a single customer's use.
       Enhanced security and isolation for sensitive workloads.
       Predictable performance
@@ -207,7 +214,59 @@ EC2 Purchasing Options + How to Choose the Right Purchasing Option
       Use cases:
         Organizations requiring predictable performance and capacity assurance. 
           For mission-critical applications or workloads for example.
-  How to choose EC2 Purchasing Options
+    AWS Savings Plans Vs AWS Capacity Reservations:
+      Both offer cost-saving options. 
+        But they are fundamentally different in their purpose and how they function. 
+      AWS Savings Plans:
+        Billing discounts.
+        You pay a fixed amount, regardless of actual usage.
+          But any usage that matches your commitment will be billed at a discounted rate.
+        Provide lower costs on compute usage.
+          In exchange for a commitment to a specific amount of usage measured in $/hour. 
+            Over a 1- or 3-year term.
+        Key Features:
+          Reduce costs by committing to consistent usage (dollars per hour).
+        Flexibility:
+          Applies to a variety of compute services like EC2, Fargate, Lambda.
+          Works across Regions, instance families, and sizes depending on the type of plan.
+        Two Types:
+          Compute Savings Plans: 
+            Most flexible but it's generally more expensive compared to EC2 Instance Savings Plans.
+            Applies to EC2 instances, Fargate, and Lambda usage.
+              Across any instance type, family, size, or region.
+          EC2 Instance Savings Plans: 
+            Tied to specific EC2 instance families in a specific region.
+        No guarantees for capacity: 
+          Reduces cost. 
+          No guarantee that capacity will always be available in a given Availability Zone.
+        Use Case:
+          You want to save money on regular workloads without needing capacity guarantees.
+          Ideal for businesses with predictable usage patterns. 
+            But no strict requirements about instance placement or availability.
+      Capacity Reservations:
+        Specific to EC2 instances.
+        Ensure that you have dedicated compute capacity in a specific AZ for a defined period. 
+          Regardless of demand.
+        Key Features:
+          Purpose: 
+            Guarantee that EC2 instances are available when needed.
+          Not about cost savings: 
+            While Capacity Reservations don’t inherently save costs. 
+              They can be combined with Savings Plans or Reserved Instances.
+                For a cost-efficient solution.
+          Specific to Availability Zones:
+            Capacity is tied to a particular AZ and instance type.
+            Ensures availability even during high-demand periods like:
+              Disaster recovery or critical applications.
+          Flexible duration:
+            Can be created or canceled as needed -no long-term commitment required-.
+          Cost:
+            Pay standard On-Demand rates unless combined with a discount like: 
+              Savings Plans or Reserved Instances.
+          Use Case:
+            You need to guarantee capacity for critical workloads in a specific AZ.
+            Ideal when availability is more important than cost savings.
+  How to choose EC2 Purchasing Options:
     Define Workload Requirements
       Identify the specific requirements of your workload, including: 
         Compute, memory, storage, and networking needs.
