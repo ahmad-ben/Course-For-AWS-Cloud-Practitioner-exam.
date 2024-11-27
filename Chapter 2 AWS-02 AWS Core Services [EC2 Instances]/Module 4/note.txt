@@ -110,7 +110,7 @@ Recap Exam
           Spot Instance.
   Questions I got wrong and why:
     Q7:
-      I din't know that AMIs allow you to create backups of your EC2 instances.
+      I didn't know that AMIs allows you to create backups of your EC2 instances.
         Which can be used to launch new instances in case of failure.
     Q8:
       I think that: 
@@ -127,3 +127,26 @@ Recap Exam
           Not applicable, as AWS does not provide this level of granularity.
         Two data centers in separate AZs: 
           Recommended for redundancy and minimal latency while maintaining availability.
+      What is Placement Group:
+        AWS feature.
+        Used to control the placement of EC2 instances on underlying hardware. 
+          Optimizing to a specific use cases, such as: 
+            Performance, availability, or fault tolerance. 
+        There are three types of placement groups:
+          Cluster Placement Group: 
+            Puts instances close together on the same physical hardware. 
+            Optimize network performance by causing low-latency, high-throughput.
+            Ideal for tightly coupled, distributed applications.
+          Spread Placement Group: 
+            Distributes instances across multiple underlying physical hardware.
+              Reducing the risk of failure, suitable for applications that need high availability.
+          Partition Placement Group:
+            Divides instances into logical groups -partitions-.
+            Distributes instances for fault tolerance -similar to Spread-.
+              While keeping instances in the same partition close together.
+                Optimizing network performance -similar to cluster-.
+            Divides instances into logical groups -partitions-. 
+              Reducing the risk of simultaneous failure.
+            Useful for large-scale distributed and big data apps.
+        Help manage EC2 instance placement for:
+          Improved performance, fault tolerance, and cost efficiency based on workload needs.

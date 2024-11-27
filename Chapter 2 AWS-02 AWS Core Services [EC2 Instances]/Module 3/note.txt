@@ -59,6 +59,8 @@ EC2 Instance Storage: EBS Volumes, Amazon Machine Images, EC2 Image Builder, and
     A network drive that can be attached to instances while they run.
       It can be detached from one EC2 instance and attached to another quickly.
       At the CCP level, they can only be mounted to one instance at a time.
+        Manara potential error ❌, the -At the CCP level- part. 
+          because under any condition it will be attached to one instance. 
     It allows instances to persist data even after termination.
     EBS volumes are bound to a specific availability zone.
     They can be thought of as a "network USB stick."
