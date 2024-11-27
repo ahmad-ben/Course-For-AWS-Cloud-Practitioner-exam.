@@ -132,7 +132,8 @@ Summary
         Software as a Service -SaaS-.
       Each model offering different levels of control and management.
     AWS Global Infrastructure: 
-      Availability Zones, Regions, and AWS Data Centers are part of AWS's global infrastructure. 
+      Availability Zones, Regions, and AWS Data Centers are part of AWS's global infrastructure.
+        Along with Edge Locations and Regional Caches.
         Providing high availability, low latency, and geographic diversity. 
           To support resilient and efficient cloud services.
     AWS pricing models: 
@@ -205,7 +206,7 @@ Mini-Exam
         Which option is a common stakeholder role for the 
         AWS Cloud Adoption Framework -AWS CAF- platform perspective?
       Options:
-        A. Chief financial officer (CFO). Manara potential error ❌ -Correct answer unknown-
+        A. Chief financial officer (CFO). Manara potential error ❌ 
         B. Chief information officer (CIO).
         C. Chief data officer (CDO).
         D. Engineer. ✔️

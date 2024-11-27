@@ -15,6 +15,8 @@ Introduction to Amazon EC2:
   Amazon EC2 -Elastic Compute Cloud-: 
     Key AWS service offering infrastructure as a service, essential for cloud understanding.
   EC2 Components:
+    Essential features and supporting services that work together. 
+      To enhance the functionality and manageability of Amazon EC2.
     Virtual Machines: 
       Also called EC2 Instances, configurable to match workload needs.
     Storage: 
@@ -38,6 +40,45 @@ Introduction to Amazon EC2:
       Control access with security groups and firewall rules.
     Bootstrapping:
       Use EC2 User Data for startup configuration.
+      User data script creates a server and static web page when the EC2 instance is first created.
+        Manara potential error ❌, script isn't existing.
+        Chat GPT answer:
+          The user data script:
+            #!/bin/bash
+            # Update the package repository
+            sudo yum update -y
+
+            # Install a web server -Apache HTTP Server-
+            sudo yum install -y httpd
+
+            # Enable and start the web server service
+            sudo systemctl enable httpd
+            sudo systemctl start httpd
+
+            # Create a static HTML page
+            echo "<!DOCTYPE html>
+            <html>
+            <head>
+                <title>Welcome to EC2</title>
+            </head>
+            <body>
+                <h1>Hello, AWS!</h1>
+                <p>This is a static web page hosted on an EC2 instance.</p>
+            </body>
+            </html>" > /var/www/html/index.html
+
+            # Set appropriate permissions
+            sudo chmod 644 /var/www/html/index.html
+
+            # Restart the Apache server to serve the new page
+            sudo systemctl restart httpd
+          Steps to Use This Script:
+            During EC2 instance launch, go to the Advanced Details section.
+            Paste the above script into the User Data field.
+            Launch the instance.
+            Once the instance is running.
+              Access the public IP or DNS of the EC2 instance in your browser, for example: 
+                http://<public-ip>
   Instance Types Examples:
     Range from T2 Micro (1 vCPU, 1GB RAM) to:
       Larger types like C5 and M5. with more vCPUs, memory, and network speed.

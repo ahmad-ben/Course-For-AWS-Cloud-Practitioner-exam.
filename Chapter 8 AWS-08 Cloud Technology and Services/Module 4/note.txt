@@ -144,7 +144,7 @@ Review your knowledge:
       Options:
         AWS Fargate. ✔️
         Amazon FSx for Windows File Server.
-        Amazon Elastic Container Service (Amazon ECS). ❌ Manara potetial error.
+        Amazon Elastic Container Service (Amazon ECS). ❌ Manara potential error.
         Amazon EC2.
     Q8:
       The question:
