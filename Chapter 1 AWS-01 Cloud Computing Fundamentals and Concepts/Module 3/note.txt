@@ -61,8 +61,30 @@ AWS Ecosystem: Free Tools
     AWS Competency Program: Recognizes partners with proven expertise in specialized areas.
     AWS Navigate Program: Helps APN Partners enhance their skills.
   AWS IQ:
-    Connect with AWS Certified third-party experts for assistance on projects.
-    Features include video conferencing, contract management, and integrated billing.
+    Service provided by AWS. 
+    It's a marketplace-like platform where customers can: 
+      Find, collaborate with, and hire experts to help with a variety of AWS tasks, such as: 
+        Architecture design, deployment, migration, and optimization.
+    A website that connects customers with AWS Certified experts for assistance with AWS projects.
+    Key Features of AWS IQ:
+      On-Demand Expertise: 
+        Customers can request assistance from AWS Certified professionals.
+      Certified Experts: 
+        Only AWS Certified individuals or consulting firms can offer services.
+          Ensuring a level of expertise and trust.
+      Direct Collaboration: 
+        Customers can chat with experts, review proposals, and approve work in the AWS IQ platform.
+      Billing Integration: 
+        The cost of hiring experts is billed directly through the customer’s AWS account.
+          Making payment and invoicing seamless.
+      Project-Based Work: 
+        Ideal for short-term projects or specialized tasks where customers need additional support.
+    Use Case for AWS IQ:
+      Suppose a company: 
+        Lacks in-house expertise to migrate their workloads to AWS.
+        Needs help designing a serverless application architecture. 
+      They can use AWS IQ to find and work with a certified professional. 
+        To complete the task efficiently.
   AWS re:Post:
     An AWS-managed Q&A service offering crowd-sourced answers to technical questions. 
       Replacing AWS Forums.
