@@ -35,8 +35,50 @@ AWS Elastic Load Balancing Introduction:
     Layer 7.
     Support SLL certificates and provide SSL termination.
     Load balancing to multiple HTTP applications across machines -target groups-.
+      Target Groups:
+        Logical groups used with Elastic Load Balancers -ELB-. 
+          Directing traffic to specific resources -targets-. 
+        Targets can include EC2 instances, containers, Lambda functions, or IP addresses. 
+        Key Points about Target Groups:
+          Association with Load Balancers:
+            Target groups define how incoming traffic is routed to backend resources. 
+              By working with one of the following:
+                Application Load Balancers -ALB-.
+                Network Load Balancers -NLB-.
+                Gateway Load Balancers -GLB-.
+          Target Types:
+            Instance: 
+              Targets are specific EC2 instances.
+            IP Address: 
+              Targets are identified by specific IP addresses. 
+                Even outside AWS like on-premises resources.
+            Lambda Function: ALB can route requests to AWS Lambda functions.
+          Health Checks:
+            Target groups include health check configurations.
+              Monitoring the availability of targets.
+              Ensuring traffic is routed only to healthy ones.
+          Use Cases:
+            Separate applications or microservices: 
+              You can route different URL paths like `/api` and `/web` to different target groups.
+            Load balancing across multiple environments like dev and prod.
+              By associating target groups with different sets of resources.
+          Targets are Registered with Target Groups:
+            Resources like EC2 instances or IPs must be registered with a target group.
+              To receive traffic from the load balancer.
+          Listener Rules and Target Groups:
+            Determine how the load balancer forwards traffic to specific target groups.
+              Based on path-based or host-based routing criteria.
+        Example:
+          Two microservices.
+            One for handling API requests `/api`.
+            Another for handling static web content `/static`. 
+              You could create two target groups:
+                TG 1: Routes traffic for `/api` to your EC2 instances running the API service.
+                TG 2: Routes traffic for `/static` to your EC2 instances hosting static files.
+        Target groups act as the link between load balancers and the backend resources they manage.
     Load balancing to multiple applications on the same machine -containers-.
     Load balancing based on route in the URL.
+      Directs traffic based on the URL path.
     Load balancing based on hostname in the URL.
     Good for microservices and container-based applications like Docker and Amazon ECS.
     Port mapping feature to redirect to a dynamic port.
