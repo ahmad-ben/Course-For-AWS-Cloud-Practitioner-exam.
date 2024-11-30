@@ -9,6 +9,30 @@ Introduction:
     You'll be able to proactively identify and address potential network-related issues.
       Ensuring the reliability and availability of your cloud infrastructure.
 Network Monitoring:
+  VPC Flow Logs: 
+    Feature provided by AWS.  
+    Within this feature, you have three options for granularity:
+      VPC Flow Logs: 
+        The broadest scope, covering all traffic in the VPC.
+        High-level overview of all traffic in the VPC, but lacks detail for specific resources.
+      Subnet Flow Logs: 
+        More focused than VPC logs.
+        Tracks traffic within a specific subnet.
+          Giving you better clarity for that part of your architecture.  
+      Elastic Network Interface -ENI- Flow Logs: 
+        The most granular, targeting a specific network interface.  
+        Very detailed and focused on traffic to/from a specific network interface, for example: 
+          Tied to an EC2 instance.  
+          Tied to a service like a Load Balancer.  
+    Data Destination:  
+      Regardless of which level you choose, the logs can be sent to: 
+        Amazon CloudWatch Logs or Amazon S3 or Amazon Kinesis, allowing for analysis and storage.
+    Enabling All The Three Options Simultaneously?
+      Yes, you can enable all three options simultaneously. Each log operates independently:
+        Enable VPC Flow Logs to monitor the overall traffic.  
+        Simultaneously enable Subnet Flow Logs for specific subnets where you need more visibility.  
+        At the same time, turn on ENI Flow Logs for critical resources, for example:
+          An EC2 instance running sensitive workloads.  
   How do you monitor the network:
     VPC Flow Logs, Subnet Flow Logs, Elastic Network Interface Flow Logs. 
       Features you can enable on your VPC resources to capture and analyze network traffic. 

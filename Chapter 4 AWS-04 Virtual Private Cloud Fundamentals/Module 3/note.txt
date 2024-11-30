@@ -29,7 +29,7 @@ Recap Exam
           To establish a secure connection between VPCs.
           To provide internet access to instances within a VPC.
           To enable communication between resources in a VPC and AWS services 
-          without traversing the public internet. ✔️
+            without traversing the public internet. ✔️
           To manage access control lists -ACLs- for subnets within a VPC.
       Q2:
         The question:
