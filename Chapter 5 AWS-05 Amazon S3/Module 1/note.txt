@@ -103,13 +103,26 @@ Amazon S3: Introduction
       Excluding the prefix "xn--" at the start.
       Avoiding the suffix "-s3alias" at the end.
   S3 Bucket Policies:
+    Powerful way to control access to Amazon S3 buckets and objects.
+      Define rules that specify who can perform which actions on the bucket and its contents. 
+    Written in JSON format. 
     JSON:
       control access to buckets and objects.
+        We can use a bucket policy to govern access to: 
+          The whole bucket -with its object-.
+          An individual object within the bucket.
       Permit or Restrict.
+        permit or restrict access to the S3 bucket or objects.
       APIs permitted or restricted.
+        Specify which APIs -or actions- are allowed or denied. 
+        For example: 
+          Restrict the PutObject API to only allow encrypted objects to be uploaded.
+          Restrict GetObject to certain users.
       User or account affected by the policy.
         Policies can target specific users or accounts. 
-          Determining who is allowed or denied access to the bucket and its contents.
+          Define which users or accounts the policy applies to.
+          Determining who is allowed or denied access to the bucket and its contents, such as: 
+            AWS user, IAM role, or even an external AWS account -cross-account access-.
     Use the S3 bucket policy to:
       Enable public access to the bucket.
       Mandate encryption on uploaded objects.
