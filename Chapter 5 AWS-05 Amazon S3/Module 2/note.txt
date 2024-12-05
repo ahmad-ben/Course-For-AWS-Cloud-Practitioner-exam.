@@ -126,6 +126,7 @@ S3 Storage Classes
     Ensures only intended individuals have access to your S3 buckets.
     Evaluates S3 Bucket Policies, S3 ACLs, and S3 Access Point Policies.
     Powered by IAM Access Analyzer.
+      Feature within AWS Identity and Access Management -IAM-.
     Identifies and flags any unintended access configurations, such as: 
       Buckets that are publicly accessible or shared with other AWS accounts
   Shared Responsibility Model for S3:

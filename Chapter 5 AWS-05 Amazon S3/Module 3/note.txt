@@ -156,7 +156,11 @@ S3 Migration: Usage Processes
             Fee includes a set number of days like 10 or 15 to complete the data transfer. 
               After the period, additional charges may apply if you need more time with the device.
     Committed Upfront Pricing:
-      Pay in advance for monthly, 1-year, and 3-year usage -primarily for Edge Computing-.
+      This pricing model is not for data transfer use cases is for Edge Computing use cases: 
+        Where the Snowball Edge device remains deployed at your location for tasks like:
+          Processing data locally.
+      Pay in advance for monthly/1-year/3-year usage -primarily for Edge Computing-.
+        You pay upfront for using a Snowball Edge device over a predefined period.
       Offers up to 62% discounted pricing compared to on-demand rates.
   Hybrid Cloud for Storage -Hybrid Cloud Approach-:
     AWS promotes a hybrid cloud model where: 
@@ -175,7 +179,7 @@ S3 Migration: Usage Processes
           Unlike EFS -Elastic File System- or NFS -Network File System-. 
             Follow standard file system protocols widely compatible across different platforms. 
           S3's storage structure and access methods are unique to AWS.
-          S3's don't use traditional file system protocols directly. 
+          S3 doesn't use traditional file system protocols directly. 
         Extra steps or tools are needed to access or integrate S3 data in on-premises environments.
       How do you expose S3 data on-premises:
         The solution is AWS Storage Gateway.
