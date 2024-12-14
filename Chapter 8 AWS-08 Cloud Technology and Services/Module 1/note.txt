@@ -180,7 +180,7 @@ Global Applications in AWS:
         All requests to the bucket must go through CloudFront.
           Providing an additional layer of security and control.
   AWS CloudFront:
-    Content delivery network -CDN-= service. 
+    Content delivery network -CDN-, service. 
     Built for high performance, security, and developer convenience.
     Content cached at the edge locations -global data centers- to improves user performance.
     S3 Bucket: 

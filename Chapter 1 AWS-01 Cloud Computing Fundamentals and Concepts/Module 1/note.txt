@@ -82,6 +82,36 @@ Cloud Computing: Pricing and Models
       Cloud-based product that is run and managed by the service provider. 
       Applications accessed over the internet. 
       Examples like Google Workspace, Microsoft Office 365, and Salesforce.
+    PaaS Comparison to IaaS and SaaS:
+      PaaS sits between IaaS and SaaS.
+      The Platform in PaaS:
+        Refers to an environment provided by the cloud service provider that includes: 
+          Tools, frameworks, and managed infrastructure helps you build, deploy, and run your app.
+      IaaS:
+        you're given raw infrastructure -virtual machines, storage, networking-.
+        You must handle things like OS setup, middleware, runtime, and scaling yourself.  
+      SaaS:
+        You're using ready-made software where everything is handled for you. 
+        You only use the software functionality.  
+      PaaS:
+        you get the infrastructure + tools -Development Environment-.
+        The provider manages everything except your code and data. 
+        Allows you to focus solely on developing and deploying apps. 
+          Without worrying about the underlying infrastructure or system software.
+        Less control than IaaS -you don’t manage infrastructure-.  
+        More flexibility than SaaS -you still write and deploy your own code-.  
+      Example to Tie It Together:
+        Imagine you're building an app ley's say an e-commerce store:
+          IaaS: 
+            Rent virtual servers, install an OS, set up a web server, and configure your database. 
+            You handle updates, scaling, and security patches yourself.  
+          PaaS: 
+            You use a platform like Heroku or AWS Elastic Beanstalk. 
+            You just upload your code, and it runs on infrastructure managed by the provider. 
+            The platform handles scaling, monitoring, load balancing, and OS-level concerns automatically.  
+          SaaS: 
+            Instead of building the app, you simply use something like Shopify.
+              Which is a ready-made e-commerce solution.
     See:
       ./assets/Cloud Computing Pricing and Models/cloud-computing-models-and-manage-resources.png
   AWS Pricing Models

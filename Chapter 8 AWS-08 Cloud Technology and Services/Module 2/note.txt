@@ -174,23 +174,3 @@ Review your knowledge
         Managing EC2 instances. ✔️
         Using Docker images.
         Configuring networks.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
