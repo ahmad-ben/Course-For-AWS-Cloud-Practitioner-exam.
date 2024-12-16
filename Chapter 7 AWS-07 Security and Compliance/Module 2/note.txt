@@ -35,6 +35,29 @@ Security Tools -Security Tools to Protect Your AWS Resources-:
             Within individual accounts or organizations.
     Supports internal audit or compliance processes.
       By offering comprehensive access to necessary documentation and agreements.
+    AoC -Attestation of Compliance-: 
+      Formal -official- document provided by a third-party auditor. 
+        Certifying that AWS meets specific compliance requirements. 
+      Often associated with standards like PCI DSS -Payment Card Industry Data Security Standard-.
+      Purpose: 
+        Customers assurance that AWS: 
+          Has been independently assessed and meets the required security and compliance benchmarks.
+        Helps organizations demonstrate their own compliance. 
+          When using AWS services as part of their infrastructure.
+      Examples of AoC in AWS:
+        PCI DSS AoC:
+          Demonstrates that AWS's infrastructure complies with the PCI DSS requirements.
+            Enabling customers to build PCI-compliant solutions on AWS.
+        HIPAA AoC:
+          Attests that: 
+            AWS services are compliant with the Health Insurance Portability and Accountability Act.
+              For handling Protected Health Information -PHI-.
+      How to Access AoC on AWS:
+        Available through AWS Artifact.
+        Steps:
+          Navigate to the AWS Management Console.
+          AWS Artifact.
+          Search for and download the required AoC document.
   Amazon GuardDuty:
     Intelligent threat discovery solution to safeguard your AWS Account.
     Utilizes:

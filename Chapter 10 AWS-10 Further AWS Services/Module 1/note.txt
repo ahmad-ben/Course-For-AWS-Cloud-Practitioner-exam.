@@ -50,13 +50,13 @@ Advanced Identity in AWS:
       Supports MFA.
         When a user tries to access AWS resources or services.
       Establish trust connections with your on-premise AD.
-  AD Connector:
-    A proxy/gateway that connects AWS resources to your existing on-premise Active Directory.
-    Directory Gateway -proxy- to redirect to on-premise AD. 
-    Users are managed entirely within the on-premise AD.
-    Supports MFA for additional security.
-      When a user tries to access AWS resources or services.
-    Does not store data in AWS, it redirects authentication and queries to your on-premises AD.
+    AD Connector:
+      A proxy/gateway that connects AWS resources to your existing on-premise Active Directory.
+      Directory Gateway -proxy- to redirect to on-premise AD. 
+      Users are managed entirely within the on-premise AD.
+      Supports MFA for additional security.
+        When a user tries to access AWS resources or services.
+      Does not store data in AWS, it redirects authentication and queries to your on-premises AD.
     Simple AD:
       AD-compatible managed directory on AWS, cannot be joined with on-premise AD.
   AWS IAM Identity Center:
