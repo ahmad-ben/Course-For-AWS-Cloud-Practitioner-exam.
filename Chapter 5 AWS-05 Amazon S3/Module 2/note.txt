@@ -72,6 +72,10 @@ S3 Storage Classes:
         Cost-effective for data rarely accessed, with retrieval time range from minutes to hours.
       Glacier Deep Archive:
         Cost-effective for data rarely accessed, with retrieval times of hours.
+    Amazon S3 Express One Zone:
+      High-performance, single AZ storage class.
+      Deliver consistent single-digit millisecond data access. 
+        For your most frequently accessed data and latency-sensitive applications.
   Unique pattern to remember:
     For all the storage classes that usually their data shouldn't be usually accessed we have:
       Minimum capacity charge per object, Minimum storage duration time, Retrieval fee.
