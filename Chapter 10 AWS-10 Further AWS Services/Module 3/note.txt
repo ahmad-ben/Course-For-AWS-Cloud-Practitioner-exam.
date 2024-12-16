@@ -306,3 +306,8 @@ Other AWS Services Part 3:
       Quickly deploying containerized workloads with minimal configuration.  
     Abstracts the complexity of containers and infrastructure.
       Letting developers focus on their application.  
+  AWS Transfer Family: 
+    Fully managed service.
+    Enables secure file transfers to and from AWS storage services like Amazon S3 and Amazon EFS.
+    Helps organizations migrate, share, or integrate files with AWS storage services.
+      Without modifying existing file transfer workflows.

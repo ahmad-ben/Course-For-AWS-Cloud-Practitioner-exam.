@@ -148,6 +148,7 @@ Estimating and Tracking Costs:
     Cost Explorer:
       Tool under the AWS Cost Management service.
       Gain insight into your AWS costs and usage trends over time.
+      Visualization cost and usage for a specific period of time.
       Generate custom reports to analyze cost and usage data according to your needs.
         Analyze data at various levels: 
           Total costs and usage across all accounts. 

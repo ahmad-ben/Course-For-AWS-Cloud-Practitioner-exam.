@@ -106,6 +106,7 @@ Amazon EC2 Pricing Options:
       Instance attributes should match the attributes of reserved instance to see discounts, like:
         Type of instance you're running, operating system, The tenancy, AZ and the region.
       When you specify an AZ, you can also reserve capacity in it, but not by region.
+      If you no longer need them, you can sell RIs on the Reserved Instance Marketplace.
     Spot Instances: 
       Offers up to 90% discounts by bidding for unused capacity but can be interrupted by AWS. 
       Ideal for flexible workloads that can handle interruptions.
