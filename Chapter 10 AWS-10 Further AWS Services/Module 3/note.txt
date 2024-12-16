@@ -278,7 +278,7 @@ Other AWS Services Part 3:
       Include tasks in a workflow that require human intervention or decision-making.
     Use cases include: 
       Order fulfillment, data processing, web applications, and any workflow automation needs.
-  Amazon DataZone
+  Amazon DataZone:
     Data management service to catalog, share, and govern data securely across an organization.  
     Enables data producers and consumers to collaborate efficiently.
       While adhering to governance policies.  
@@ -286,6 +286,23 @@ Other AWS Services Part 3:
           IoT devices, Applications, Databases, AWS Services.
         Consumers like: 
           Analytics tools, Data pipelines, Real-time apps, End-users.
-  AWS Cloud Map
+  AWS Cloud Map:
     A service discovery tool that maps resources and dynamically updates their locations.  
     Helps apps discover and connect to resources like databases, microservices, or storage systems.
+  AWS App Runner:
+    Fully managed service. 
+    Makes it easy to deploy and run containerized web applications and APIs.  
+    Key Features:  
+      Simplified Deployment: 
+        Directly deploy from source code like GitHub or a container images like Amazon ECR.  
+      Auto Scaling: 
+        Automatically adjusts capacity to handle traffic.  
+      Built-in Load Balancing: 
+        Handles incoming requests across instances.  
+      Secure by Default: 
+        HTTPS is enabled automatically.  
+    Ideal Use Cases:  
+      Running web applications or APIs without managing infrastructure.  
+      Quickly deploying containerized workloads with minimal configuration.  
+    Abstracts the complexity of containers and infrastructure.
+      Letting developers focus on their application.  
