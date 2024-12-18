@@ -164,11 +164,11 @@ Databases Part 2:
     Blockchain Technology:
       Enables the development of applications where:
         Multiple parties can execute transactions without requiring a trusted, central authority.
-      Amazon Managed Blockchain:
-        A managed service that allows you to:
-          Join public blockchain networks.
-          Create your own scalable private network.
-          Compatible with blockchain frameworks Hyperledger Fabric and Ethereum.
+    Amazon Managed Blockchain:
+      A managed service that allows you to:
+        Join public blockchain networks.
+        Create your own scalable private network.
+        Compatible with blockchain frameworks Hyperledger Fabric and Ethereum.
   AWS Glue:
     Managed database to extract, transform, and load -ETL- service. 
       Manara Potential Error ❌, it's not a DB.

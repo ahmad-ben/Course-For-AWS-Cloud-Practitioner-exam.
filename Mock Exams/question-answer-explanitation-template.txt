@@ -1,6 +1,0 @@
-  Q NUMBER:
-    The Question:
-    The Options:
-      ✔️ Correct Answer.
-      ❌ What I Chose.
-    Why, for avoiding this again:
